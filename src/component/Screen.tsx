@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, ViewStyle } from "react-native";
+import { SafeAreaView, StyleSheet, Text, ViewStyle } from "react-native";
 
 type Props = {
     children: React.ReactNode;
@@ -8,10 +8,10 @@ type Props = {
 
 export default function Screen({ children, style, title }: Props) {
     return (
-        <View style={[styles.container, style]}>
+        <SafeAreaView style={[styles.container, style]}>
             {title && <Text style={styles.title}>{title}</Text>}
             {children}
-        </View>
+        </SafeAreaView>
     );
 }
 

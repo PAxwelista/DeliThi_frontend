@@ -1,24 +1,34 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import Screen from "../../component/Screen";
-import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import { Order } from "../../types/order";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
+import { useDelivery } from "../../context/orderContext";
+import { useFocusEffect } from "@react-navigation/native";
 
+type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 
-type Props = NativeStackScreenProps<MakeDeliveryStackParamList, 'BeginDelivery'>;
-
-
-export default function BeginDeliveryScreen({ navigation } : Props) {
-    const { data, isLoading, error } = useFetch(`${apiUrl}/orders/allAreas`);
+export default function BeginDeliveryScreen({ navigation }: Props) {
+    const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders/allAreas`);
 
     const [errorMessage, setErrorMessage] = useState<string>("");
+
+    useFocusEffect(
+        useCallback(() => {
+            refresh();
+        }, [refresh])
+    );
+
+    const delivery = useDelivery();
 
     const handleStartDelivery = async (area: string) => {
         const orderResponse = await fetch(`${apiUrl}/orders?state=pending&area=${area}`);
         const orders = await orderResponse.json();
+
+        setErrorMessage("")
 
         if (!orders) {
             setErrorMessage("Problème de connexion");
@@ -40,7 +50,7 @@ export default function BeginDeliveryScreen({ navigation } : Props) {
                 ordersID,
             }),
         });
-        const delivery = await deliveriesResponse.json();
+        const deliveryData = await deliveriesResponse.json();
 
         const stateChangeResponse = await fetch(`${apiUrl}/orders/state`, {
             method: "PATCH",
@@ -53,7 +63,8 @@ export default function BeginDeliveryScreen({ navigation } : Props) {
             }),
         });
         const stateChange = await stateChangeResponse.json();
-        navigation.navigate("PrepareDelivery", delivery.data);
+        delivery?.setDelivery(deliveryData.data);
+        navigation.navigate("PrepareDelivery", deliveryData.data);
     };
 
     const Areas = data?.areas.map((area: string) => (
@@ -68,8 +79,10 @@ export default function BeginDeliveryScreen({ navigation } : Props) {
 
     return (
         <Screen title="Départ livraison">
-            {Areas}
-            {errorMessage && <Text>{errorMessage}</Text>}
+            <ScrollView>
+                {Areas}
+                {errorMessage && <Text>{errorMessage}</Text>}
+            </ScrollView>
         </Screen>
     );
 }

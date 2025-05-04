@@ -1,19 +1,16 @@
 import Screen from "../../component/Screen";
 import Input from "../../component/Input";
-import { Picker } from "@react-native-picker/picker";
-import { useEffect, useState, useRef } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { useState, useRef } from "react";
+import { StyleSheet, View, Text, KeyboardAvoidingView, ScrollView } from "react-native";
 import Button from "../../component/Button";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useFetch } from "../../hooks/useFetch";
 import { Customer } from "../../types/customer";
 import { apiUrl } from "../../config";
-
-
-type Product = {
-    _id: string;
-    name: string;
-};
+import { Product } from "../../types/product";
+import ProductManager from "../../component/ProductManager";
+import React from "react";
+import AutoComplete from "../../component/Autocomplete";
 
 type ProductItem = {
     id: string;
@@ -33,8 +30,6 @@ let inputNameRef: AutocompleteDropdownController;
 let inputLocationRef: AutocompleteDropdownController;
 
 export default function ConnectionScreen() {
-    const [selectedProduct, setSelectedProduct] = useState<Product>();
-    const [quantity, setQuantity] = useState<number>(1);
     const [products, setProducts] = useState<ProductItem[]>([]);
     const [selectedLocationId, setSelectedLocationId] = useState<string>("");
     const [area, setArea] = useState<string>("");
@@ -42,9 +37,10 @@ export default function ConnectionScreen() {
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [customerName, setCustomerName] = useState<string>("");
     const [customerLocation, setCustomerLocation] = useState<string>("");
+    const [locationData, setLocationData] = useState([]);
 
     const {
-        data: productAvailable,
+        data: productsAvailable,
         isLoading: isLoadingProductAvailable,
         error: errorProductAvailable,
     } = useFetch(`${apiUrl}/products/`);
@@ -52,34 +48,17 @@ export default function ConnectionScreen() {
         data: locationList,
         isLoading: isLoadingLocationlist,
         error: errorLocationList,
+        refresh: refreshLocationlist,
     } = useFetch(`${apiUrl}/customers/`);
-
-    useEffect(() => {
-        productAvailable &&
-            setSelectedProduct({ name: productAvailable.products[0].name, _id: productAvailable.products[0]._id });
-    }, [productAvailable]);
-
-    const handleAddProduct = () => {
-        setProducts(products =>
-            products.some(product => product.product === selectedProduct?.name)
-                ? products.map(product =>
-                      product.product === selectedProduct?.name
-                          ? { ...product, quantity: product.quantity + quantity }
-                          : product
-                  )
-                : [...products, { product: selectedProduct?.name || "", quantity, id: selectedProduct?._id || "" }]
-        );
-    };
 
     const resetLocationinfos = () => {
         setArea("");
         setPhoneNumber("");
-        console.log(inputNameRef)
         inputNameRef?.setInputText("");
         inputLocationRef?.setInputText("");
         setSelectedLocationId("");
-        setCustomerLocation("")
-        setCustomerName("")
+        setCustomerLocation("");
+        setCustomerName("");
     };
 
     const handleOnSelectCustomer = (item: any) => {
@@ -90,20 +69,26 @@ export default function ConnectionScreen() {
         if (selectedLocation) {
             setArea(selectedLocation.location.area);
             setPhoneNumber(selectedLocation.phoneNumber);
-            inputNameRef?.setInputText(selectedLocation.name);
             inputLocationRef?.setInputText(selectedLocation.location.name);
         }
     };
 
+    const handleOnSelectLocation = (item: any) => {
+        setCustomerLocation(item?.title);
+    };
+
     const handleValidateOrder = async () => {
         setErrorMessage("");
+        let id: string = selectedLocationId;
 
-        if (products.length === 0){
+        if (products.length === 0) {
             setErrorMessage("Il n'y as aucuns produits dans cette commande");
             return;
         }
 
-        if (!selectedLocationId) AddnewCustomer();
+        if (!id) id = await AddnewCustomer();
+
+        refreshLocationlist;
 
         try {
             const response = await fetch(`${apiUrl}/orders`, {
@@ -114,7 +99,7 @@ export default function ConnectionScreen() {
                 body: JSON.stringify({
                     products: products.map(v => ({ product: v.id, quantity: v.quantity })),
                     orderer: "axel", //a modifier en fonction de qui passe la commande
-                    customerId: selectedLocationId,
+                    customerId: id,
                 }),
             });
             const json = await response.json();
@@ -128,7 +113,18 @@ export default function ConnectionScreen() {
         }
     };
 
-    const AddnewCustomer = async () => {
+    const handleChangeTextLocation = async (value: string) => {
+
+        if (value.length < 3) return;
+
+        const response = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${value}`);
+
+        const data = await response.json();
+
+        setLocationData(data.features);
+    };
+
+    async function AddnewCustomer(): Promise<string> {
         try {
             const response = await fetch(`${apiUrl}/customers`, {
                 method: "POST",
@@ -144,141 +140,124 @@ export default function ConnectionScreen() {
             });
             const json = await response.json();
             if (json.result) {
-                setSelectedLocationId(json.data._id);
+                return json.data._id;
             } else setErrorMessage(json.error);
         } catch (error) {
             setErrorMessage("Erreur de connexion");
         }
-    };
-
-    const PickerElmts = productAvailable?.products?.map((v: Product) => (
-        <Picker.Item
-            key={v._id}
-            label={v.name}
-            value={{ _id: v._id, name: v.name }}
-        />
-    ));
-
-    const productElmts = products.map(v => (
-        <Text key={v.product}>
-            {v.quantity}x {v.product}{" "}
-        </Text>
-    ));
+        return "";
+    }
 
     if (isLoadingProductAvailable || isLoadingLocationlist) return <Text>Chargement...</Text>;
     if (errorProductAvailable || errorLocationList)
-        return <Text>Erreur : {errorProductAvailable || errorLocationList}</Text>;
+        return <Text style={styles.errorMess}>Erreur : {errorProductAvailable || errorLocationList}</Text>;
 
     return (
         <Screen title="Nouvelle commande">
             <AutocompleteDropdownContextProvider>
-                <View style={styles.ordersChoices}>
-                    <View style={styles.picker}>
-                        <Picker
-                            selectedValue={selectedProduct}
-                            onValueChange={(v: Product) => setSelectedProduct(v)}
-                        >
-                            {PickerElmts}
-                        </Picker>
-                    </View>
-                    <View style={styles.quantityContainer}>
-                        <Input
-                            placeholder="Qté"
-                            keyboardType="decimal-pad"
-                            style={styles.quantityInput}
-                            value={quantity.toString()}
-                            onChangeText={v => (Number(v) > 0 ? setQuantity(Number(v)) : setQuantity(0))}
-                        />
-                        <Button
-                            title="+"
-                            style={styles.quantityChanger}
-                            onPress={() => setQuantity(v => v + 1)}
-                        />
-                        <Button
-                            title="-"
-                            style={styles.quantityChanger}
-                            onPress={() => setQuantity(v => (v > 1 ? v - 1 : 1))}
-                        />
-                    </View>
-                    <Button
-                        title="Ajouter"
-                        onPress={handleAddProduct}
-                    />
-                </View>
-                <View style={styles.orders}>{productElmts}</View>
-                <View style={styles.coordinates}>
-                    <AutocompleteDropdown
-                        dataSet={locationList?.customers?.map((v: Customer) => ({ id: v._id, title: v.name }))}
-                        onSelectItem={handleOnSelectCustomer}
-                        clearOnFocus={false}
-                        EmptyResultComponent={<></>}
-                        textInputProps={{ placeholder: "Nom" }}
-                        controller={functions => (inputNameRef = functions)}
-                        onClear={resetLocationinfos}
-                        onChangeText={value => setCustomerName(value)}
-                    />
-                    <AutocompleteDropdown
-                        dataSet={locationList?.customers?.map((v: Customer) => ({ id: v._id, title: v.location.name }))}
-                        onSelectItem={handleOnSelectCustomer}
-                        clearOnFocus={false}
-                        EmptyResultComponent={<></>}
-                        textInputProps={{ placeholder: "Lieu" }}
-                        controller={functions => (inputLocationRef = functions)}
-                        onClear={resetLocationinfos}
-                        onChangeText={value => setCustomerLocation(value)}
-                    />
-                    <View>
-                        <Input
-                            placeholder="Zone"
-                            value={area}
-                            onChangeText={v => setArea(v)}
+                <KeyboardAvoidingView
+                    style={styles.container}
+                    behavior="padding"
+                >
+                    <ScrollView
+                        contentContainerStyle={styles.globalScroll}
+                        bounces={false}
+                    >
+                        <ProductManager
+                            productsAvailable={productsAvailable?.products}
+                            products={products}
+                            setProducts={setProducts}
                         />
 
-                        <Input
-                            placeholder="Téléphone"
-                            keyboardType="decimal-pad"
-                            value={phoneNumber}
-                            onChangeText={v => setPhoneNumber(v)}
+                        <View style={styles.coordinates}>
+                            <AutocompleteDropdown
+                                dataSet={locationList?.customers?.map((v: Customer) => ({ id: v._id, title: v.name }))}
+                                onSelectItem={handleOnSelectCustomer}
+                                clearOnFocus={false}
+                                EmptyResultComponent={<></>}
+                                textInputProps={{ placeholder: "Nom" }}
+                                controller={functions => (inputNameRef = functions)}
+                                onClear={resetLocationinfos}
+                                onChangeText={value => setCustomerName(value)}
+                            />
+                            <AutocompleteDropdown
+                                dataSet={locationData?.map((v: { properties: { id: string; label: string } }) => ({
+                                    id: v.properties.id,
+                                    title: v.properties.label,
+                                }))}
+                                onSelectItem={handleOnSelectLocation}
+                                clearOnFocus={false}
+                                EmptyResultComponent={<React.Fragment></React.Fragment>}
+                                textInputProps={{ placeholder: "Lieu" }}
+                                controller={functions => (inputLocationRef = functions)}
+                                onClear={resetLocationinfos}
+                                onChangeText={value => handleChangeTextLocation(value)}
+                                showChevron={false}
+                            />
+                            <AutoComplete
+                                data={[
+                                    { id: "id1", title: "test1" },
+                                    { id: "id2", title: "test2" },
+                                    { id: "id3", title: "test3" },
+                                    { id: "id4", title: "test4" },
+                                    { id: "id5", title: "test5" },
+                                    { id: "id6", title: "test6" },
+                                ]}
+                            />
+                            <AutoComplete
+                                data={locationData?.map((v: { properties: { id: string; label: string } }) => ({
+                                    id: v.properties.id,
+                                    title: v.properties.label,
+                                }))}
+                                onChangeText={handleChangeTextLocation}
+                            />
+                            <View>
+                                <Input
+                                    placeholder="Zone"
+                                    value={area}
+                                    onChangeText={v => setArea(v)}
+                                    style={styles.input}
+                                />
+
+                                <Input
+                                    placeholder="Téléphone"
+                                    keyboardType="decimal-pad"
+                                    value={phoneNumber}
+                                    onChangeText={v => setPhoneNumber(v)}
+                                    style={styles.input}
+                                />
+                            </View>
+                            {errorMessage && <Text>{errorMessage}</Text>}
+                        </View>
+                        <Button
+                            title="Valider commande"
+                            onPress={handleValidateOrder}
                         />
-                    </View>
-                    {errorMessage && <Text>{errorMessage}</Text>}
-                </View>
-                <Button
-                    title="Valider commande"
-                    onPress={handleValidateOrder}
-                />
+                    </ScrollView>
+                </KeyboardAvoidingView>
             </AutocompleteDropdownContextProvider>
         </Screen>
     );
 }
 
 const styles = StyleSheet.create({
-    ordersChoices: {
-        flex: 2,
-        justifyContent: "center",
+    container: { flex: 1 },
+    globalScroll: {
+        flexGrow: 1,
     },
-    orders: {
-        flex: 1,
-        padding: 10,
-        borderRadius: 10,
-        borderWidth: 1,
-    },
+
     coordinates: {
         flex: 3,
         justifyContent: "center",
     },
-    quantityContainer: {
-        flexDirection: "row",
-        alignContent: "center",
-    },
-    quantityInput: {
-        flex: 2,
-    },
-    quantityChanger: {
+
+    errorMess: {
         flex: 1,
+        textAlign: "center",
+        textAlignVertical: "center",
+        color: "red",
     },
-    picker: {
-        backgroundColor: "lightgrey",
-        borderRadius: 10,
+    input: {
+        height: 40,
     },
 });

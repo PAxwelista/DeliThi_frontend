@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 20,
         borderRadius: 10,
-        backgroundColor: "lightgrey",
+        backgroundColor: "lightblue",
     },
 });
