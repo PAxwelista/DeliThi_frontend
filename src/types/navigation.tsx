@@ -12,7 +12,7 @@ export type OrderStackParamList = {
 };
 export type MakeDeliveryStackParamList = {
     BeginDelivery: undefined;
-    PrepareDelivery: Delivery;
+    PrepareDelivery: undefined;
     Map: undefined;
-    DeliverOrder: undefined;
+    DeliverOrder: Order;
 };

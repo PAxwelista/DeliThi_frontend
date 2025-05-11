@@ -6,16 +6,22 @@ import Button from "../../component/Button";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { apiUrl } from "../../config";
+import { useDelivery } from "../../context/orderContext";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, 'PrepareDelivery'>;
 
-export default function PrepareDeliveryScreen({navigation, route } : Props) {
-    const { _id } = route.params;
+export default function PrepareDeliveryScreen({navigation } : Props) {
+    
+    const delivery = useDelivery()
+
+    const _id = delivery?.delivery?._id
 
     const { data } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
 
-
     const handleStartRide = ()=>{
+
+        
+
         navigation.navigate("Map")
     }
 

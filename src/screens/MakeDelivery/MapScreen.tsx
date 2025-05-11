@@ -1,31 +1,52 @@
 import MapView from "react-native-maps";
 import { Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
-//import MapViewDirections from "react-native-maps-directions";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order } from "../../types/order";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
 import Button from "../../component/Button";
 import Screen from "../../component/Screen";
 import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../config";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { MakeDeliveryStackParamList } from "../../types/navigation";
+import { Delivery } from "../../types/delivery";
 
-export default function MapScreen() {
-    const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
-    const [directionInfos, setDirectionInfos] = useState();
-    const [errorMessage, setErrorMessage] = useState<string>("");
+type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
+
+type Directioninfos = {
+    duration: { text: string };
+    distance: { text: string };
+};
+
+type Coords = [number, number][];
+
+export default function MapScreen({ navigation }: Props) {
     const delivery = useDelivery();
-    const [routeCoords, setRouteCoords] = useState([]);
 
-    const [test, setTest] = useState(false);
+    const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
+    const [firstDirectionInfos, setFirstDirectionInfos] = useState<Directioninfos>();
+    const [errorMessage, setErrorMessage] = useState<string>("");
+    const [routeCoords, setRouteCoords] = useState<Coords>([]);
+    const [nextRouteCoords, setnextRouteCoords] = useState<Coords>([]);
+    const [refreshDirection, setRefreshDirection] = useState<boolean>(false);
+    const [nextOrder, setnextOrder] = useState<Order | undefined>();
+    const [isRefreshDirection, setIsRefreshDirection] = useState<boolean>(false);
 
     useEffect(() => {
         (async () => {
+            setIsRefreshDirection(true);
             const { status } = await Location.requestForegroundPermissionsAsync();
+
             if (status === "granted") {
-                const location = await Location.getCurrentPositionAsync({});
-                setLocation({ latitude: location.coords.latitude, longitude: location.coords.longitude });
+                Location.watchPositionAsync({ distanceInterval: 10 }, location => {
+                    console.log(location);
+                    setLocation({ latitude: location.coords.latitude, longitude: location.coords.longitude });
+                });
+                const currentLocation = await Location.getCurrentPositionAsync({});
+                console.log(currentLocation);
+                setLocation({ latitude: currentLocation.coords.latitude, longitude: currentLocation.coords.longitude });
                 try {
                     const response = await fetch(`${apiUrl}/direction`, {
                         method: "POST",
@@ -33,31 +54,117 @@ export default function MapScreen() {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify({
-                            originCoords: { latitude: location.coords.latitude, longitude: location.coords.longitude },
-                            waypointsCoords: [
-                                {
-                                    latitude: delivery?.delivery?.orders[0].customer.location.latitude,
-                                    longitude: delivery?.delivery?.orders[0].customer.location.longitude,
-                                },
-                            ],
+                            originCoords:
+                                location.latitude === 0 && location.longitude === 0
+                                    ? {
+                                          latitude: currentLocation.coords.latitude,
+                                          longitude: currentLocation.coords.longitude,
+                                      }
+                                    : location,
+                            waypointsCoords: delivery?.delivery?.orders.map(order => {
+                                return {
+                                    latitude: order.customer.location.latitude,
+                                    longitude: order.customer.location.longitude,
+                                };
+                            }),
                         }),
                     });
                     const json = await response.json();
-                    setRouteCoords(json.polyline);
+                    setRouteCoords(json.globalPolyline);
                     if (json.result) {
                         setErrorMessage("Reussi!!");
+                        setnextRouteCoords(json.firstPolyline);
+                        setFirstDirectionInfos(json.firstDirectionInfos);
+                        setnextOrder(delivery?.delivery?.orders[json.order[0]]);
                     } else setErrorMessage(json.error);
                 } catch (error) {
                     setErrorMessage("Erreur de connexion");
                 }
-            
             }
-            
+            setIsRefreshDirection(false);
         })();
-    }, [test]);
+    }, [refreshDirection]);
 
-    const handleOnArrived = () => {
-        setTest(t => !t);
+    useEffect(() => {
+        delivery?.delivery?.orders.every(order => order.state != "processing") && handleDeliveryFinished();
+    }, [delivery]);
+
+    const handleDeliveryFinished = async () => {
+        const response = await fetch(`${apiUrl}/deliveries/state`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                newState: "finished",
+                deliveryID: delivery?.delivery?._id,
+            }),
+        });
+
+        const data = await response.json();
+
+        navigation.navigate("BeginDelivery");
+    };
+
+    const handleDelivery = async () => {
+        const response = await fetch(`${apiUrl}/orders/state`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                newState: "delivered",
+                ordersID: [nextOrder?._id],
+            }),
+        });
+
+        delivery?.setDelivery(prev => {
+            if (!prev) return prev;
+
+            return {
+                ...prev,
+                orders: prev.orders.filter((order: Order) => order._id != nextOrder?._id),
+            };
+        });
+
+        setRefreshDirection(t => !t);
+
+        if (nextOrder) navigation.navigate("DeliverOrder", nextOrder);
+    };
+
+    const handlePostponeDelivery = async () => {
+        await fetch(`${apiUrl}/orders/state`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                newState: "pending",
+                ordersID: [nextOrder?._id],
+            }),
+        });
+
+        await fetch(`${apiUrl}/deliveries/${delivery?.delivery?._id}/removeOrder/${nextOrder?._id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        delivery?.setDelivery(prev => {
+            if (!prev) return prev;
+
+            return {
+                ...prev,
+                orders: prev.orders.filter((order: Order) => order._id != nextOrder?._id),
+            };
+        });
+
+        setRefreshDirection(t => !t);
+    };
+
+    const handleRefreshDirection = () => {
+        setRefreshDirection(t => !t);
     };
 
     const Markers = delivery?.delivery?.orders.map((order: Order) => {
@@ -76,11 +183,33 @@ export default function MapScreen() {
     return (
         <Screen style={styles.container}>
             <View style={styles.header}>
-                <Text>Prochaine destination : </Text>
-                <Button
-                    title="Arrivé"
-                    onPress={handleOnArrived}
-                />
+                {isRefreshDirection ? (
+                    <ActivityIndicator
+                        size="large"
+                        color="#3b82f6"
+                    />
+                ) : (
+                    <>
+                        <Text>Prochain client : {nextOrder?.customer.name}</Text>
+                        <Text>Lieu : {nextOrder?.customer.location.name}</Text>
+                        <Text>Temps : {firstDirectionInfos?.duration.text} </Text>
+                        <Text>Distance : {firstDirectionInfos?.distance.text}</Text>
+                        <View style={styles.buttons}>
+                            <Button
+                                title="Livraison"
+                                onPress={handleDelivery}
+                            />
+                            <Button
+                                title="Repousser livraison"
+                                onPress={handlePostponeDelivery}
+                            />
+                            <Button
+                                title="Rafraîchir"
+                                onPress={handleRefreshDirection}
+                            />
+                        </View>
+                    </>
+                )}
             </View>
             <MapView
                 initialRegion={{
@@ -97,15 +226,28 @@ export default function MapScreen() {
                 }}
                 style={styles.map}
             >
-                <Marker coordinate={{ latitude: location.latitude, longitude: location.longitude }} />
+                <Marker
+                    coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+                    pinColor={"gold"}
+                />
                 {Markers}
                 {routeCoords && (
                     <Polyline
                         coordinates={routeCoords.map(coords => {
                             return { latitude: coords[0], longitude: coords[1] };
                         })}
-                        strokeColor="red"
+                        strokeColor="rgba(255,0,0,0.3)"
+                        strokeWidth={3}
+                    />
+                )}
+                {nextRouteCoords && (
+                    <Polyline
+                        coordinates={nextRouteCoords.map(coords => {
+                            return { latitude: coords[0], longitude: coords[1] };
+                        })}
+                        strokeColor="rgba(255,255,0,1)"
                         strokeWidth={4}
+                        style={{ zIndex: 1 }}
                     />
                 )}
             </MapView>
@@ -120,8 +262,15 @@ const styles = StyleSheet.create({
     },
     map: {
         flex: 5,
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").height,
     },
     header: {
         flex: 1,
+        margin: 20,
+    },
+    buttons: {
+        justifyContent: "center",
+        flexDirection: "row",
     },
 });

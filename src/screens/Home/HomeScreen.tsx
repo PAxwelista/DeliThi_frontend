@@ -11,6 +11,8 @@ import { Product } from "../../types/product";
 import ProductManager from "../../component/ProductManager";
 import React from "react";
 import AutoComplete from "../../component/Autocomplete";
+import Loading from "../../component/Loading";
+import Error from "../../component/Error";
 
 type ProductItem = {
     id: string;
@@ -26,8 +28,8 @@ type AutocompleteDropdownController = {
     setInputText: (text: string) => void;
 } | null;
 
-let inputNameRef: AutocompleteDropdownController;
-let inputLocationRef: AutocompleteDropdownController;
+let inputDropdownCustomerRef : AutocompleteDropdownController
+let inputDropdownLocationRef : AutocompleteDropdownController
 
 export default function ConnectionScreen() {
     const [products, setProducts] = useState<ProductItem[]>([]);
@@ -38,6 +40,7 @@ export default function ConnectionScreen() {
     const [customerName, setCustomerName] = useState<string>("");
     const [customerLocation, setCustomerLocation] = useState<string>("");
     const [locationData, setLocationData] = useState([]);
+    const [showClearLocationInput , setShowClearLocationinput] = useState<boolean>(true)
 
     const {
         data: productsAvailable,
@@ -54,22 +57,25 @@ export default function ConnectionScreen() {
     const resetLocationinfos = () => {
         setArea("");
         setPhoneNumber("");
-        inputNameRef?.setInputText("");
-        inputLocationRef?.setInputText("");
         setSelectedLocationId("");
         setCustomerLocation("");
         setCustomerName("");
+        inputDropdownLocationRef?.setInputText("");
+        inputDropdownCustomerRef?.setInputText("");
+        setLocationData([])
     };
 
     const handleOnSelectCustomer = (item: any) => {
+        
         const selectedLocation = locationList?.customers?.find((v: Product) => v._id === item?.id);
 
         item && setSelectedLocationId(item.id);
 
         if (selectedLocation) {
+            setShowClearLocationinput(false)
             setArea(selectedLocation.location.area);
             setPhoneNumber(selectedLocation.phoneNumber);
-            inputLocationRef?.setInputText(selectedLocation.location.name);
+            inputDropdownLocationRef?.setInputText(selectedLocation.location.name);
         }
     };
 
@@ -114,7 +120,6 @@ export default function ConnectionScreen() {
     };
 
     const handleChangeTextLocation = async (value: string) => {
-
         if (value.length < 3) return;
 
         const response = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${value}`);
@@ -125,6 +130,7 @@ export default function ConnectionScreen() {
     };
 
     async function AddnewCustomer(): Promise<string> {
+        console.log(customerName,customerLocation,area,phoneNumber)
         try {
             const response = await fetch(`${apiUrl}/customers`, {
                 method: "POST",
@@ -148,9 +154,9 @@ export default function ConnectionScreen() {
         return "";
     }
 
-    if (isLoadingProductAvailable || isLoadingLocationlist) return <Text>Chargement...</Text>;
+    if (isLoadingProductAvailable || isLoadingLocationlist) return <Loading/>
     if (errorProductAvailable || errorLocationList)
-        return <Text style={styles.errorMess}>Erreur : {errorProductAvailable || errorLocationList}</Text>;
+        return <Error err={errorProductAvailable || errorLocationList} />
 
     return (
         <Screen title="Nouvelle commande">
@@ -174,9 +180,9 @@ export default function ConnectionScreen() {
                                 dataSet={locationList?.customers?.map((v: Customer) => ({ id: v._id, title: v.name }))}
                                 onSelectItem={handleOnSelectCustomer}
                                 clearOnFocus={false}
-                                EmptyResultComponent={<></>}
+                                EmptyResultComponent={<View></View>}
                                 textInputProps={{ placeholder: "Nom" }}
-                                controller={functions => (inputNameRef = functions)}
+                                controller={functions => (inputDropdownCustomerRef = functions)}
                                 onClear={resetLocationinfos}
                                 onChangeText={value => setCustomerName(value)}
                             />
@@ -187,30 +193,15 @@ export default function ConnectionScreen() {
                                 }))}
                                 onSelectItem={handleOnSelectLocation}
                                 clearOnFocus={false}
-                                EmptyResultComponent={<React.Fragment></React.Fragment>}
+                                EmptyResultComponent={<View></View>}
                                 textInputProps={{ placeholder: "Lieu" }}
-                                controller={functions => (inputLocationRef = functions)}
-                                onClear={resetLocationinfos}
-                                onChangeText={value => handleChangeTextLocation(value)}
-                                showChevron={false}
-                            />
-                            <AutoComplete
-                                data={[
-                                    { id: "id1", title: "test1" },
-                                    { id: "id2", title: "test2" },
-                                    { id: "id3", title: "test3" },
-                                    { id: "id4", title: "test4" },
-                                    { id: "id5", title: "test5" },
-                                    { id: "id6", title: "test6" },
-                                ]}
-                            />
-                            <AutoComplete
-                                data={locationData?.map((v: { properties: { id: string; label: string } }) => ({
-                                    id: v.properties.id,
-                                    title: v.properties.label,
-                                }))}
+                                controller={functions => (inputDropdownLocationRef = functions)}
                                 onChangeText={handleChangeTextLocation}
+                                showChevron={false}
+                                onClear={resetLocationinfos}
+                                showClear={showClearLocationInput}
                             />
+
                             <View>
                                 <Input
                                     placeholder="Zone"

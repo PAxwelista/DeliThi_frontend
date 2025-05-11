@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, ViewStyle } from "react-native";
+import { SafeAreaView, StyleSheet, Text, ViewStyle ,Platform,StatusBar } from "react-native";
 
 type Props = {
     children: React.ReactNode;
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         margin: 20,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
     title: {
         textAlign: "center",

@@ -3,7 +3,7 @@ import { Delivery } from "../types/delivery";
 
 type DeliveryContextType = {
     delivery: Delivery | null;
-    setDelivery: (delivery: Delivery | null) => void;
+    setDelivery: React.Dispatch<React.SetStateAction<Delivery | null>>;
   };
 
 const DeliveryContext = createContext<DeliveryContextType | undefined>(undefined);

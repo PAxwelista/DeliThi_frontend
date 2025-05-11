@@ -2,6 +2,7 @@ import { Order } from "./order";
 
 export type Delivery = {
     _id: string;
-    orders: [Order];
+    orders: Order[];
     deliveryDate: string;
+    state: string;
 };

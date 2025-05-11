@@ -9,6 +9,8 @@ import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import React from "react";
 import { apiUrl } from "../../config";
+import Loading from "../../component/Loading";
+import Error from "../../component/Error";
 
 type Props = NativeStackScreenProps<OrderStackParamList, "AllOrders">;
 
@@ -46,6 +48,11 @@ export default function OrdersScreen({ navigation }: Props) {
             </TouchableOpacity>
         );
     };
+
+    if (isLoading) return <Loading/>
+
+    if (error)
+        return <Error err={error} />
 
     return (
         <Screen title="Commandes">
