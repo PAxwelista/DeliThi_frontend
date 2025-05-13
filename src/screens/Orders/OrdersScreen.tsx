@@ -20,19 +20,18 @@ export default function OrdersScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders`);
 
     useFocusEffect(
-        useCallback(()=>{
-            refresh()
-        },[refresh])
-        
+        useCallback(() => {
+            refresh();
+        }, [refresh])
     );
 
     type ItemOrder = {
         item: Order;
     };
 
-    const handleOnCancel = ()=>{
-        refresh()
-    }
+    const handleOnCancel = () => {
+        refresh();
+    };
 
     const renderOrder = ({ item }: ItemOrder) => {
         const orderColorStyle = { backgroundColor: colorState[item.state as State] };
@@ -40,7 +39,7 @@ export default function OrdersScreen({ navigation }: Props) {
         return (
             <TouchableOpacity
                 style={[styles.order, orderColorStyle]}
-                onPress={() => navigation.navigate("DetailOrder", item )}
+                onPress={() => navigation.navigate("DetailOrder", item)}
             >
                 <Text>
                     {item.customer.name} du : {new Date(item.creationDate).toLocaleDateString()}
@@ -49,15 +48,14 @@ export default function OrdersScreen({ navigation }: Props) {
         );
     };
 
-    if (isLoading) return <Loading/>
+    if (isLoading) return <Loading />;
 
-    if (error)
-        return <Error err={error} />
+    if (error) return <Error err={error} />;
 
     return (
         <Screen title="Commandes">
             <FlatList
-                data={data?.orders}
+                data={data?.orders.sort((a: Order, b: Order) => b.creationDate.localeCompare(a.creationDate))}
                 renderItem={renderOrder}
                 keyExtractor={item => item._id}
             />

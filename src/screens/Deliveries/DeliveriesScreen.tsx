@@ -58,7 +58,7 @@ export default function DeliveriesScreen({ navigation }: Props) {
     return (
         <Screen title="Livraisons">
             <FlatList
-                data={data?.deliveries}
+                data={data?.deliveries.sort((a: Delivery, b: Delivery) => b.deliveryDate.localeCompare(a.deliveryDate))}
                 renderItem={renderDelivery}
                 keyExtractor={item => item._id}
             />

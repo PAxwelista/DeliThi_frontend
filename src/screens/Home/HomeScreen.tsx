@@ -13,6 +13,7 @@ import React from "react";
 import AutoComplete from "../../component/Autocomplete";
 import Loading from "../../component/Loading";
 import Error from "../../component/Error";
+import { Order } from "../../types/order";
 
 type ProductItem = {
     id: string;
@@ -92,6 +93,14 @@ export default function ConnectionScreen() {
             return;
         }
 
+        const response = await fetch(`${apiUrl}/orders?state=pending`)
+        const data = await response.json()
+
+        if (data.orders.some((order:Order)=>order.customer._id === id)){
+            setErrorMessage("Commande existante enregistré avec ce client")
+            return
+        }
+
         if (!id) id = await AddnewCustomer();
 
         refreshLocationlist;
@@ -104,7 +113,7 @@ export default function ConnectionScreen() {
                 },
                 body: JSON.stringify({
                     products: products.map(v => ({ product: v.id, quantity: v.quantity })),
-                    orderer: "axel", //a modifier en fonction de qui passe la commande
+                    orderer: "Placeholder", //a modifier en fonction de qui passe la commande
                     customerId: id,
                 }),
             });
@@ -130,7 +139,7 @@ export default function ConnectionScreen() {
     };
 
     async function AddnewCustomer(): Promise<string> {
-        console.log(customerName,customerLocation,area,phoneNumber)
+        
         try {
             const response = await fetch(`${apiUrl}/customers`, {
                 method: "POST",
@@ -177,7 +186,7 @@ export default function ConnectionScreen() {
 
                         <View style={styles.coordinates}>
                             <AutocompleteDropdown
-                                dataSet={locationList?.customers?.map((v: Customer) => ({ id: v._id, title: v.name }))}
+                                dataSet={locationList?.customers?.sort((a:Customer,b:Customer)=>a.name.localeCompare(b.name)).map((v: Customer) => ({ id: v._id, title: v.name }))}
                                 onSelectItem={handleOnSelectCustomer}
                                 clearOnFocus={false}
                                 EmptyResultComponent={<View></View>}

@@ -1,9 +1,8 @@
-import { View, StyleSheet, ScrollView, Text } from "react-native";
+import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import Button from "./Button";
 import Input from "./Input";
-import { useState, useEffect , Dispatch, SetStateAction } from "react";
-
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 type productAvailable = {
     _id: string;
@@ -19,7 +18,7 @@ type ProductItem = {
 type Props = {
     productsAvailable: productAvailable[];
     products: ProductItem[];
-    setProducts: Dispatch<SetStateAction<ProductItem[]>>
+    setProducts: Dispatch<SetStateAction<ProductItem[]>>;
 };
 
 export default function ProductManager({ productsAvailable, products, setProducts }: Props) {
@@ -29,20 +28,6 @@ export default function ProductManager({ productsAvailable, products, setProduct
     useEffect(() => {
         productsAvailable && setSelectedProductId(productsAvailable[0]?._id);
     }, [productsAvailable]);
-
-    const PickerElmts = productsAvailable?.map((v: productAvailable) => (
-        <Picker.Item
-            key={v._id}
-            label={v.name}
-            value={v._id}
-        />
-    ));
-
-    const productElmts = products.map(v => (
-        <Text key={v.product}>
-            {v.quantity}x {v.product}{" "}
-        </Text>
-    ));
 
     const handleAddProduct = () => {
         setProducts((products: ProductItem[]) =>
@@ -61,6 +46,35 @@ export default function ProductManager({ productsAvailable, products, setProduct
                   ]
         );
     };
+
+    const handleRemoveProduct = (id: string) => {
+        setProducts((products: ProductItem[]) => products.filter(product => product.id != id));
+    };
+
+    const PickerElmts = productsAvailable?.map((v: productAvailable) => (
+        <Picker.Item
+            key={v._id}
+            label={v.name}
+            value={v._id}
+        />
+    ));
+
+    const productElmts = products.map(v => (
+        <View
+            style={styles.product}
+            key={v.product}
+        >
+            <Text>
+                {v.quantity}x {v.product}{" "}
+            </Text>
+            <TouchableOpacity
+                style={styles.removeBtn}
+                onPress={() => handleRemoveProduct(v.id)}
+            >
+                <Text style={styles.removeBtnText}>-</Text>
+            </TouchableOpacity>
+        </View>
+    ));
 
     return (
         <>
@@ -134,5 +148,23 @@ const styles = StyleSheet.create({
     },
     quantityInput: {
         flex: 2,
+    },
+    product: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems:"center"
+    },
+    removeBtn: {
+        height: 30,
+        width: 30,
+        margin: 5,
+        backgroundColor: "lightgrey",
+        borderRadius: 20,
+        textAlignVertical: "top",
+    },
+    removeBtnText: {
+        fontSize: 20,
+        textAlign: "center",
+        alignItems: "center",
     },
 });
