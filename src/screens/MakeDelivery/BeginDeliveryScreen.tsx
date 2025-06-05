@@ -31,12 +31,8 @@ export default function BeginDeliveryScreen({ navigation }: Props) {
         const actualDelivery = await actualDeliveryResponse.json();
 
         if (actualDelivery.result) {
-            console.log("way 1");
-            
-
             delivery?.setDelivery(actualDelivery.data);
         } else {
-            console.log("way 2");
             const orderResponse = await fetch(`${apiUrl}/orders?state=pending&area=${area}`);
             const orders = await orderResponse.json();
 

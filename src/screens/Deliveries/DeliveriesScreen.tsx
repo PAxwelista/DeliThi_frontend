@@ -35,7 +35,7 @@ export default function DeliveriesScreen({ navigation }: Props) {
                 style={styles.delivery}
                 onPress={() => handlePressDeliveries(item)}
             >
-                <Text>Livraison du {new Date(item.deliveryDate).toLocaleDateString()}</Text>
+                <Text>Livraison du {new Date(item.deliveryDate).toLocaleDateString()} / zone : {item.orders[0]?.area}</Text>
             </TouchableOpacity>
         );
     };

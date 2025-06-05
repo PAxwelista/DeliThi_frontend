@@ -10,17 +10,21 @@ import BeginDeliveryScreen from "./src/screens/MakeDelivery/BeginDeliveryScreen"
 import PrepareDeliveryScreen from "./src/screens/MakeDelivery/PrepareDeliveryScreen";
 import MapScreen from "./src/screens/MakeDelivery/MapScreen";
 import DeliverOrderScreen from "./src/screens/MakeDelivery/DeliverOrderScreen";
-import { DeliveriesStackParamList, OrderStackParamList, MakeDeliveryStackParamList } from "./src/types/navigation";
+import MoreMenuScreen from "./src/screens/Mores/MoreMenuScreen";
+import CustomersScreen from "./src/screens/Mores/CustomersScreen";
+import StatisticsScreen from "./src/screens/Mores/StatisticsScreen";
+import { DeliveriesStackParamList, OrderStackParamList, MakeDeliveryStackParamList,MoreMenuStackParamList } from "./src/types/navigation";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { DeliveryProvider } from "./src/context/orderContext";
 
 const OrderStack = createNativeStackNavigator<OrderStackParamList>();
 const DeliveriesStack = createNativeStackNavigator<DeliveriesStackParamList>();
 const MakeDeliveryStack = createNativeStackNavigator<MakeDeliveryStackParamList>();
+const MoreMenuStack = createNativeStackNavigator<MoreMenuStackParamList>();
 
 const Tab = createBottomTabNavigator();
 
-const iconsByRouteName = { Home: "home", Orders: "server", Deliveries: "map-signs", MakeDelivery: "truck" };
+const iconsByRouteName : {[name :  string ] : string} =  { Home: "home", Orders: "server", Deliveries: "map-signs", MakeDelivery: "truck", MoreMenu: "bars" };
 
 const Orders = () => {
     return (
@@ -91,6 +95,26 @@ const MakeDelivery = () => {
     );
 };
 
+const MoreMenu = () => {
+    return (
+        <MoreMenuStack.Navigator screenOptions={{ headerShown: false }}>
+            <MoreMenuStack.Screen
+                name="Menu"
+                component={MoreMenuScreen}
+            />
+            
+            <MoreMenuStack.Screen
+                name="Customers"
+                component={CustomersScreen}
+            />
+            <MoreMenuStack.Screen
+                name="Statistics"
+                component={StatisticsScreen}
+            />
+        </MoreMenuStack.Navigator>
+    );
+};
+
 export default function App() {
     return (
         <NavigationContainer>
@@ -127,6 +151,11 @@ export default function App() {
                     name="MakeDelivery"
                     component={MakeDelivery}
                     options={{ title: "Départ" }}
+                />
+                <Tab.Screen
+                    name="MoreMenu"
+                    component={MoreMenu}
+                    options={{ title: "Autre" }}
                 />
             </Tab.Navigator>
         </NavigationContainer>

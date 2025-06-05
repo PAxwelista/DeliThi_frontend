@@ -1,7 +1,6 @@
 import Screen from "../../component/Screen";
-import Input from "../../component/Input";
-import { useState, useRef } from "react";
-import { StyleSheet, View, Text, KeyboardAvoidingView, ScrollView } from "react-native";
+import { useState } from "react";
+import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal } from "react-native";
 import Button from "../../component/Button";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useFetch } from "../../hooks/useFetch";
@@ -10,10 +9,11 @@ import { apiUrl } from "../../config";
 import { Product } from "../../types/product";
 import ProductManager from "../../component/ProductManager";
 import React from "react";
-import AutoComplete from "../../component/Autocomplete";
 import Loading from "../../component/Loading";
 import Error from "../../component/Error";
 import { Order } from "../../types/order";
+import NewCustomerForm from "../../component/NewCustomerForm";
+import { CustomerFormType } from "../../types/customeForm";
 
 type ProductItem = {
     id: string;
@@ -29,81 +29,50 @@ type AutocompleteDropdownController = {
     setInputText: (text: string) => void;
 } | null;
 
-let inputDropdownCustomerRef : AutocompleteDropdownController
-let inputDropdownLocationRef : AutocompleteDropdownController
+let inputDropdownCustomerRef: AutocompleteDropdownController;
 
 export default function ConnectionScreen() {
     const [products, setProducts] = useState<ProductItem[]>([]);
-    const [selectedLocationId, setSelectedLocationId] = useState<string>("");
-    const [area, setArea] = useState<string>("");
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [errorMessage, setErrorMessage] = useState<string>("");
-    const [customerName, setCustomerName] = useState<string>("");
-    const [customerLocation, setCustomerLocation] = useState<string>("");
-    const [locationData, setLocationData] = useState([]);
-    const [showClearLocationInput , setShowClearLocationinput] = useState<boolean>(true)
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [customer, setCustomer] = useState<Customer | undefined>(undefined);
 
     const {
         data: productsAvailable,
         isLoading: isLoadingProductAvailable,
         error: errorProductAvailable,
     } = useFetch(`${apiUrl}/products/`);
+
     const {
-        data: locationList,
-        isLoading: isLoadingLocationlist,
-        error: errorLocationList,
-        refresh: refreshLocationlist,
+        data: customerList,
+        isLoading: isLoadingCustomerlist,
+        error: errorCustomerList,
+        refresh: refreshCustomerlist,
     } = useFetch(`${apiUrl}/customers/`);
 
-    const resetLocationinfos = () => {
-        setArea("");
-        setPhoneNumber("");
-        setSelectedLocationId("");
-        setCustomerLocation("");
-        setCustomerName("");
-        inputDropdownLocationRef?.setInputText("");
-        inputDropdownCustomerRef?.setInputText("");
-        setLocationData([])
-    };
-
     const handleOnSelectCustomer = (item: any) => {
-        
-        const selectedLocation = locationList?.customers?.find((v: Product) => v._id === item?.id);
 
-        item && setSelectedLocationId(item.id);
-
-        if (selectedLocation) {
-            setShowClearLocationinput(false)
-            setArea(selectedLocation.location.area);
-            setPhoneNumber(selectedLocation.phoneNumber);
-            inputDropdownLocationRef?.setInputText(selectedLocation.location.name);
-        }
-    };
-
-    const handleOnSelectLocation = (item: any) => {
-        setCustomerLocation(item?.title);
+        item && setCustomer(customerList.customers?.find((v:Customer)=> v._id === item.id));
     };
 
     const handleValidateOrder = async () => {
         setErrorMessage("");
-        let id: string = selectedLocationId;
+        let id: string | undefined = customer?._id;
 
         if (products.length === 0) {
-            setErrorMessage("Il n'y as aucuns produits dans cette commande");
+            setErrorMessage("Il n'y a aucuns produits dans cette commande");
             return;
         }
 
-        const response = await fetch(`${apiUrl}/orders?state=pending`)
-        const data = await response.json()
+        const response = await fetch(`${apiUrl}/orders?state=pending`);
+        const data = await response.json();
 
-        if (data.orders.some((order:Order)=>order.customer._id === id)){
-            setErrorMessage("Commande existante enregistré avec ce client")
-            return
+        if (data.orders.some((order: Order) => order.customer._id === id)) {
+            setErrorMessage("Commande existante en cours déjà enregistré avec ce client");
+            return;
         }
 
-        if (!id) id = await AddnewCustomer();
-
-        refreshLocationlist;
+        refreshCustomerlist;
 
         try {
             const response = await fetch(`${apiUrl}/orders`, {
@@ -115,57 +84,51 @@ export default function ConnectionScreen() {
                     products: products.map(v => ({ product: v.id, quantity: v.quantity })),
                     orderer: "Placeholder", //a modifier en fonction de qui passe la commande
                     customerId: id,
+                    area : customer?.location.area
                 }),
+                
             });
             const json = await response.json();
             if (json.result) {
-                setErrorMessage("Reussi!!");
-                resetLocationinfos();
+                setErrorMessage("Commande enregistrée");
                 setProducts([]);
+                inputDropdownCustomerRef?.setInputText("");
             } else setErrorMessage(json.error);
         } catch (error) {
             setErrorMessage("Erreur de connexion");
         }
     };
 
-    const handleChangeTextLocation = async (value: string) => {
-        if (value.length < 3) return;
-
-        const response = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${value}`);
-
-        const data = await response.json();
-
-        setLocationData(data.features);
+    const handleAddCustomer = async (customerInfos: CustomerFormType) => {
+        setShowModal(false);
+        setCustomer(await AddnewCustomer(customerInfos));
+        inputDropdownCustomerRef?.setInputText(customerInfos.name);
+    };
+    const handleCloseModal = () => {
+        setShowModal(false);
     };
 
-    async function AddnewCustomer(): Promise<string> {
-        
+    async function AddnewCustomer(customerInfos: CustomerFormType): Promise<Customer | undefined> {
         try {
             const response = await fetch(`${apiUrl}/customers`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({
-                    name: customerName,
-                    locationName: customerLocation,
-                    area,
-                    phoneNumber,
-                }),
+                body: JSON.stringify(customerInfos),
             });
             const json = await response.json();
             if (json.result) {
-                return json.data._id;
+                return json.data;
             } else setErrorMessage(json.error);
         } catch (error) {
             setErrorMessage("Erreur de connexion");
         }
-        return "";
+        return undefined;
     }
 
-    if (isLoadingProductAvailable || isLoadingLocationlist) return <Loading/>
-    if (errorProductAvailable || errorLocationList)
-        return <Error err={errorProductAvailable || errorLocationList} />
+    if (isLoadingProductAvailable || isLoadingCustomerlist) return <Loading />;
+    if (errorProductAvailable || errorCustomerList) return <Error err={errorProductAvailable || errorCustomerList} />;
 
     return (
         <Screen title="Nouvelle commande">
@@ -184,57 +147,46 @@ export default function ConnectionScreen() {
                             setProducts={setProducts}
                         />
 
-                        <View style={styles.coordinates}>
+                        <View style={styles.customer}>
                             <AutocompleteDropdown
-                                dataSet={locationList?.customers?.sort((a:Customer,b:Customer)=>a.name.localeCompare(b.name)).map((v: Customer) => ({ id: v._id, title: v.name }))}
+                                dataSet={customerList?.customers
+                                    ?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))
+                                    .map((v: Customer) => ({ id: v._id, title: v.name }))}
                                 onSelectItem={handleOnSelectCustomer}
                                 clearOnFocus={false}
                                 EmptyResultComponent={<View></View>}
                                 textInputProps={{ placeholder: "Nom" }}
                                 controller={functions => (inputDropdownCustomerRef = functions)}
-                                onClear={resetLocationinfos}
-                                onChangeText={value => setCustomerName(value)}
-                            />
-                            <AutocompleteDropdown
-                                dataSet={locationData?.map((v: { properties: { id: string; label: string } }) => ({
-                                    id: v.properties.id,
-                                    title: v.properties.label,
-                                }))}
-                                onSelectItem={handleOnSelectLocation}
-                                clearOnFocus={false}
-                                EmptyResultComponent={<View></View>}
-                                textInputProps={{ placeholder: "Lieu" }}
-                                controller={functions => (inputDropdownLocationRef = functions)}
-                                onChangeText={handleChangeTextLocation}
-                                showChevron={false}
-                                onClear={resetLocationinfos}
-                                showClear={showClearLocationInput}
+                                containerStyle={styles.autocompleteStyle}
                             />
 
-                            <View>
-                                <Input
-                                    placeholder="Zone"
-                                    value={area}
-                                    onChangeText={v => setArea(v)}
-                                    style={styles.input}
-                                />
-
-                                <Input
-                                    placeholder="Téléphone"
-                                    keyboardType="decimal-pad"
-                                    value={phoneNumber}
-                                    onChangeText={v => setPhoneNumber(v)}
-                                    style={styles.input}
-                                />
-                            </View>
-                            {errorMessage && <Text>{errorMessage}</Text>}
+                            <Button
+                                title="Ajouter un client"
+                                onPress={() => setShowModal(true)}
+                                style={styles.button}
+                            />
                         </View>
+                        {errorMessage && <Error err={errorMessage} />}
                         <Button
                             title="Valider commande"
                             onPress={handleValidateOrder}
                         />
                     </ScrollView>
                 </KeyboardAvoidingView>
+
+                <Modal
+                    visible={showModal}
+                    transparent
+                    style={{ flex: 1, backgroundColor: "blue" }}
+                    animationType="slide"
+                >
+                    <View style={styles.modal}>
+                        <NewCustomerForm
+                            addCustomer={handleAddCustomer}
+                            closeModal={handleCloseModal}
+                        />
+                    </View>
+                </Modal>
             </AutocompleteDropdownContextProvider>
         </Screen>
     );
@@ -246,18 +198,29 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
 
-    coordinates: {
+    customer: {
         flex: 3,
-        justifyContent: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    autocompleteStyle: {
+        width: "70%",
+    },
+    button: {
+        width: "25%",
     },
 
-    errorMess: {
-        flex: 1,
-        textAlign: "center",
-        textAlignVertical: "center",
-        color: "red",
-    },
     input: {
         height: 40,
+    },
+    modal: {
+        flex: 1,
+        marginHorizontal: 20,
+        marginVertical: 100,
+        padding: 30,
+        borderRadius: 20,
+        backgroundColor: "white",
+        borderWidth: 1,
     },
 });

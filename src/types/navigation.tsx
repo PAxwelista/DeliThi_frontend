@@ -16,3 +16,8 @@ export type MakeDeliveryStackParamList = {
     Map: undefined;
     DeliverOrder: Order;
 };
+export type MoreMenuStackParamList = {
+    Menu: undefined;
+    Customers: undefined;
+    Statistics: undefined;
+};

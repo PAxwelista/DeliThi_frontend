@@ -112,9 +112,13 @@ export default function ProductManager({ productsAvailable, products, setProduct
                     onPress={handleAddProduct}
                 />
             </View>
-            <View style={styles.orders}>
-                <ScrollView contentContainerStyle={styles.ordersScroll}>{productElmts}</ScrollView>
-            </View>
+            {products.length ? (
+                <View style={styles.orders}>
+                    <ScrollView contentContainerStyle={styles.ordersScroll}>{productElmts}</ScrollView>
+                </View>
+            ) : (
+                <></>
+            )}
         </>
     );
 }
@@ -152,7 +156,7 @@ const styles = StyleSheet.create({
     product: {
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems:"center"
+        alignItems: "center",
     },
     removeBtn: {
         height: 30,

@@ -9,4 +9,5 @@ export type Order = {
     state: string;
     orderer: string;
     products: [Product];
+    area:string;
 };

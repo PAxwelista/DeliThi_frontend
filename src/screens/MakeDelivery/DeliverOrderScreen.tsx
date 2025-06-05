@@ -12,7 +12,7 @@ export default function DeliverOrderScreen({navigation,route} : Props){
     const order = route.params
 
     const handleNextOrder = () =>{
-        navigation.navigate("Map"  );
+        navigation.navigate("Map");
     }
 
     const Product = order.products.map(product=><Text key={product._id}>{product.quantity}x {product.product.name}</Text>)

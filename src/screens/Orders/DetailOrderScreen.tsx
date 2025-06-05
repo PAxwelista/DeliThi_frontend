@@ -6,16 +6,18 @@ import { State } from "../../types/state";
 import { OrderStackParamList } from "../../types/navigation";
 import { useState } from "react";
 import { apiUrl } from "../../config";
+import Input from "../../component/Input";
 
-const frenchState = {pending : "Enregistré" , processing : "En cours de livraison" , delivered : "Déliveré" , cancelled : "Annulé"}
+const frenchState = {pending : "Enregistré" , processing : "En cours de livraison" , delivered : "Livré" , cancelled : "Annulé"}
 
 type Props = NativeStackScreenProps<OrderStackParamList, "DetailOrder">;
 
 export default function DetailOrderScreen({ route }: Props) {
+    const { _id, customer, deliveryDate, creationDate, products ,area  } = route.params;
 
     const [state ,setState] = useState(route.params.state)
-
-    const { _id, customer, deliveryDate, creationDate, products  } = route.params;
+    const [actualArea , setActualArea] = useState(area)
+    
     const title = `Commande pour ${customer.name}`;
 
     const Product = products.map((v: { _id: string; product: { name: string }; quantity: number }) => (
@@ -23,6 +25,16 @@ export default function DetailOrderScreen({ route }: Props) {
             {v.product?.name} : x{v.quantity}
         </Text>
     ));
+
+    const handleChangeArea = async ()=>{
+        const response = await fetch(`${apiUrl}/orders/area`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ordersID: [_id], newArea: actualArea }),
+        });
+    }
 
     const handleCancelledOrder = async () => {
         const response = await fetch(`${apiUrl}/orders/state`, {
@@ -44,6 +56,7 @@ export default function DetailOrderScreen({ route }: Props) {
     return (
         <Screen title={title}>
             <Text>Commande du {new Date(creationDate).toLocaleDateString()}</Text>
+            <View style={styles.area}><Text>Zone : </Text><Input value={actualArea} onChangeText={v=>setActualArea(v)} style={styles.areaInput} onEndEditing={handleChangeArea}/></View>
             <View style={styles.products}>{Product}</View>
             <Text>Statut : {frenchState[state as State]}</Text>
             {deliveryDate && <Text>Commande livré le : {new Date(deliveryDate).toLocaleDateString()}</Text>}
@@ -64,4 +77,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#E7E7E7",
         alignItems: "center",
     },
+    area:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+        marginVertical:20
+    },
+    areaInput:{
+        width:"50%"
+    }
 });
