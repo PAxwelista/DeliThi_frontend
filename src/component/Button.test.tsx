@@ -1,12 +1,12 @@
 
 import Button from "./Button";
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react-native';
 
 describe("Button",()=>{
     test("renders correctly", () => {
         const handleClick = jest.fn()
-        render(<Button title='test' onPress={()=>console.log("click")} />);
-        fireEvent.click(screen.getByRole('button'))
+        render(<Button title='test' onPress={handleClick} />);
+        fireEvent.press(screen.getByText('test'))
         expect(handleClick).toHaveBeenCalledTimes(1)
     });
 })
