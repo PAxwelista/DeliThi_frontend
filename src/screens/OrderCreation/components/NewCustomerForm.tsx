@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Input from "./Input";
-import useFormInput from "../hooks/useFormInput";
+import Input from "../../../components/Input";
+import useFormInput from "../../../hooks/useFormInput";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useState } from "react";
-import Button from "./Button";
-import { CustomerFormType } from "../types/customeForm";
-import Error from "./Error";
+import Button from "../../../components/Button";
+import { CustomerFormType } from "../../../types/customeForm";
+import Error from "../../../components/Error";
 
 type PropType = {
     addCustomer: (values: CustomerFormType ) => void;

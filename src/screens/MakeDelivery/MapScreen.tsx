@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order } from "../../types/order";
 import { View, Text, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import Button from "../../component/Button";
-import Screen from "../../component/Screen";
+import Button from "../../components/Button";
+import Screen from "../../components/Screen";
 import { useFetch } from "../../hooks/useFetch";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
 import { Delivery } from "../../types/delivery";
-import Loading from "../../component/Loading";
+import Loading from "../../components/Loading";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
 

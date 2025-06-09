@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./src/screens//Home/HomeScreen";
+import OrderCreationScreen from "./src/screens/OrderCreation/OrderCreationScreen";
 import OrdersScreen from "./src/screens/Orders/OrdersScreen";
 import DetailOrderScreen from "./src/screens/Orders/DetailOrderScreen";
 import DeliveriesScreen from "./src/screens/Deliveries/DeliveriesScreen";
@@ -24,7 +24,7 @@ const MoreMenuStack = createNativeStackNavigator<MoreMenuStackParamList>();
 
 const Tab = createBottomTabNavigator();
 
-const iconsByRouteName : {[name :  string ] : string} =  { Home: "home", Orders: "server", Deliveries: "map-signs", MakeDelivery: "truck", MoreMenu: "bars" };
+const iconsByRouteName : {[name :  string ] : string} =  { OrderCreation: "home", Orders: "server", Deliveries: "map-signs", MakeDelivery: "truck", MoreMenu: "bars" };
 
 const Orders = () => {
     return (
@@ -133,8 +133,8 @@ export default function App() {
                 })}
             >
                 <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name="OrderCreation"
+                    component={OrderCreationScreen}
                     options={{ title: "Ajout" }}
                 />
                 <Tab.Screen

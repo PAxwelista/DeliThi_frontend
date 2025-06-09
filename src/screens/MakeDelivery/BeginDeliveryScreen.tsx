@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import { Order } from "../../types/order";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
@@ -8,8 +8,8 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
 import { useDelivery } from "../../context/orderContext";
 import { useFocusEffect } from "@react-navigation/native";
-import Loading from "../../component/Loading";
-import Error from "../../component/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 

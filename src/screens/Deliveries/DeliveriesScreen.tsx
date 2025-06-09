@@ -1,4 +1,4 @@
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import { useFetch } from "../../hooks/useFetch";
 import { Delivery } from "../../types/delivery";
@@ -7,8 +7,8 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
-import Loading from "../../component/Loading";
-import Error from "../../component/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 type ItemDelivery = {
     item: Delivery;

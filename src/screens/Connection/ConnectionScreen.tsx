@@ -1,6 +1,6 @@
-import Input from "../../component/Input";
-import Button from "../../component/Button";
-import Screen from "../../component/Screen";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+import Screen from "../../components/Screen";
 import { StyleSheet ,Text} from "react-native";
 import { useInput } from "../../hooks/useInput";
 import { useState } from "react";

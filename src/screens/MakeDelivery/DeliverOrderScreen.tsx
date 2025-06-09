@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { View ,Text} from "react-native";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
-import Screen from "../../component/Screen";
-import Button from "../../component/Button";
+import Screen from "../../components/Screen";
+import Button from "../../components/Button";
 import { StyleSheet } from "react-native";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "DeliverOrder">;

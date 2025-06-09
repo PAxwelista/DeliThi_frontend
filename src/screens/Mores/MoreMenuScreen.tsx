@@ -1,6 +1,6 @@
 import { Text } from "react-native";
-import Screen from "../../component/Screen";
-import Button from "../../component/Button";
+import Screen from "../../components/Screen";
+import Button from "../../components/Button";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MoreMenuStackParamList } from "../../types/navigation";
 

@@ -1,4 +1,4 @@
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { Text, View, StyleSheet, FlatList } from "react-native";
 import { Order } from "../../types/order";
 import { Product } from "../../types/product";

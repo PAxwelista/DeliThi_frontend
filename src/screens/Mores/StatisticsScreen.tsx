@@ -1,5 +1,5 @@
 import {  Text} from "react-native";
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 
 export default function StatisticsScreen(){
 

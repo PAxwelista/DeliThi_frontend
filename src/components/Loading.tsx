@@ -4,6 +4,7 @@ export default function Loading() {
     return (
         <View style={styles.container}>
             <ActivityIndicator
+                accessibilityHint="loading"
                 size="large"
                 color="#3b82f6"
             />

@@ -1,25 +1,20 @@
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal } from "react-native";
-import Button from "../../component/Button";
+import Button from "../../components/Button";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useFetch } from "../../hooks/useFetch";
 import { Customer } from "../../types/customer";
 import { apiUrl } from "../../config";
 import { Product } from "../../types/product";
-import ProductManager from "../../component/ProductManager";
+import ProductManager from "./components/ProductManager";
 import React from "react";
-import Loading from "../../component/Loading";
-import Error from "../../component/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import { Order } from "../../types/order";
-import NewCustomerForm from "../../component/NewCustomerForm";
+import NewCustomerForm from "./components/NewCustomerForm";
 import { CustomerFormType } from "../../types/customeForm";
-
-type ProductItem = {
-    id: string;
-    product: string;
-    quantity: number;
-};
+import { availableProducts } from "../../types/availableProduct";
 
 type AutocompleteDropdownController = {
     clear: () => void;
@@ -31,14 +26,14 @@ type AutocompleteDropdownController = {
 
 let inputDropdownCustomerRef: AutocompleteDropdownController;
 
-export default function ConnectionScreen() {
-    const [products, setProducts] = useState<ProductItem[]>([]);
+export default function OrderCreationScreen() {
+    const [products, setProducts] = useState<Product[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [showModal, setShowModal] = useState<boolean>(false);
     const [customer, setCustomer] = useState<Customer | undefined>(undefined);
 
     const {
-        data: productsAvailable,
+        data: availableProducts,
         isLoading: isLoadingProductAvailable,
         error: errorProductAvailable,
     } = useFetch(`${apiUrl}/products/`);
@@ -51,8 +46,31 @@ export default function ConnectionScreen() {
     } = useFetch(`${apiUrl}/customers/`);
 
     const handleOnSelectCustomer = (item: any) => {
+        item && setCustomer(customerList.customers?.find((v: Customer) => v._id === item.id));
+    };
 
-        item && setCustomer(customerList.customers?.find((v:Customer)=> v._id === item.id));
+    const handleAddProduct = (id: string, quantity: number) => {
+        setProducts(products =>
+            products.some(product => product._id === id)
+                ? products.map(product =>
+                      product._id === id ? { ...product, quantity: product.quantity + quantity } : product
+                  )
+                : [
+                      ...products,
+                      {
+                          product: {
+                              name:
+                                  availableProducts?.products.find((v: availableProducts) => v._id === id)?.name || "",
+                          },
+                          quantity,
+                          _id: id || "",
+                      },
+                  ]
+        );
+    };
+
+    const handleRemoveProduct = (id: string) => {
+        setProducts(products => products.filter(product => product._id != id));
     };
 
     const handleValidateOrder = async () => {
@@ -81,12 +99,11 @@ export default function ConnectionScreen() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    products: products.map(v => ({ product: v.id, quantity: v.quantity })),
+                    products: products.map(v => ({ product: v._id, quantity: v.quantity })),
                     orderer: "Placeholder", //a modifier en fonction de qui passe la commande
                     customerId: id,
-                    area : customer?.location.area
+                    area: customer?.location.area,
                 }),
-                
             });
             const json = await response.json();
             if (json.result) {
@@ -142,9 +159,10 @@ export default function ConnectionScreen() {
                         bounces={false}
                     >
                         <ProductManager
-                            productsAvailable={productsAvailable?.products}
+                            availableProducts={availableProducts?.products}
                             products={products}
-                            setProducts={setProducts}
+                            addProduct={handleAddProduct}
+                            removeProduct={handleRemoveProduct}
                         />
 
                         <View style={styles.customer}>

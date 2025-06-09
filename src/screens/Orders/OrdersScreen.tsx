@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { useFetch } from "../../hooks/useFetch";
 import { Order } from "../../types/order";
 import { State } from "../../types/state";
@@ -9,8 +9,8 @@ import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import React from "react";
 import { apiUrl } from "../../config";
-import Loading from "../../component/Loading";
-import Error from "../../component/Error";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 type Props = NativeStackScreenProps<OrderStackParamList, "AllOrders">;
 

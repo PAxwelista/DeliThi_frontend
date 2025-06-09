@@ -1,8 +1,8 @@
 import { useFetch } from "../../hooks/useFetch";
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import { Text } from "react-native";
 import { TotalProduct } from "../../types/totalProduct";
-import Button from "../../component/Button";
+import Button from "../../components/Button";
 import { MakeDeliveryStackParamList } from "../../types/navigation";
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { apiUrl } from "../../config";

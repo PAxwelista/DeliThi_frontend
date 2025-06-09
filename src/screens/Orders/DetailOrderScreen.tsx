@@ -1,12 +1,12 @@
 import { Text, View, StyleSheet } from "react-native";
-import Screen from "../../component/Screen";
+import Screen from "../../components/Screen";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import Button from "../../component/Button";
+import Button from "../../components/Button";
 import { State } from "../../types/state";
 import { OrderStackParamList } from "../../types/navigation";
 import { useState } from "react";
 import { apiUrl } from "../../config";
-import Input from "../../component/Input";
+import Input from "../../components/Input";
 
 const frenchState = {pending : "Enregistré" , processing : "En cours de livraison" , delivered : "Livré" , cancelled : "Annulé"}
 
