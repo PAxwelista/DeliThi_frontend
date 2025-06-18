@@ -1,16 +1,12 @@
-import { Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
-import Screen from "../../components/Screen";
-import { useFetch } from "../../hooks/useFetch";
-import { Order } from "../../types/order";
-import { State } from "../../types/state";
+import { StyleSheet, FlatList } from "react-native";
+import { useFetch } from "../../hooks";
+import { Order, State, OrderStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { OrderStackParamList } from "../../types/navigation";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import React from "react";
 import { apiUrl } from "../../config";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
+import { Loading, Error, Button, Screen } from "../../components";
 
 type Props = NativeStackScreenProps<OrderStackParamList, "AllOrders">;
 
@@ -29,22 +25,16 @@ export default function OrdersScreen({ navigation }: Props) {
         item: Order;
     };
 
-    const handleOnCancel = () => {
-        refresh();
-    };
-
     const renderOrder = ({ item }: ItemOrder) => {
         const orderColorStyle = { backgroundColor: colorState[item.state as State] };
 
         return (
-            <TouchableOpacity
-                style={[styles.order, orderColorStyle]}
+            <Button
+                title={`${item.customer.name} du : ${new Date(item.creationDate).toLocaleDateString()}`}
                 onPress={() => navigation.navigate("DetailOrder", item)}
-            >
-                <Text>
-                    {item.customer.name} du : {new Date(item.creationDate).toLocaleDateString()}
-                </Text>
-            </TouchableOpacity>
+                isListMember
+                style={orderColorStyle}
+            />
         );
     };
 

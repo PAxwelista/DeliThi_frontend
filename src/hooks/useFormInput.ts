@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useFormInput = <T extends Record<string, string>>(initialValues:T) => {
+export const useFormInput = <T extends Record<string, string>>(initialValues:T) => {
     const [values, setValues] = useState<T>(initialValues);
 
     const handleChangeValue = (name: string) => (text: string) => {
@@ -17,5 +17,3 @@ const useFormInput = <T extends Record<string, string>>(initialValues:T) => {
         reset,
     };
 };
-
-export default useFormInput;

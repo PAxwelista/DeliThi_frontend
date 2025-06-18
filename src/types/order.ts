@@ -1,5 +1,4 @@
-import { Customer } from "./customer";
-import { Product } from "./product";
+import { Customer, Product } from "./";
 
 export type Order = {
     _id: string;
@@ -9,5 +8,5 @@ export type Order = {
     state: string;
     orderer: string;
     products: [Product];
-    area:string;
+    area: string;
 };

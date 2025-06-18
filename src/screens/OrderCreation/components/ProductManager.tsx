@@ -1,11 +1,10 @@
-import { Dispatch, SetStateAction } from "react";
 import ProductAddingForm from "./ProductAddingForm";
 import DisplayProducts from "./DisplayProducts";
 import { Product } from "../../../types/product"
-import { availableProducts } from "../../../types/availableProduct";
+import { AvailableProduct } from "../../../types";
 
 type Props = {
-    availableProducts: availableProducts[];
+    availableProducts: AvailableProduct[];
     products: Product[];
     addProduct: (productId: string, quantity: number) => void;
     removeProduct: (productId: string) => void;

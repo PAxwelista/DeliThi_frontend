@@ -6,7 +6,7 @@ type Prop = {
     textStyle? : TextStyle
 };
 
-export default function Error({ err ,containerStyle,textStyle}: Prop) {
+export function Error({ err ,containerStyle,textStyle}: Prop) {
     return (
         <View style={[styles.container,containerStyle]}>
             <Text style={[styles.text,textStyle]}>{err}</Text>

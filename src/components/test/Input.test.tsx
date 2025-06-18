@@ -1,20 +1,23 @@
 import { render, screen, fireEvent } from "@testing-library/react-native";
-import Input from "../Input";
+import { Input } from "../";
 
-describe("Input component" , ()=>{
-    it("should call onChangeText when changing text" , ()=>{
-
+describe("Input component", () => {
+    it("should call onChangeText when changing text", () => {
         const handleChangeText = jest.fn();
 
-        const placeholder = "password"
-        const newText = "Hello there"
-        render(<Input placeholder={placeholder} onChangeText={handleChangeText}/>);
+        const placeholder = "password";
+        const newText = "Hello there";
+        render(
+            <Input
+                placeholder={placeholder}
+                onChangeText={handleChangeText}
+            />
+        );
 
-        const input = screen.getByPlaceholderText(placeholder)
+        const input = screen.getByPlaceholderText(placeholder);
 
-        fireEvent.changeText(input,newText)
+        fireEvent.changeText(input, newText);
 
-        expect(handleChangeText).toHaveBeenCalledWith(newText)
-
-    })
-})
+        expect(handleChangeText).toHaveBeenCalledWith(newText);
+    });
+});

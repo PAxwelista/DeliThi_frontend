@@ -1,13 +1,11 @@
 import { View, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
+import { Button, Input } from "../../../components";
 import { useEffect, useState } from "react";
-import { availableProducts } from "../../../types/availableProduct";
-
+import { AvailableProduct } from "../../../types";
 
 type Prop = {
-    availableProducts: availableProducts[];
+    availableProducts: AvailableProduct[];
     addProduct: (productId: string, quantity: number) => void;
 };
 
@@ -18,7 +16,6 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
     useEffect(() => {
         availableProducts && setSelectedProductId(availableProducts[0]?._id);
     }, [availableProducts]);
-
 
     const PickerElmts = availableProducts?.map(v => (
         <Picker.Item
@@ -60,7 +57,7 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
             </View>
             <Button
                 title="Ajouter"
-                onPress={()=>addProduct(selectedProductId,quantity)}
+                onPress={() => addProduct(selectedProductId, quantity)}
             />
         </View>
     );

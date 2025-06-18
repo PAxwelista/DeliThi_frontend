@@ -3,16 +3,11 @@ import { Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
-import { Order } from "../../types/order";
+import { Order, MakeDeliveryStackParamList } from "../../types";
 import { View, Text, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import Button from "../../components/Button";
-import Screen from "../../components/Screen";
-import { useFetch } from "../../hooks/useFetch";
+import { Button, Screen, Loading } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { MakeDeliveryStackParamList } from "../../types/navigation";
-import { Delivery } from "../../types/delivery";
-import Loading from "../../components/Loading";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
 
@@ -135,8 +130,6 @@ export default function MapScreen({ navigation }: Props) {
             }),
         });
 
-
-
         delivery?.setDelivery(prev => {
             if (!prev) return prev;
 
@@ -198,7 +191,7 @@ export default function MapScreen({ navigation }: Props) {
             />
         );
     });
-    
+
     if (loadingGetPosition) return <Loading />;
 
     return (

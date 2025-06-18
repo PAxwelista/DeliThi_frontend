@@ -6,7 +6,7 @@ type Props = {
     title?: string;
 };
 
-export default function Screen({ children, style, title }: Props) {
+export function Screen({ children, style, title }: Props) {
     return (
         <SafeAreaView style={[styles.container, style]}>
             {title && <Text style={styles.title}>{title}</Text>}

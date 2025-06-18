@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react-native";
-import { Product } from "../../../../types/product";
+import { Product } from "../../../../types";
 
 import ProductManager from "../ProductManager";
 

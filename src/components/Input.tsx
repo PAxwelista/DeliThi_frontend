@@ -1,11 +1,8 @@
+import { View, TextInput, StyleSheet, TextInputProps } from "react-native";
 
-import { View,TextInput , StyleSheet , TextInputProps} from "react-native";
-
-
-export default function Input(props : TextInputProps) {
+export function Input(props: TextInputProps) {
     return (
-        
-        <View style={[styles.container,props.style]}>
+        <View style={[styles.container, props.style]}>
             <TextInput {...props} />
         </View>
     );
@@ -13,9 +10,9 @@ export default function Input(props : TextInputProps) {
 
 const styles = StyleSheet.create({
     container: {
-       backgroundColor:"lightgrey",
-       margin : 2,
-       paddingHorizontal : 10,
-       borderRadius:10,
-    }
+        backgroundColor: "lightgrey",
+        margin: 2,
+        paddingHorizontal: 10,
+        borderRadius: 10,
+    },
 });

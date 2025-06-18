@@ -1,5 +1,4 @@
-import { Delivery } from "./delivery";
-import { Order } from "./order";
+import { Delivery, Order, Customer } from "./";
 
 export type DeliveriesStackParamList = {
     AllDeliveries: undefined;
@@ -19,5 +18,6 @@ export type MakeDeliveryStackParamList = {
 export type MoreMenuStackParamList = {
     Menu: undefined;
     Customers: undefined;
+    DetailCustomer: Customer;
     Statistics: undefined;
 };

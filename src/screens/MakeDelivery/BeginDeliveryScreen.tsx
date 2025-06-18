@@ -1,15 +1,12 @@
 import { useCallback, useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import Screen from "../../components/Screen";
-import { Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
-import { Order } from "../../types/order";
-import { MakeDeliveryStackParamList } from "../../types/navigation";
+import { useFetch } from "../../hooks";
+import { Screen, Loading, Error, Button } from "../../components";
+import { Text, StyleSheet, ScrollView } from "react-native";
+import { Order, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
 import { useDelivery } from "../../context/orderContext";
 import { useFocusEffect } from "@react-navigation/native";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 
@@ -84,11 +81,8 @@ export default function BeginDeliveryScreen({ navigation }: Props) {
                 }),
             });
 
-            
-
             const stateChange = await stateChangeResponse.json();
 
-            
             delivery?.setDelivery(deliveryData.data);
         }
 
@@ -96,13 +90,12 @@ export default function BeginDeliveryScreen({ navigation }: Props) {
     };
 
     const Areas = data?.areas.map((area: string) => (
-        <TouchableOpacity
+        <Button
             key={area}
-            style={styles.area}
+            title={area}
             onPress={() => handleStartDelivery(area)}
-        >
-            <Text>{area}</Text>
-        </TouchableOpacity>
+            isListMember
+        />
     ));
 
     if (isLoading) return <Loading />;

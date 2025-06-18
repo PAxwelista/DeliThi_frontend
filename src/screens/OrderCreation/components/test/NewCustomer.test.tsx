@@ -1,7 +1,7 @@
 jest.mock("react-native-autocomplete-dropdown", () => {
     const React = require("react");
     const actual = jest.requireActual("react-native-autocomplete-dropdown");
-    const Input = require("../../../../components/Input").default;
+    const { Input } = require("../../../../components");
 
     return {
         ...actual,
@@ -121,7 +121,7 @@ describe("NewCustomer component", () => {
             fireEvent.changeText(input, newText[i]);
         });
 
-        fireEvent.press(screen.getByText("Ajouter"))
+        fireEvent.press(screen.getByText("Ajouter"));
 
         expect(handleAddCustomer.mock.calls[0][0]).toEqual({
             name: "Here",
@@ -129,7 +129,6 @@ describe("NewCustomer component", () => {
             area: "42",
             phoneNumber: "",
             email: "",
-        })
-
+        });
     });
 });

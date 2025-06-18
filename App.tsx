@@ -13,9 +13,21 @@ import DeliverOrderScreen from "./src/screens/MakeDelivery/DeliverOrderScreen";
 import MoreMenuScreen from "./src/screens/Mores/MoreMenuScreen";
 import CustomersScreen from "./src/screens/Mores/CustomersScreen";
 import StatisticsScreen from "./src/screens/Mores/StatisticsScreen";
-import { DeliveriesStackParamList, OrderStackParamList, MakeDeliveryStackParamList,MoreMenuStackParamList } from "./src/types/navigation";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
+import DetailCustomerScreen from "./src/screens/Mores/DetailCustomerScreen";
+import {
+    DeliveriesStackParamList,
+    OrderStackParamList,
+    MakeDeliveryStackParamList,
+    MoreMenuStackParamList,
+} from "./src/types/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { DeliveryProvider } from "./src/context/orderContext";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faServer } from "@fortawesome/free-solid-svg-icons";
+import { faMap } from "@fortawesome/free-solid-svg-icons";
+import { faTruck } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 const OrderStack = createNativeStackNavigator<OrderStackParamList>();
 const DeliveriesStack = createNativeStackNavigator<DeliveriesStackParamList>();
@@ -24,7 +36,21 @@ const MoreMenuStack = createNativeStackNavigator<MoreMenuStackParamList>();
 
 const Tab = createBottomTabNavigator();
 
-const iconsByRouteName : {[name :  string ] : string} =  { OrderCreation: "home", Orders: "server", Deliveries: "map-signs", MakeDelivery: "truck", MoreMenu: "bars" };
+const iconsByRouteName: { [name: string]: IconDefinition } = {
+    OrderCreation: faHouse,
+    Orders: faServer,
+    Deliveries: faMap,
+    MakeDelivery: faTruck,
+    MoreMenu: faBars,
+};
+
+const headerReturnTab = {
+    headerShown: true,
+    title: "",
+    headerBackTitle: "Retour",
+    headerTintColor: "#fff",
+    headerStyle: { backgroundColor: "lightblue" },
+}
 
 const Orders = () => {
     return (
@@ -36,13 +62,7 @@ const Orders = () => {
             <OrderStack.Screen
                 name="DetailOrder"
                 component={DetailOrderScreen}
-                options={{
-                    headerShown:true,
-                    title: '',
-                    headerBackTitle: 'Retour',
-                    headerTintColor: '#fff',
-                    headerStyle: { backgroundColor: 'lightblue' }
-                  }}
+                options={headerReturnTab}
             />
         </OrderStack.Navigator>
     );
@@ -58,13 +78,7 @@ const Deliveries = () => {
             <DeliveriesStack.Screen
                 name="DetailDelivery"
                 component={DetailDeliveriesScreen}
-                options={{
-                    headerShown:true,
-                    title: '',
-                    headerBackTitle: 'Retour',
-                    headerTintColor: '#fff',
-                    headerStyle: { backgroundColor: 'lightblue' }
-                  }}
+                options={headerReturnTab}
             />
         </DeliveriesStack.Navigator>
     );
@@ -102,14 +116,21 @@ const MoreMenu = () => {
                 name="Menu"
                 component={MoreMenuScreen}
             />
-            
+
             <MoreMenuStack.Screen
                 name="Customers"
                 component={CustomersScreen}
+                options={headerReturnTab}
             />
             <MoreMenuStack.Screen
                 name="Statistics"
                 component={StatisticsScreen}
+                options={headerReturnTab}
+            />
+            <MoreMenuStack.Screen
+                name="DetailCustomer"
+                component={DetailCustomerScreen}
+                options={headerReturnTab}
             />
         </MoreMenuStack.Navigator>
     );
@@ -121,8 +142,8 @@ export default function App() {
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesome
-                            name={iconsByRouteName[route.name]}
+                        <FontAwesomeIcon
+                            icon={iconsByRouteName[route.name]}
                             size={size}
                             color={color}
                         />

@@ -1,20 +1,13 @@
-import Screen from "../../components/Screen";
+import { Screen, Button, Loading, Error } from "../../components";
 import { useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal } from "react-native";
-import Button from "../../components/Button";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
-import { useFetch } from "../../hooks/useFetch";
-import { Customer } from "../../types/customer";
+import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
-import { Product } from "../../types/product";
 import ProductManager from "./components/ProductManager";
 import React from "react";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
-import { Order } from "../../types/order";
 import NewCustomerForm from "./components/NewCustomerForm";
-import { CustomerFormType } from "../../types/customeForm";
-import { availableProducts } from "../../types/availableProduct";
+import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../types";
 
 type AutocompleteDropdownController = {
     clear: () => void;
@@ -45,6 +38,10 @@ export default function OrderCreationScreen() {
         refresh: refreshCustomerlist,
     } = useFetch(`${apiUrl}/customers/`);
 
+    // const handleOnSelectLocation = (item: any) => {
+    //     handleChangeValue("locationName")(item?.title);
+    // };
+
     const handleOnSelectCustomer = (item: any) => {
         item && setCustomer(customerList.customers?.find((v: Customer) => v._id === item.id));
     };
@@ -59,8 +56,7 @@ export default function OrderCreationScreen() {
                       ...products,
                       {
                           product: {
-                              name:
-                                  availableProducts?.products.find((v: availableProducts) => v._id === id)?.name || "",
+                              name: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.name || "",
                           },
                           quantity,
                           _id: id || "",
@@ -79,6 +75,9 @@ export default function OrderCreationScreen() {
 
         if (products.length === 0) {
             setErrorMessage("Il n'y a aucuns produits dans cette commande");
+            return;
+        } else if (!customer) {
+            setErrorMessage("Veuillez choisir un client ou en créé un nouveau");
             return;
         }
 
@@ -106,6 +105,7 @@ export default function OrderCreationScreen() {
                 }),
             });
             const json = await response.json();
+
             if (json.result) {
                 setErrorMessage("Commande enregistrée");
                 setProducts([]);
@@ -116,7 +116,7 @@ export default function OrderCreationScreen() {
         }
     };
 
-    const handleAddCustomer = async (customerInfos: CustomerFormType) => {
+    const handleAddCustomer = async (customerInfos: CustomerForm) => {
         setShowModal(false);
         setCustomer(await AddnewCustomer(customerInfos));
         inputDropdownCustomerRef?.setInputText(customerInfos.name);
@@ -125,7 +125,7 @@ export default function OrderCreationScreen() {
         setShowModal(false);
     };
 
-    async function AddnewCustomer(customerInfos: CustomerFormType): Promise<Customer | undefined> {
+    async function AddnewCustomer(customerInfos: CustomerForm): Promise<Customer | undefined> {
         try {
             const response = await fetch(`${apiUrl}/customers`, {
                 method: "POST",

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react-native";
-import Error from "../Error";
+import { Error } from "../";
 
 describe("Error component", () => {
     const errorName = "Erreur2";

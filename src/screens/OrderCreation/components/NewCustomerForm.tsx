@@ -1,19 +1,17 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Input from "../../../components/Input";
-import useFormInput from "../../../hooks/useFormInput";
+import { Input, Button, Error } from "../../../components";
+import { useFormInput } from "../../../hooks/";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useState } from "react";
-import Button from "../../../components/Button";
-import { CustomerFormType } from "../../../types/customeForm";
-import Error from "../../../components/Error";
+import { CustomerForm } from "../../../types";
 
 type PropType = {
-    addCustomer: (values: CustomerFormType ) => void;
+    addCustomer: (values: CustomerForm) => void;
     closeModal: () => void;
 };
 
 export default function NewCustomerForm({ addCustomer, closeModal }: PropType) {
-    const { values, handleChangeValue, reset } = useFormInput<CustomerFormType>({
+    const { values, handleChangeValue, reset } = useFormInput<CustomerForm>({
         name: "",
         locationName: "",
         area: "",
@@ -45,14 +43,17 @@ export default function NewCustomerForm({ addCustomer, closeModal }: PropType) {
         if (!values.locationName || !values.area) {
             return setError("Champ lieu et/ou zone non rempli");
         }
-        addCustomer(values.name ? values : {...values , name : values.locationName});
+        addCustomer(values.name ? values : { ...values, name: values.locationName });
     };
 
     return (
         <AutocompleteDropdownContextProvider>
             <View style={styles.container}>
                 <View style={styles.closeBtnContainer}>
-                    <TouchableOpacity style={styles.closeBtn} onPress={closeModal}>
+                    <TouchableOpacity
+                        style={styles.closeBtn}
+                        onPress={closeModal}
+                    >
                         <Text style={styles.textCloseBtn}>X</Text>
                     </TouchableOpacity>
                 </View>

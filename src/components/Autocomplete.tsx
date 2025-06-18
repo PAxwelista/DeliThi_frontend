@@ -1,5 +1,5 @@
-import { FlatList, View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
-import Input from "./Input";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { Input } from "./";
 import { useState, useEffect } from "react";
 
 type DataType = {

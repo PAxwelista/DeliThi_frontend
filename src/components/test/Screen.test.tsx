@@ -1,31 +1,27 @@
 import { render, screen } from "@testing-library/react-native";
 import { Text } from "react-native";
 
-import Screen from "../Screen";
+import { Screen } from "../";
 
-describe("Screen component" , ()=>{
-    it("should show her children" , ()=>{
+describe("Screen component", () => {
+    it("should show her children", () => {
+        const text = "Hey what's up?";
 
-        const text = "Hey what's up?"
+        const mockComponent = <Text>{text}</Text>;
 
-        const mockComponent=<Text>{text}</Text>
+        render(<Screen>{mockComponent}</Screen>);
 
-        render(<Screen>{mockComponent}</Screen>)
+        expect(screen.getByText(text)).toBeTruthy();
+    });
+    it("should show a title", () => {
+        const text = "Hey what's up?";
 
-        expect(screen.getByText(text)).toBeTruthy()
+        const title = "this is the title";
 
-    })
-    it("should show a title" , ()=>{
+        const mockComponent = <Text>{text}</Text>;
 
-        const text = "Hey what's up?"
+        render(<Screen title={title}>{mockComponent}</Screen>);
 
-        const title = "this is the title"
-
-        const mockComponent=<Text >{text}</Text>
-
-        render(<Screen title={title}>{mockComponent}</Screen>)
-
-        expect(screen.getByText(title)).toBeTruthy()
-
-    })
-})
+        expect(screen.getByText(title)).toBeTruthy();
+    });
+});

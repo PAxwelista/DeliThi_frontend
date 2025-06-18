@@ -1,4 +1,4 @@
-export type CustomerFormType = {
+export type CustomerForm = {
     name: string;
     locationName: string;
     area: string;
