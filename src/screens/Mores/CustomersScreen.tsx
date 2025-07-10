@@ -2,8 +2,10 @@ import { FlatList } from "react-native";
 import { Screen, Loading, Error, Button } from "../../components/";
 import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
-import { Customer, MoreMenuStackParamList } from "../../types";
+import type { Customer, MoreMenuStackParamList } from "../../types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useFocusEffect } from "@react-navigation/native";
+import { useCallback } from "react";
 
 type ItemCustomer = {
     item: Customer;
@@ -11,8 +13,14 @@ type ItemCustomer = {
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "Customers">;
 
-export default function CustomersScreen({ navigation }: Props) {
-    const { data, isLoading, error } = useFetch(`${apiUrl}/customers/`);
+function CustomersScreen({ navigation }: Props) {
+    const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/customers/`);
+
+    useFocusEffect(
+        useCallback(() => {
+            refresh();
+        }, [refresh])
+    );
 
     const handlePressDeliveries = (customer: Customer) => {
         navigation.navigate("DetailCustomer", customer);
@@ -34,7 +42,10 @@ export default function CustomersScreen({ navigation }: Props) {
     if (error) return <Error err={error} />;
 
     return (
-        <Screen>
+        <Screen
+            title="Clients"
+            hasHeaderBar
+        >
             <FlatList
                 data={data?.customers.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))}
                 renderItem={renderCustomer}
@@ -43,3 +54,5 @@ export default function CustomersScreen({ navigation }: Props) {
         </Screen>
     );
 }
+
+export {CustomersScreen}

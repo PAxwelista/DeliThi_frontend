@@ -30,7 +30,9 @@ export default function DisplayProducts({ products, removeProduct }: Props) {
 
     return (
         <View style={styles.orders}>
-            <ScrollView contentContainerStyle={styles.ordersScroll}>{productElmts}</ScrollView>
+            <ScrollView contentContainerStyle={styles.ordersScroll}>
+                {products.length ? productElmts : <Text>Aucun produits dans le panier</Text>}
+            </ScrollView>
         </View>
     );
 }

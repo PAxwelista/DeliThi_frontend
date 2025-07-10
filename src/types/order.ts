@@ -7,6 +7,6 @@ export type Order = {
     creationDate: string;
     state: string;
     orderer: string;
-    products: [Product];
+    products: Product[];
     area: string;
 };

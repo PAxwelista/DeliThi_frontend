@@ -1,14 +1,10 @@
-export { AvailableProduct } from "./availableProduct";
-export { CustomerForm } from "./customerForm";
-export { Customer } from "./customer";
-export { Delivery } from "./delivery";
-export {
-    DeliveriesStackParamList,
-    OrderStackParamList,
-    MakeDeliveryStackParamList,
-    MoreMenuStackParamList,
-} from "./navigation";
-export { Order } from "./order";
-export { Product } from "./product";
-export { State } from "./state";
-export { TotalProduct } from "./totalProduct";
+export * from "./availableProduct";
+export * from "./customerForm";
+export * from "./customer";
+export * from "./delivery";
+export * from "./navigation";
+export * from "./order";
+export * from "./product";
+export * from "./state";
+export * from "./totalProduct";
+export * from "./login";

@@ -71,6 +71,9 @@ const styles = StyleSheet.create({
     picker: {
         backgroundColor: "lightgrey",
         borderRadius: 10,
+        margin:2,
+        boxShadow: "1px 1px 1px black"
+
     },
     pickerElmt: {
         height: 100,

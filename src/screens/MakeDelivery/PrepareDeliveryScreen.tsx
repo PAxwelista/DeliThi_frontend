@@ -1,5 +1,5 @@
 import { useFetch } from "../../hooks";
-import { Screen, Button } from "../../components";
+import { Screen, Button, Loading } from "../../components";
 import { Text } from "react-native";
 import { TotalProduct, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -8,16 +8,18 @@ import { useDelivery } from "../../context/orderContext";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "PrepareDelivery">;
 
-export default function PrepareDeliveryScreen({ navigation }: Props) {
+function PrepareDeliveryScreen({ navigation }: Props) {
     const delivery = useDelivery();
 
     const _id = delivery?.delivery?._id;
 
-    const { data } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
+    const { data, isLoading } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
 
     const handleStartRide = () => {
         navigation.navigate("Map");
     };
+
+    if (isLoading) return <Loading />;
 
     return (
         <Screen title="Préparation de commande">
@@ -33,3 +35,5 @@ export default function PrepareDeliveryScreen({ navigation }: Props) {
         </Screen>
     );
 }
+
+export {PrepareDeliveryScreen}

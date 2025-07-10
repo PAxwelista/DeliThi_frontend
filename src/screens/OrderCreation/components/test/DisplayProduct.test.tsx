@@ -6,8 +6,8 @@ import DisplayProducts from "../DisplayProducts";
 
 describe("DisplayProdcuts component", () => {
     const products: Product[] = [
-        { _id: "1", product: { name: "Carotte" }, quantity: 3 },
-        { _id: "2", product: { name: "Tomate" }, quantity: 4 },
+        { _id: "1", product: { name: "Carotte" , price : 2 }, quantity: 3 },
+        { _id: "2", product: { name: "Tomate" , price : 5}, quantity: 4 },
     ];
 
     it("should show products pass in props", () => {

@@ -1,15 +1,52 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { View, Text } from "react-native";
-import { MakeDeliveryStackParamList } from "../../types";
+import { MakeDeliveryStackParamList, Order } from "../../types";
 import { Screen, Button } from "../../components";
 import { StyleSheet } from "react-native";
+import { CalculateOrderTotalPrice } from "../../utils";
+import { apiUrl } from "../../config";
+import { useDelivery } from "../../context/orderContext";
+import { useFetchWithGroupId } from "../../hooks";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "DeliverOrder">;
 
-export default function DeliverOrderScreen({ navigation, route }: Props) {
+function DeliverOrderScreen({ navigation, route }: Props) {
     const order = route.params;
+    const delivery = useDelivery();
 
-    const handleNextOrder = () => {
+    const handleNextOrder = async () => {
+          await useFetchWithGroupId(`${apiUrl}/orders/state`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                newState: "delivered",
+                ordersID: [order._id],
+            }),
+        });
+
+
+        await useFetchWithGroupId(`${apiUrl}/orders/deliveryDate`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    newDeliveryDate: new Date(),
+                    ordersID: [order._id],
+                }),
+            });
+    
+            delivery?.setDelivery(prev => {
+                if (!prev) return prev;
+    
+                return {
+                    ...prev,
+                    orders: prev.orders.filter((currentOrder: Order) => currentOrder._id != order._id),
+                };
+            });
+
         navigation.navigate("Map");
     };
 
@@ -24,6 +61,7 @@ export default function DeliverOrderScreen({ navigation, route }: Props) {
             <Text>Client : {order.customer.name}</Text>
             <Text>Lieu : {order.customer.location.name}</Text>
             <View style={styles.products}>{Product}</View>
+            <Text>Total : {CalculateOrderTotalPrice(order)} euros</Text>
             <Button
                 title="Commande suivante"
                 onPress={handleNextOrder}
@@ -31,6 +69,8 @@ export default function DeliverOrderScreen({ navigation, route }: Props) {
         </Screen>
     );
 }
+
+export {DeliverOrderScreen}
 
 const styles = StyleSheet.create({
     products: {

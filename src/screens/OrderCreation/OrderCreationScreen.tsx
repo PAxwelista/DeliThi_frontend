@@ -1,13 +1,13 @@
 import { Screen, Button, Loading, Error } from "../../components";
 import { useState } from "react";
-import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal } from "react-native";
+import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal, Text } from "react-native";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
-import { useFetch } from "../../hooks";
+import {  useAppSelector, useFetch ,useFetchWithGroupId} from "../../hooks";
 import { apiUrl } from "../../config";
 import ProductManager from "./components/ProductManager";
-import React from "react";
 import NewCustomerForm from "./components/NewCustomerForm";
 import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../types";
+
 
 type AutocompleteDropdownController = {
     clear: () => void;
@@ -19,9 +19,12 @@ type AutocompleteDropdownController = {
 
 let inputDropdownCustomerRef: AutocompleteDropdownController;
 
-export default function OrderCreationScreen() {
+function OrderCreationScreen() {
+    const fetchWithGroupId = useFetchWithGroupId();
+    const username = useAppSelector(state=>state.login.username)
     const [products, setProducts] = useState<Product[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
     const [showModal, setShowModal] = useState<boolean>(false);
     const [customer, setCustomer] = useState<Customer | undefined>(undefined);
 
@@ -38,10 +41,6 @@ export default function OrderCreationScreen() {
         refresh: refreshCustomerlist,
     } = useFetch(`${apiUrl}/customers/`);
 
-    // const handleOnSelectLocation = (item: any) => {
-    //     handleChangeValue("locationName")(item?.title);
-    // };
-
     const handleOnSelectCustomer = (item: any) => {
         item && setCustomer(customerList.customers?.find((v: Customer) => v._id === item.id));
     };
@@ -57,6 +56,8 @@ export default function OrderCreationScreen() {
                       {
                           product: {
                               name: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.name || "",
+                              price:
+                                  availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.price || "",
                           },
                           quantity,
                           _id: id || "",
@@ -81,7 +82,7 @@ export default function OrderCreationScreen() {
             return;
         }
 
-        const response = await fetch(`${apiUrl}/orders?state=pending`);
+        const response = await fetchWithGroupId(`${apiUrl}/orders?state=pending`);
         const data = await response.json();
 
         if (data.orders.some((order: Order) => order.customer._id === id)) {
@@ -92,14 +93,14 @@ export default function OrderCreationScreen() {
         refreshCustomerlist;
 
         try {
-            const response = await fetch(`${apiUrl}/orders`, {
+            const response = await fetchWithGroupId(`${apiUrl}/orders`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     products: products.map(v => ({ product: v._id, quantity: v.quantity })),
-                    orderer: "Placeholder", //a modifier en fonction de qui passe la commande
+                    orderer: username, 
                     customerId: id,
                     area: customer?.location.area,
                 }),
@@ -107,7 +108,7 @@ export default function OrderCreationScreen() {
             const json = await response.json();
 
             if (json.result) {
-                setErrorMessage("Commande enregistrée");
+                setMessage("Commande enregistrée");
                 setProducts([]);
                 inputDropdownCustomerRef?.setInputText("");
             } else setErrorMessage(json.error);
@@ -127,7 +128,7 @@ export default function OrderCreationScreen() {
 
     async function AddnewCustomer(customerInfos: CustomerForm): Promise<Customer | undefined> {
         try {
-            const response = await fetch(`${apiUrl}/customers`, {
+            const response = await fetchWithGroupId(`${apiUrl}/customers`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -185,6 +186,7 @@ export default function OrderCreationScreen() {
                             />
                         </View>
                         {errorMessage && <Error err={errorMessage} />}
+                        {message && <Text>{message}</Text>}
                         <Button
                             title="Valider commande"
                             onPress={handleValidateOrder}
@@ -210,6 +212,8 @@ export default function OrderCreationScreen() {
     );
 }
 
+export {OrderCreationScreen}
+
 const styles = StyleSheet.create({
     container: { flex: 1 },
     globalScroll: {
@@ -224,6 +228,8 @@ const styles = StyleSheet.create({
     },
     autocompleteStyle: {
         width: "70%",
+        borderRadius: 5,
+        boxShadow: "1px 1px 1px black",
     },
     button: {
         width: "25%",

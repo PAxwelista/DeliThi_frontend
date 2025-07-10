@@ -27,6 +27,8 @@ jest.mock("react-native-autocomplete-dropdown", () => {
     };
 });
 
+jest.mock('react-redux');
+
 import { render, screen, fireEvent } from "@testing-library/react-native";
 
 import NewCustomerForm from "../NewCustomerForm";

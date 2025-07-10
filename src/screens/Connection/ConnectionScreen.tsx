@@ -3,8 +3,11 @@ import { StyleSheet ,Text} from "react-native";
 import { useInput } from "../../hooks";
 import { useState } from "react";
 import { apiUrl } from "../../config";
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../../reducers/login';
 
-export default function ConnectionScreen() {
+function ConnectionScreen() {
+    const dispatch = useDispatch()
     const username = useInput();
     const password = useInput();
     const [errorMessage , setErrorMessage] = useState<string>("")
@@ -12,7 +15,7 @@ export default function ConnectionScreen() {
     const handleConnect = async () => {
         setErrorMessage("")
         try {
-            const response = await fetch(`${apiUrl}/users/signin` , {
+            const response = await fetch(`${apiUrl}/users/signIn` , {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -21,8 +24,7 @@ export default function ConnectionScreen() {
               });
             const json = await response.json();
             if (json.result){
-                setErrorMessage("Reussi!!")
-                //ici déplacement vers une autre page et ajotuer également le nom de l'utilisateur dans data
+                dispatch(setLogin(json.login))
             }
             else (setErrorMessage(json.error))
             
@@ -51,6 +53,8 @@ export default function ConnectionScreen() {
         </Screen>
     );
 }
+
+export {ConnectionScreen}
 
 const styles = StyleSheet.create({
     element: {

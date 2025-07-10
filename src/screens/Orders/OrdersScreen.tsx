@@ -12,8 +12,10 @@ type Props = NativeStackScreenProps<OrderStackParamList, "AllOrders">;
 
 const colorState = { pending: "#D5FFC4", processing: "#C4ECFF", delivered: "#D5D5D5", cancelled: "#FFC4C4" };
 
-export default function OrdersScreen({ navigation }: Props) {
+function OrdersScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders`);
+
+    console.log(data)
 
     useFocusEffect(
         useCallback(() => {
@@ -41,6 +43,7 @@ export default function OrdersScreen({ navigation }: Props) {
     if (isLoading) return <Loading />;
 
     if (error) return <Error err={error} />;
+    if (data && !data.result) return <Error err={data.error} />;
 
     return (
         <Screen title="Commandes">
@@ -52,6 +55,8 @@ export default function OrdersScreen({ navigation }: Props) {
         </Screen>
     );
 }
+
+export {OrdersScreen}
 
 const styles = StyleSheet.create({
     order: {

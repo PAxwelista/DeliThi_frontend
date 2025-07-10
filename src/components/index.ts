@@ -1,5 +1,5 @@
-export { Button } from "./Button";
-export { Error } from "./Error";
-export { Input } from "./Input";
-export { Loading } from "./Loading";
-export { Screen } from "./Screen";
+export * from "./Button";
+export * from "./Error";
+export * from "./Input";
+export * from "./Loading";
+export * from "./Screen";

@@ -4,8 +4,8 @@ import ProductAddingForm from "../ProductAddingForm";
 
 describe("ProductAddingForm component", () => {
     const productsAvailable = [
-        { _id: "1", name: "Carottes" },
-        { _id: "2", name: "Tomates" },
+        { _id: "1", name: "Carottes" , price : 3 },
+        { _id: "2", name: "Tomates" , price : 2 },
     ];
 
     it("should change the quantity value while clicking on + and - button", () => {

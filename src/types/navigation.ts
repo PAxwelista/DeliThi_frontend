@@ -20,4 +20,5 @@ export type MoreMenuStackParamList = {
     Customers: undefined;
     DetailCustomer: Customer;
     Statistics: undefined;
+    Products: undefined;
 };

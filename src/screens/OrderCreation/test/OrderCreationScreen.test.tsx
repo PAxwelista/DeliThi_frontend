@@ -27,11 +27,14 @@ jest.mock("react-native-autocomplete-dropdown", () => {
     };
 });
 
+
+jest.mock('react-redux');
+
 import { render, screen, fireEvent, waitFor } from "@testing-library/react-native";
 
 import { useFetch } from "../../../hooks";
 
-import OrderCreationScreen from "../OrderCreationScreen";
+import {OrderCreationScreen} from "../../";
 
 const mockLoadingData = {
     data: null,

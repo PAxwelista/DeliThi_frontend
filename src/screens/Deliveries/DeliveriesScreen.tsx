@@ -13,7 +13,7 @@ type ItemDelivery = {
 
 type Props = NativeStackScreenProps<DeliveriesStackParamList, "AllDeliveries">;
 
-export default function DeliveriesScreen({ navigation }: Props) {
+  function DeliveriesScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/deliveries`);
 
     useFocusEffect(
@@ -52,3 +52,5 @@ export default function DeliveriesScreen({ navigation }: Props) {
         </Screen>
     );
 }
+
+export {DeliveriesScreen}

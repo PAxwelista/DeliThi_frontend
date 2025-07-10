@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
+import { useFetchWithGroupId } from "./";
+
 
 export function useFetch(url: string) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const [data, setData] = useState<any>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>("");
@@ -15,7 +18,7 @@ export function useFetch(url: string) {
         (async () => {
             setIsLoading(true);
             try {
-                const response = await fetch(url);
+                const response = await fetchWithGroupId(url);
                 const json = await response.json();
                 setData(json);
             } catch (err: any) {

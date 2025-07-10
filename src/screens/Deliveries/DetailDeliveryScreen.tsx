@@ -5,6 +5,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { DeliveriesStackParamList } from "../../types/navigation";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
+import { CalculateOrderTotalPrice } from "../../utils";
 
 type ItemOrder = {
     item: Order;
@@ -12,7 +13,7 @@ type ItemOrder = {
 
 type Props = NativeStackScreenProps<DeliveriesStackParamList, "DetailDelivery">;
 
-export default function DetailDeliveryScreen({ route }: Props) {
+function DetailDeliveryScreen({ route }: Props) {
     const { _id, deliveryDate, orders } = route.params;
 
     const { data: total } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
@@ -44,15 +45,22 @@ export default function DetailDeliveryScreen({ route }: Props) {
             </View>
             <View style={styles.total}>
                 <Text style={styles.totalText}>Total : </Text>
-                {total?.totalProduct.map((product: TotalProduct) => (
-                    <Text key={product.name}>
-                        {product.name} x{product.quantity}
-                    </Text>
-                ))}
+                <View style={styles.totalElmtsAndPrice}>
+                    <View style={styles.totalElmts}>
+                    {total?.totalProduct.map((product: TotalProduct) => (
+                        <Text key={product.name}>
+                            {product.name} x{product.quantity}
+                        </Text>
+                    ))}
+                    </View>
+                    <Text style={styles.totalPrice}>{orders.reduce((a,v)=>a+CalculateOrderTotalPrice(v) , 0)} euros</Text>
+                </View>
             </View>
         </Screen>
     );
 }
+
+export {DetailDeliveryScreen}
 
 const styles = StyleSheet.create({
     order: {
@@ -79,4 +87,14 @@ const styles = StyleSheet.create({
     totalText: {
         textAlign: "center",
     },
+    totalElmtsAndPrice: {
+        flexDirection: "row",
+        justifyContent:"space-between"
+    },
+    totalElmts: {
+        flexDirection: "column",
+    },
+    totalPrice:{
+        textAlignVertical: "center",
+    }
 });

@@ -1,9 +1,12 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Alert } from "react-native";
 import { Screen, Button, Input } from "../../components";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { OrderStackParamList, State } from "../../types";
 import { useState } from "react";
 import { apiUrl } from "../../config";
+import { CalculateOrderTotalPrice } from "../../utils";
+import { useFetchWithGroupId } from "../../hooks";
+
 
 const frenchState = {
     pending: "Enregistré",
@@ -14,7 +17,8 @@ const frenchState = {
 
 type Props = NativeStackScreenProps<OrderStackParamList, "DetailOrder">;
 
-export default function DetailOrderScreen({ route }: Props) {
+function DetailOrderScreen({ route }: Props) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const { _id, customer, deliveryDate, creationDate, products, area } = route.params;
 
     const [state, setState] = useState(route.params.state);
@@ -29,7 +33,7 @@ export default function DetailOrderScreen({ route }: Props) {
     ));
 
     const handleChangeArea = async () => {
-        const response = await fetch(`${apiUrl}/orders/area`, {
+        const response = await fetchWithGroupId(`${apiUrl}/orders/area`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -38,8 +42,15 @@ export default function DetailOrderScreen({ route }: Props) {
         });
     };
 
+    const showAlert = () => {
+        Alert.alert("Attention", "Voulez vous vraiment supprimer cette commande?", [
+            { text: "Non", style: "cancel" },
+            { text: "Oui", onPress: handleCancelledOrder },
+        ]);
+    };
+
     const handleCancelledOrder = async () => {
-        const response = await fetch(`${apiUrl}/orders/state`, {
+        const response = await fetchWithGroupId(`${apiUrl}/orders/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -68,16 +79,19 @@ export default function DetailOrderScreen({ route }: Props) {
             </View>
             <View style={styles.products}>{Product}</View>
             <Text>Statut : {frenchState[state as State]}</Text>
+            <Text>Total : {CalculateOrderTotalPrice(route.params)} euros</Text>
             {deliveryDate && <Text>Commande livré le : {new Date(deliveryDate).toLocaleDateString()}</Text>}
-            {state != "cancelled" && (
+            {state != "cancelled" && state != "delivered" && (
                 <Button
                     title="Annuler commande"
-                    onPress={handleCancelledOrder}
+                    onPress={showAlert}
                 />
             )}
         </Screen>
     );
 }
+
+export { DetailOrderScreen };
 
 const styles = StyleSheet.create({
     products: {
@@ -95,6 +109,6 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     areaInput: {
-        width: "50%",
+        minWidth: "70%",
     },
 });
