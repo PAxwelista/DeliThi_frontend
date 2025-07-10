@@ -11,11 +11,12 @@ import { useFetchWithGroupId } from "../../hooks";
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "DeliverOrder">;
 
 function DeliverOrderScreen({ navigation, route }: Props) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const order = route.params;
     const delivery = useDelivery();
 
     const handleNextOrder = async () => {
-          await useFetchWithGroupId(`${apiUrl}/orders/state`, {
+          await fetchWithGroupId(`${apiUrl}/orders/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -27,7 +28,7 @@ function DeliverOrderScreen({ navigation, route }: Props) {
         });
 
 
-        await useFetchWithGroupId(`${apiUrl}/orders/deliveryDate`, {
+        await fetchWithGroupId(`${apiUrl}/orders/deliveryDate`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

@@ -16,6 +16,7 @@ const inputs: Record<keyof CustomerForm, string> = {
 };
 
 function DetailCustomerScreen({ route }: Props) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const { name, email, phoneNumber } = route.params;
     const { name: locationName, area } = route.params.location;
     
@@ -45,7 +46,7 @@ function DetailCustomerScreen({ route }: Props) {
             .map(([key, value]) => key + "=" + value)
             .join("&");
 
-            useFetchWithGroupId(`${apiUrl}/Customers/${route.params._id}?${urlRequest}`, {
+            fetchWithGroupId(`${apiUrl}/Customers/${route.params._id}?${urlRequest}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

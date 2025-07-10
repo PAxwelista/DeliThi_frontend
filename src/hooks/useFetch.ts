@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useFetchWithGroupId } from "./";
+import { useFetchWithGroupId } from "./useFetchWithGroupId";
 
 
 export function useFetch(url: string) {

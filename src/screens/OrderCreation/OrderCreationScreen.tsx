@@ -2,11 +2,12 @@ import { Screen, Button, Loading, Error } from "../../components";
 import { useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal, Text } from "react-native";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
-import {  useAppSelector, useFetch ,useFetchWithGroupId} from "../../hooks";
+import {  useFetch ,useFetchWithGroupId} from "../../hooks";
 import { apiUrl } from "../../config";
 import ProductManager from "./components/ProductManager";
 import NewCustomerForm from "./components/NewCustomerForm";
 import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../types";
+import { useAppSelector } from "../../hooks/redux";
 
 
 type AutocompleteDropdownController = {

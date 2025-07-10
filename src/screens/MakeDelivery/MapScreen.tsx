@@ -23,6 +23,7 @@ type Coord = { latitude: number; longitude: number };
 type Coords = [number, number][];
 
 function MapScreen({ navigation }: Props) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const delivery = useDelivery();
 
     const [location, setLocation] = useState<Coord>({ latitude: -1, longitude: -1 });
@@ -72,7 +73,7 @@ function MapScreen({ navigation }: Props) {
     }, [delivery]);
 
     const handleDeliveryFinished = async () => {
-        const response = await useFetchWithGroupId(`${apiUrl}/deliveries/state`, {
+        const response = await fetchWithGroupId(`${apiUrl}/deliveries/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -90,7 +91,7 @@ function MapScreen({ navigation }: Props) {
 
     async function itiliazeRouteOrder(location: Coord) {
         try {
-            const response = await useFetchWithGroupId(`${apiUrl}/direction/order`, {
+            const response = await fetchWithGroupId(`${apiUrl}/direction/order`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -128,7 +129,7 @@ function MapScreen({ navigation }: Props) {
 
         try {
             const waypointsCoords = location ? [location, ...(coords ?? [])] : coords ?? [];
-            const response = await useFetchWithGroupId(`${apiUrl}/direction`, {
+            const response = await fetchWithGroupId(`${apiUrl}/direction`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -157,7 +158,7 @@ function MapScreen({ navigation }: Props) {
     };
 
     const handlePostponeDelivery = async () => {
-        await useFetchWithGroupId(`${apiUrl}/orders/state`, {
+        await fetchWithGroupId(`${apiUrl}/orders/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -168,7 +169,7 @@ function MapScreen({ navigation }: Props) {
             }),
         });
 
-        await useFetchWithGroupId(
+        await fetchWithGroupId(
             `${apiUrl}/deliveries/${delivery?.delivery?._id}/removeOrder/${delivery?.delivery?.orders[0]?._id}`,
             {
                 method: "PATCH",

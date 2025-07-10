@@ -1,4 +1,4 @@
-import { useAppSelector } from ".";
+import { useAppSelector } from "./redux";
 
 export const useFetchWithGroupId = () => {
     const groupId = useAppSelector(state => state.login.groupId);

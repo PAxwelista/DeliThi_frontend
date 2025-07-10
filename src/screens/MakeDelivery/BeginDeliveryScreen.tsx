@@ -11,6 +11,7 @@ import { useFocusEffect } from "@react-navigation/native";
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 
 function BeginDeliveryScreen({ navigation }: Props) {
+    const fetchWithGroupId = useFetchWithGroupId();
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders/allAreas`);
 
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -24,13 +25,13 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const delivery = useDelivery();
 
     const handleStartDelivery = async (area: string) => {
-        const actualDeliveryResponse = await useFetchWithGroupId(`${apiUrl}/deliveries/actualDelivery`);
+        const actualDeliveryResponse = await fetchWithGroupId(`${apiUrl}/deliveries/actualDelivery`);
         const actualDelivery = await actualDeliveryResponse.json();
 
         if (actualDelivery.result) {
             delivery?.setDelivery(actualDelivery.data);
         } else {
-            const orderResponse = await useFetchWithGroupId(`${apiUrl}/orders?state=pending&area=${area}`);
+            const orderResponse = await fetchWithGroupId(`${apiUrl}/orders?state=pending&area=${area}`);
             const orders = await orderResponse.json();
 
             setErrorMessage("");
@@ -47,7 +48,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
 
             const ordersID = orders.orders.map((order: Order) => order._id);
 
-            const stateChangeResponse = await useFetchWithGroupId(`${apiUrl}/orders/state`, {
+            const stateChangeResponse = await fetchWithGroupId(`${apiUrl}/orders/state`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -58,7 +59,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 }),
             });
 
-            const deliveriesResponse = await useFetchWithGroupId(`${apiUrl}/deliveries`, {
+            const deliveriesResponse = await fetchWithGroupId(`${apiUrl}/deliveries`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -70,7 +71,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
 
             const deliveryData = await deliveriesResponse.json();
 
-            await useFetchWithGroupId(`${apiUrl}/deliveries/state`, {
+            await fetchWithGroupId(`${apiUrl}/deliveries/state`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
