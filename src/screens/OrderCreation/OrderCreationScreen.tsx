@@ -8,6 +8,7 @@ import ProductManager from "./components/ProductManager";
 import NewCustomerForm from "./components/NewCustomerForm";
 import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../types";
 import { useAppSelector } from "../../hooks/redux";
+import { CustomModal } from "../../components/CustomModal";
 
 
 type AutocompleteDropdownController = {
@@ -195,19 +196,11 @@ function OrderCreationScreen() {
                     </ScrollView>
                 </KeyboardAvoidingView>
 
-                <Modal
-                    visible={showModal}
-                    transparent
-                    style={{ flex: 1, backgroundColor: "blue" }}
-                    animationType="slide"
-                >
-                    <View style={styles.modal}>
-                        <NewCustomerForm
+                <CustomModal visible={showModal} handleCloseModal={handleCloseModal}>
+                <NewCustomerForm
                             addCustomer={handleAddCustomer}
-                            closeModal={handleCloseModal}
                         />
-                    </View>
-                </Modal>
+                </CustomModal>
             </AutocompleteDropdownContextProvider>
         </Screen>
     );

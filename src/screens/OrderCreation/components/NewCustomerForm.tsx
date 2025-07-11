@@ -7,10 +7,9 @@ import { CustomerForm } from "../../../types";
 
 type PropType = {
     addCustomer: (values: CustomerForm) => void;
-    closeModal: () => void;
 };
 
-export default function NewCustomerForm({ addCustomer, closeModal }: PropType) {
+export default function NewCustomerForm({ addCustomer }: PropType) {
     const { values, handleChangeValue, reset } = useFormInput<CustomerForm>({
         name: "",
         locationName: "",
@@ -49,14 +48,6 @@ export default function NewCustomerForm({ addCustomer, closeModal }: PropType) {
     return (
         <AutocompleteDropdownContextProvider>
             <View style={styles.container}>
-                <View style={styles.closeBtnContainer}>
-                    <TouchableOpacity
-                        style={styles.closeBtn}
-                        onPress={closeModal}
-                    >
-                        <Text style={styles.textCloseBtn}>X</Text>
-                    </TouchableOpacity>
-                </View>
                 <View>
                     <Input
                         placeholder="Nom"
