@@ -26,8 +26,6 @@ const SignUp = ({ navigation }: Props) => {
         groupId: !isChecked,
     };
 
-    console.log(values)
-
     const labelsFr: Record<keyof typeof values, string> = {
         username: "Nom d'utilisateur",
         password: "Mot de passe",

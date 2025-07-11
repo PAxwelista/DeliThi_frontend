@@ -92,8 +92,6 @@ function OrderCreationScreen() {
             return;
         }
 
-        refreshCustomerlist;
-
         try {
             const response = await fetchWithGroupId(`${apiUrl}/orders`, {
                 method: "POST",
@@ -139,6 +137,7 @@ function OrderCreationScreen() {
             });
             const json = await response.json();
             if (json.result) {
+                refreshCustomerlist();
                 return json.data;
             } else setErrorMessage(json.error);
         } catch (error) {

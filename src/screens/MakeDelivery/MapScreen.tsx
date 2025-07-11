@@ -34,8 +34,6 @@ function MapScreen({ navigation }: Props) {
     const [loadingRefreshDirection, setLoadingRefreshDirection] = useState<boolean>(false);
     const [loadingGetPosition, setLoadingGetPosition] = useState<boolean>(false);
 
-    console.log(firstDirectionInfos);
-
     useEffect(() => {
         (async () => {
             setLoadingGetPosition(true);

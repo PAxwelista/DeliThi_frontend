@@ -60,8 +60,6 @@ function DetailOrderScreen({ route }: Props) {
 
         const json = await response.json();
 
-        console.log(json);
-
         if (json.result) setState("cancelled");
     };
 

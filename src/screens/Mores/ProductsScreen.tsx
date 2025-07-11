@@ -1,16 +1,18 @@
-import { StyleSheet, View, Modal, Text, TouchableOpacity } from "react-native";
-import { Loading, Screen, Button, Input } from "../../components";
-import { useFetch, useFormInput } from "../../hooks";
+import { StyleSheet, View, Modal, Text, TouchableOpacity, ScrollView } from "react-native";
+import { Loading, Screen, Button, Input, Error } from "../../components";
+import { useFetch, useFetchWithGroupId, useFormInput } from "../../hooks";
 import { apiUrl } from "../../config";
 import { AvailableProduct } from "../../types";
 import { useState } from "react";
 import { CustomModal } from "../../components/CustomModal";
+import { AddNewProductForm } from "./Components/AddNewProductForm";
 
 function ProductsScreen() {
     const { values, handleChangeValue, reset } = useFormInput({ name: "", price: "" });
     const [showModal, setShowModal] = useState<boolean>(false);
+    const fecthWithGroupId = useFetchWithGroupId();
     const [errorMessage, setErrorMessage] = useState<string>("");
-    const { data, isLoading } = useFetch(`${apiUrl}/products`);
+    const { data, isLoading, refresh } = useFetch(`${apiUrl}/products`);
 
     if (isLoading) return <Loading />;
 
@@ -23,30 +25,28 @@ function ProductsScreen() {
         setShowModal(false);
     };
 
-    const handleAddNewProduct = () => {
+    const handleAddNewProduct = async () => {
         if (!values.name || !values.price) return setErrorMessage("Veuillez rentrez toutes les informations");
-    };
 
-    const AddNewProductForm = () => {
-        return (
-            <View style={styles.addProductForm}>
-                <Input
-                    placeholder="Nom"
-                    value={values.name}
-                    onChangeText={handleChangeValue("name")}
-                />
-                <Input
-                    placeholder="Prix"
-                    value={values.price}
-                    onChangeText={handleChangeValue("price")}
-                    keyboardType="numeric"
-                />
-                <Button
-                    title="Ajouter produit"
-                    onPress={handleAddNewProduct}
-                />
-            </View>
-        );
+        try {
+            const response = await fecthWithGroupId(`${apiUrl}/products`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(values),
+            });
+
+            const json = await response.json();
+
+            if (json.result) {
+                reset();
+                setShowModal(false);
+                refresh();
+            }
+        } catch (error) {
+            setErrorMessage(`Erreur de connexion : ${error}`);
+        }
     };
 
     const products = data?.products.map((v: AvailableProduct) => (
@@ -64,7 +64,8 @@ function ProductsScreen() {
             hasHeaderBar
         >
             <View style={styles.container}>
-                {products}
+                <ScrollView>{products}</ScrollView>
+                {errorMessage && <Error err={errorMessage} />}
                 <Button
                     title="Nouveau produit"
                     onPress={handleOpenModal}
@@ -74,7 +75,11 @@ function ProductsScreen() {
                 visible={showModal}
                 handleCloseModal={handleCloseModal}
             >
-                <AddNewProductForm />
+                <AddNewProductForm
+                    values={values}
+                    handleChangeValue={handleChangeValue}
+                    handleAddNewProduct={handleAddNewProduct}
+                />
             </CustomModal>
         </Screen>
     );
@@ -96,10 +101,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         borderWidth: 1,
     },
-    addProductForm: {
-        flex: 1,
-        justifyContent: "center",
-    },
+
     closeBtnContainer: {
         alignItems: "flex-end",
     },

@@ -15,8 +15,6 @@ const colorState = { pending: "#D5FFC4", processing: "#C4ECFF", delivered: "#D5D
 function OrdersScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders`);
 
-    console.log(data)
-
     useFocusEffect(
         useCallback(() => {
             refresh();
