@@ -22,3 +22,8 @@ export type MoreMenuStackParamList = {
     Statistics: undefined;
     Products: undefined;
 };
+
+export type ConnexionStackParamList = {
+    SignIn: undefined;
+    SignUp: undefined;
+};

@@ -3098,6 +3098,11 @@ expo-asset@~11.1.4:
     "@expo/image-utils" "^0.7.4"
     expo-constants "~17.1.4"
 
+expo-checkbox@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/expo-checkbox/-/expo-checkbox-4.1.4.tgz#ad5de0d346af26027c939f943d87ac4c68283d00"
+  integrity sha512-sahBTVble5/6EnHgLyGvX6fAytkZ7vmllHUbX5ko1kTQ59qTdiVmCznxqaT5DNWfxRZ0gdQVlao46dGQ3hbmeQ==
+
 expo-constants@^17.1.5, expo-constants@~17.1.4, expo-constants@~17.1.5:
   version "17.1.5"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-17.1.5.tgz#7c39c0208a8401217cc2bb44c21b9d354dbc6c4f"

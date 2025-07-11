@@ -9,7 +9,9 @@ export * from "./Orders/OrdersScreen";
 export * from "./MakeDelivery/BeginDeliveryScreen";
 export * from "./MakeDelivery/MapScreen";
 export * from "./MakeDelivery/PrepareDeliveryScreen";
-export * from "./Connection/ConnectionScreen";
+export * from "./Connection/SignInScreen";
+export * from "./Connection/SignUpScreen";
 export * from "./Deliveries/DetailDeliveryScreen";
 export * from "./MakeDelivery/DeliverOrderScreen";
 export * from "./Deliveries/DeliveriesScreen";
+
