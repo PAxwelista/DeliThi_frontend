@@ -47,20 +47,23 @@ function DetailDeliveryScreen({ route }: Props) {
                 <Text style={styles.totalText}>Total : </Text>
                 <View style={styles.totalElmtsAndPrice}>
                     <View style={styles.totalElmts}>
-                    {total?.totalProduct.map((product: TotalProduct) => (
-                        <Text key={product.name}>
-                            {product.name} x{product.quantity}
-                        </Text>
-                    ))}
+                        {total?.totalProduct.map((product: TotalProduct) => (
+                            <Text key={product.name}>
+                                {product.name} x{product.quantity}
+                            </Text>
+                        ))}
                     </View>
-                    <Text style={styles.totalPrice}>{orders.reduce((a,v)=>a+CalculateOrderTotalPrice(v) , 0)} euros</Text>
+                    <Text style={styles.totalPrice}>
+                        {orders.reduce((a, v) => (a + v.amountPaid ? v.amountPaid : CalculateOrderTotalPrice(v)), 0)}{" "}
+                        euros
+                    </Text>
                 </View>
             </View>
         </Screen>
     );
 }
 
-export {DetailDeliveryScreen}
+export { DetailDeliveryScreen };
 
 const styles = StyleSheet.create({
     order: {
@@ -89,12 +92,12 @@ const styles = StyleSheet.create({
     },
     totalElmtsAndPrice: {
         flexDirection: "row",
-        justifyContent:"space-between"
+        justifyContent: "space-between",
     },
     totalElmts: {
         flexDirection: "column",
     },
-    totalPrice:{
+    totalPrice: {
         textAlignVertical: "center",
-    }
+    },
 });

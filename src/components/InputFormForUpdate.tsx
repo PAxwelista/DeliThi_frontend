@@ -1,5 +1,6 @@
 import { View, StyleSheet, Text } from "react-native";
-import { Button, Input } from ".";
+import { Button } from "./Button";
+import { Input } from "./Input";
 import { useFormInput } from "../hooks";
 
 type Props = {

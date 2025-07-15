@@ -15,38 +15,29 @@ function DeliverOrderScreen({ navigation, route }: Props) {
     const order = route.params;
     const delivery = useDelivery();
 
+    const amountToPaid = CalculateOrderTotalPrice(order);
+
     const handleNextOrder = async () => {
-          await fetchWithGroupId(`${apiUrl}/orders/state`, {
+        await fetchWithGroupId(`${apiUrl}/orders/${order._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                newState: "delivered",
-                ordersID: [order._id],
+                deliveryDate: new Date(),
+                state: "delivered",
+                amountPaid: amountToPaid,
             }),
         });
 
+        delivery?.setDelivery(prev => {
+            if (!prev) return prev;
 
-        await fetchWithGroupId(`${apiUrl}/orders/deliveryDate`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    newDeliveryDate: new Date(),
-                    ordersID: [order._id],
-                }),
-            });
-    
-            delivery?.setDelivery(prev => {
-                if (!prev) return prev;
-    
-                return {
-                    ...prev,
-                    orders: prev.orders.filter((currentOrder: Order) => currentOrder._id != order._id),
-                };
-            });
+            return {
+                ...prev,
+                orders: prev.orders.filter((currentOrder: Order) => currentOrder._id != order._id),
+            };
+        });
 
         navigation.navigate("Map");
     };
@@ -62,7 +53,7 @@ function DeliverOrderScreen({ navigation, route }: Props) {
             <Text>Client : {order.customer.name}</Text>
             <Text>Lieu : {order.customer.location.name}</Text>
             <View style={styles.products}>{Product}</View>
-            <Text>Total : {CalculateOrderTotalPrice(order)} euros</Text>
+            <Text>Total : {amountToPaid} euros</Text>
             <Button
                 title="Commande suivante"
                 onPress={handleNextOrder}
@@ -71,7 +62,7 @@ function DeliverOrderScreen({ navigation, route }: Props) {
     );
 }
 
-export {DeliverOrderScreen}
+export { DeliverOrderScreen };
 
 const styles = StyleSheet.create({
     products: {

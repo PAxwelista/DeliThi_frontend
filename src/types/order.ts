@@ -9,4 +9,5 @@ export type Order = {
     orderer: string;
     products: Product[];
     area: string;
+    amountPaid: number;
 };

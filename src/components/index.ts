@@ -3,6 +3,6 @@ export * from "./Error";
 export * from "./Input";
 export * from "./Loading";
 export * from "./Screen";
-export * from "./InputForm"
-export * from "./CustomModal"
-export * from "./InputFormForUpdate"
+export * from "./InputForm";
+export * from "./CustomModal";
+export * from "./InputFormForUpdate";

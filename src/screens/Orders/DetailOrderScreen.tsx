@@ -19,7 +19,7 @@ type Props = NativeStackScreenProps<OrderStackParamList, "DetailOrder">;
 
 function DetailOrderScreen({ route }: Props) {
     const fetchWithGroupId = useFetchWithGroupId();
-    const { _id, customer, deliveryDate, creationDate, products, area } = route.params;
+    const { _id, customer, deliveryDate, creationDate, products, area , amountPaid } = route.params;
 
     const [state, setState] = useState(route.params.state);
     const [actualArea, setActualArea] = useState(area);
@@ -33,12 +33,12 @@ function DetailOrderScreen({ route }: Props) {
     ));
 
     const handleChangeArea = async () => {
-        const response = await fetchWithGroupId(`${apiUrl}/orders/area`, {
+        const response = await fetchWithGroupId(`${apiUrl}/orders/${_id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ ordersID: [_id], newArea: actualArea }),
+            body: JSON.stringify({ area: actualArea }),
         });
     };
 
@@ -77,7 +77,7 @@ function DetailOrderScreen({ route }: Props) {
             </View>
             <View style={styles.products}>{Product}</View>
             <Text>Statut : {frenchState[state as State]}</Text>
-            <Text>Total : {CalculateOrderTotalPrice(route.params)} euros</Text>
+            <Text>{amountPaid ? `Total payé : ${amountPaid}` : `Total : ${CalculateOrderTotalPrice(route.params)}`} euros</Text>
             {deliveryDate && <Text>Commande livré le : {new Date(deliveryDate).toLocaleDateString()}</Text>}
             {state != "cancelled" && state != "delivered" && (
                 <Button
