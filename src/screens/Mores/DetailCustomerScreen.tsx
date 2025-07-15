@@ -1,9 +1,9 @@
-import { Screen, Button, Input } from "../../components/";
-import { Text, View, StyleSheet } from "react-native";
+import { Screen, InputFormForUpdate } from "../../components/";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MoreMenuStackParamList, CustomerForm } from "../../types";
-import { useFormInput ,useFetchWithGroupId} from "../../hooks";
+import { useFetchWithGroupId } from "../../hooks";
 import { apiUrl } from "../../config";
+import { useState } from "react";
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "DetailCustomer">;
 
@@ -19,9 +19,7 @@ function DetailCustomerScreen({ route }: Props) {
     const fetchWithGroupId = useFetchWithGroupId();
     const { name, email, phoneNumber } = route.params;
     const { name: locationName, area } = route.params.location;
-    
-
-    const { values, handleChangeValue } = useFormInput<CustomerForm>({
+    const [values, setValues] = useState<typeof inputs>({
         name,
         locationName,
         area,
@@ -29,24 +27,13 @@ function DetailCustomerScreen({ route }: Props) {
         email,
     });
 
-    const isInitialValues =
-        JSON.stringify(values) ===
-        JSON.stringify({
-            name,
-            locationName,
-            area,
-            phoneNumber,
-            email,
-        });
-
-    const btnStyle = isInitialValues ? { backgroundColor: "grey" } : {};
-
-    const handleValidateModifications = () => {
-        const urlRequest = Object.entries(values)
+    const handleValidateModifications = (newValues: Record<string, string>) => {
+        setValues(newValues);
+        const urlRequest = Object.entries(newValues)
             .map(([key, value]) => key + "=" + value)
             .join("&");
 
-            fetchWithGroupId(`${apiUrl}/Customers/${route.params._id}?${urlRequest}`, {
+        fetchWithGroupId(`${apiUrl}/Customers/${route.params._id}?${urlRequest}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -54,45 +41,18 @@ function DetailCustomerScreen({ route }: Props) {
         });
     };
 
-    const Inputs = Object.entries(inputs).map(([key, value]) => {
-        const k = key as keyof CustomerForm;
-        return (
-            <View
-                key={k}
-                style={styles.inputContainer}
-            >
-                <Text>{value}</Text>
-                <Input
-                    value={values[k]}
-                    onChangeText={handleChangeValue(k)}
-                />
-            </View>
-        );
-    });
-
     return (
-        <Screen title="Client" hasHeaderBar>
-            <View style={styles.container}>
-                {Inputs}
-                <Button
-                    title="Valider changements"
-                    onPress={handleValidateModifications}
-                    disable={isInitialValues}
-                    style={btnStyle}
-                />
-            </View>
+        <Screen
+            title="Client"
+            hasHeaderBar
+        >
+            <InputFormForUpdate
+                initialValues={values}
+                inputs={inputs}
+                handleValidateModifications={handleValidateModifications}
+            />
         </Screen>
     );
 }
 
-export {DetailCustomerScreen}
-
-const styles = StyleSheet.create({
-    inputContainer: {
-        marginVertical: 5,
-    },
-    container: {
-        flex: 1,
-        justifyContent: "space-between",
-    },
-});
+export { DetailCustomerScreen };

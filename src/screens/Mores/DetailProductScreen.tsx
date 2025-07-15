@@ -1,0 +1,46 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { InputFormForUpdate, Screen } from "../../components";
+import { MoreMenuStackParamList, Product } from "../../types";
+import { useState } from "react";
+import { apiUrl } from "../../config";
+import { useFetchWithGroupId } from "../../hooks";
+
+type Props = NativeStackScreenProps<MoreMenuStackParamList, "DetailProduct">;
+
+const inputs: Record<keyof Product["product"], string> = {
+    name: "Nom",
+    price: "prix",
+};
+
+const DetailProductScreen = ({ route }: Props) => {
+    const fetchWithGroupId = useFetchWithGroupId()
+    const { name, price } = route.params;
+
+    const [values, setValues] = useState<typeof inputs>({ name, price: price.toString() });
+
+    const handleValidateModifications = (newValues: Record<string, string>) => {
+        setValues(newValues);
+        const urlRequest = Object.entries(newValues)
+            .map(([key, value]) => key + "=" + value)
+            .join("&");
+
+        fetchWithGroupId(`${apiUrl}/products/${route.params._id}?${urlRequest}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+    };
+
+    return (
+        <Screen title="Produit">
+            <InputFormForUpdate
+                initialValues={values}
+                inputs={inputs}
+                handleValidateModifications={handleValidateModifications}
+            />
+        </Screen>
+    );
+};
+
+export { DetailProductScreen };

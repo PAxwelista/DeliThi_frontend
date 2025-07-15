@@ -3,13 +3,21 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MoreMenuStackParamList } from "../../types";
 import { useAppDispatch } from "../../hooks/redux";
 import { setLogin } from "../../reducers/login";
+import { Alert } from "react-native";
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "Menu">;
 
 function MoreMenuScreen({ navigation }: Props) {
     const dispatch = useAppDispatch();
 
-    const deconnexion = () => {
+    const handleClickOnDeconnexion = () => {
+        Alert.alert("Attention", "Voulez vous vraiment vous deconnecter?", [
+            { text: "Non", style: "cancel" },
+            { text: "Oui", onPress: handleDeconnexion },
+        ]);
+    };
+    
+    const handleDeconnexion = () => {
         dispatch(setLogin({ username: "", groupId: "", role: "" }));
     };
 
@@ -17,7 +25,7 @@ function MoreMenuScreen({ navigation }: Props) {
         { title: "Clients", onPress: () => navigation.navigate("Customers") },
         { title: "Statistiques", onPress: () => navigation.navigate("Statistics") },
         { title: "Produits", onPress: () => navigation.navigate("Products") },
-        { title: "Deconnexion", onPress: () => deconnexion() },
+        { title: "Deconnexion", onPress: handleClickOnDeconnexion },
     ];
 
     const Buttons = buttons.map(button => (

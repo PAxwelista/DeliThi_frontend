@@ -1,4 +1,4 @@
-import { Delivery, Order, Customer } from "./";
+import { Delivery, Order, Customer, AvailableProduct } from "./";
 
 export type DeliveriesStackParamList = {
     AllDeliveries: undefined;
@@ -21,6 +21,7 @@ export type MoreMenuStackParamList = {
     DetailCustomer: Customer;
     Statistics: undefined;
     Products: undefined;
+    DetailProduct: AvailableProduct;
 };
 
 export type ConnexionStackParamList = {

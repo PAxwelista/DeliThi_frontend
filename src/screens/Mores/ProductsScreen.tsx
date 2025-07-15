@@ -1,22 +1,34 @@
-import { StyleSheet, View, Modal, Text, TouchableOpacity, ScrollView } from "react-native";
-import { Loading, Screen, Button, Input, Error } from "../../components";
+import { StyleSheet, View, ScrollView } from "react-native";
+import { Loading, Screen, Button, Error } from "../../components";
 import { useFetch, useFetchWithGroupId, useFormInput } from "../../hooks";
 import { apiUrl } from "../../config";
-import { AvailableProduct } from "../../types";
-import { useState } from "react";
+import { AvailableProduct, MoreMenuStackParamList } from "../../types";
+import { useCallback, useState } from "react";
 import { CustomModal } from "../../components/CustomModal";
 import { AddNewProductForm } from "./Components/AddNewProductForm";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useFocusEffect } from "@react-navigation/native";
 
-function ProductsScreen() {
+type Props = NativeStackScreenProps<MoreMenuStackParamList, "Products">;
+
+function ProductsScreen({ navigation }: Props) {
     const { values, handleChangeValue, reset } = useFormInput({ name: "", price: "" });
     const [showModal, setShowModal] = useState<boolean>(false);
     const fecthWithGroupId = useFetchWithGroupId();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const { data, isLoading, refresh } = useFetch(`${apiUrl}/products`);
 
+    useFocusEffect(
+        useCallback(() => {
+            refresh();
+        }, [refresh])
+    );
+
     if (isLoading) return <Loading />;
 
-    const handlePressProduct = () => {};
+    const handlePressProduct = (availableProduct: AvailableProduct) => {
+        navigation.navigate("DetailProduct", availableProduct);
+    };
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -53,7 +65,7 @@ function ProductsScreen() {
         <Button
             key={v._id}
             title={`${v.name} : ${v.price ? v.price + " euros" : "prix non définie"}`}
-            onPress={handlePressProduct}
+            onPress={() => handlePressProduct(v)}
             isListMember
         />
     ));
