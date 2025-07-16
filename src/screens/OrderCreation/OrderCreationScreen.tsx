@@ -1,15 +1,15 @@
 import { Screen, Button, Loading, Error } from "../../components";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal, Text } from "react-native";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
-import {  useFetch ,useFetchWithAuth} from "../../hooks";
+import { useFetch, useFetchWithAuth } from "../../hooks";
 import { apiUrl } from "../../config";
 import ProductManager from "./components/ProductManager";
 import NewCustomerForm from "./components/NewCustomerForm";
 import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../types";
 import { useAppSelector } from "../../hooks/redux";
 import { CustomModal } from "../../components/CustomModal";
-
+import { useFocusEffect } from "@react-navigation/native";
 
 type AutocompleteDropdownController = {
     clear: () => void;
@@ -23,7 +23,7 @@ let inputDropdownCustomerRef: AutocompleteDropdownController;
 
 function OrderCreationScreen() {
     const fetchWithAuth = useFetchWithAuth();
-    const username = useAppSelector(state=>state.login.username)
+    const username = useAppSelector(state => state.login.username);
     const [products, setProducts] = useState<Product[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [message, setMessage] = useState<string>("");
@@ -34,6 +34,7 @@ function OrderCreationScreen() {
         data: availableProducts,
         isLoading: isLoadingProductAvailable,
         error: errorProductAvailable,
+        refresh: refreshProductAvailable,
     } = useFetch(`${apiUrl}/products/`);
 
     const {
@@ -41,7 +42,14 @@ function OrderCreationScreen() {
         isLoading: isLoadingCustomerlist,
         error: errorCustomerList,
         refresh: refreshCustomerlist,
-    } = useFetch(`${apiUrl}/customers/`)
+    } = useFetch(`${apiUrl}/customers/`);
+
+    useFocusEffect(
+        useCallback(() => {
+            refreshCustomerlist();
+            refreshProductAvailable();
+        }, [refreshCustomerlist, refreshProductAvailable])
+    );
 
     const handleOnSelectCustomer = (item: any) => {
         item && setCustomer(customerList.customers?.find((v: Customer) => v._id === item.id));
@@ -100,7 +108,7 @@ function OrderCreationScreen() {
                 },
                 body: JSON.stringify({
                     products: products.map(v => ({ product: v._id, quantity: v.quantity })),
-                    orderer: username, 
+                    orderer: username,
                     customerId: id,
                     area: customer?.location.area,
                 }),
@@ -161,7 +169,9 @@ function OrderCreationScreen() {
                         bounces={false}
                     >
                         <ProductManager
-                            availableProducts={availableProducts?.products}
+                            availableProducts={availableProducts?.products.sort(
+                                (a: AvailableProduct, b: AvailableProduct) => a.name.localeCompare(b.name)
+                            )}
                             products={products}
                             addProduct={handleAddProduct}
                             removeProduct={handleRemoveProduct}
@@ -195,17 +205,18 @@ function OrderCreationScreen() {
                     </ScrollView>
                 </KeyboardAvoidingView>
 
-                <CustomModal visible={showModal} handleCloseModal={handleCloseModal}>
-                <NewCustomerForm
-                            addCustomer={handleAddCustomer}
-                        />
+                <CustomModal
+                    visible={showModal}
+                    handleCloseModal={handleCloseModal}
+                >
+                    <NewCustomerForm addCustomer={handleAddCustomer} />
                 </CustomModal>
             </AutocompleteDropdownContextProvider>
         </Screen>
     );
 }
 
-export {OrderCreationScreen}
+export { OrderCreationScreen };
 
 const styles = StyleSheet.create({
     container: { flex: 1 },

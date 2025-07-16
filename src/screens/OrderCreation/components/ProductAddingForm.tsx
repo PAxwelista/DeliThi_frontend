@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
     },
     pickerElmt: {
-        height: 100,
+        height: 120,
     },
 
     quantityChanger: {
