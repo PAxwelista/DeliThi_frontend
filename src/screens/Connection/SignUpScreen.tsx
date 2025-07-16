@@ -15,7 +15,7 @@ type Props = NativeStackScreenProps<ConnexionStackParamList, "SignUp">;
 const SignUp = ({ navigation }: Props) => {
     const dispatch = useDispatch();
     const [isChecked, setChecked] = useState(false);
-    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJncm91cElkIjoiNjg3Njc5NWY5NzEwZWQyNWRkNDBlNmE5IiwiaWF0IjoxNzUyNjcwNzYyLCJleHAiOjE3NTI2NzQzNjJ9.Srbkoic-O1nAhEB4QvwAHmtE9Gr-3lh8RJFSi-wVSfo" });
+    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", token: "" });
     const [errorMessage, setErrorMessage] = useState<string>("");
 
     const visible: Record<keyof typeof values, boolean> = {

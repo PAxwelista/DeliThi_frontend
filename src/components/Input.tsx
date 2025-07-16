@@ -3,7 +3,10 @@ import { View, TextInput, StyleSheet, TextInputProps } from "react-native";
 export function Input(props: TextInputProps) {
     return (
         <View style={[styles.container, props.style]}>
-            <TextInput {...props} />
+            <TextInput
+                {...props}
+                style={styles.textInput}
+            />
         </View>
     );
 }
@@ -14,6 +17,9 @@ const styles = StyleSheet.create({
         margin: 5,
         paddingHorizontal: 10,
         borderRadius: 10,
-        boxShadow: "-1px -1px 3px black"
+        boxShadow: "-1px -1px 3px black",
+    },
+    textInput: {
+        minHeight: 40,
     },
 });
