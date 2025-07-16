@@ -1,6 +1,6 @@
 import { StyleSheet, View, ScrollView } from "react-native";
 import { Loading, Screen, Button, Error } from "../../components";
-import { useFetch, useFetchWithGroupId, useFormInput } from "../../hooks";
+import { useFetch, useFetchWithAuth, useFormInput } from "../../hooks";
 import { apiUrl } from "../../config";
 import { AvailableProduct, MoreMenuStackParamList } from "../../types";
 import { useCallback, useState } from "react";
@@ -14,7 +14,7 @@ type Props = NativeStackScreenProps<MoreMenuStackParamList, "Products">;
 function ProductsScreen({ navigation }: Props) {
     const { values, handleChangeValue, reset } = useFormInput({ name: "", price: "" });
     const [showModal, setShowModal] = useState<boolean>(false);
-    const fecthWithGroupId = useFetchWithGroupId();
+    const fecthWithAuth = useFetchWithAuth();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const { data, isLoading, refresh } = useFetch(`${apiUrl}/products`);
 
@@ -41,7 +41,7 @@ function ProductsScreen({ navigation }: Props) {
         if (!values.name || !values.price) return setErrorMessage("Veuillez rentrez toutes les informations");
 
         try {
-            const response = await fecthWithGroupId(`${apiUrl}/products`, {
+            const response = await fecthWithAuth(`${apiUrl}/products`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ function ProductsScreen({ navigation }: Props) {
         }
     };
 
-    const products = data?.products.map((v: AvailableProduct) => (
+    const products = data?.products?.map((v: AvailableProduct) => (
         <Button
             key={v._id}
             title={`${v.name} : ${v.price ? v.price + " euros" : "prix non définie"}`}

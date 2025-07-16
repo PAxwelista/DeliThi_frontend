@@ -1,28 +1,32 @@
-import { createSlice ,PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Login } from "../types";
-import type { RootState } from '../../App'
+import type { RootState } from "../store";
 
-const initialState : Login = {
-    username: "" ,
-    groupId: "",
-    role : ""
-} ;
+const initialState: Login = {
+    username: "",
+    token: "",
+    role: "",
+};
 
 export const LoginSlice = createSlice({
     name: "login",
     initialState,
     reducers: {
-        setLogin: (state , action : PayloadAction<Login>) => {
-            state.username = action.payload.username
-            state.groupId = action.payload.groupId
-            state.role = action.payload.role
+        setLogin: (state, action: PayloadAction<Login>) => {
+            state.username = action.payload.username;
+            state.token = action.payload.token;
+            state.role = action.payload.role;
+        },
+        disconnect: state => {
+            state.username = "";
+            state.token = "";
+            state.role = "";
         },
     },
 });
 
-export const { setLogin } = LoginSlice.actions;
+export const { setLogin, disconnect } = LoginSlice.actions;
 
-export const selectCount = (state: RootState) => state.login
-
+export const selectCount = (state: RootState) => state.login;
 
 export default LoginSlice.reducer;

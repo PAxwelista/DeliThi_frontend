@@ -3,7 +3,7 @@ export const useSelector = jest.fn((selectorFn) =>
   selectorFn({
     login: {
       username: "Axel",
-      groupId: "12345",
+      token: "12345",
       role : "admin",
     },
   })

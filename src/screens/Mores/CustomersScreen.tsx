@@ -47,7 +47,7 @@ function CustomersScreen({ navigation }: Props) {
             hasHeaderBar
         >
             <FlatList
-                data={data?.customers.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))}
+                data={data?.customers?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))}
                 renderItem={renderCustomer}
                 keyExtractor={item => item._id}
             />

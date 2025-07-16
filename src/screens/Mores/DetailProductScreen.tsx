@@ -3,7 +3,7 @@ import { InputFormForUpdate, Screen } from "../../components";
 import { MoreMenuStackParamList, Product } from "../../types";
 import { useState } from "react";
 import { apiUrl } from "../../config";
-import { useFetchWithGroupId } from "../../hooks";
+import { useFetchWithAuth } from "../../hooks";
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "DetailProduct">;
 
@@ -13,7 +13,7 @@ const inputs: Record<keyof Product["product"], string> = {
 };
 
 const DetailProductScreen = ({ route }: Props) => {
-    const fetchWithGroupId = useFetchWithGroupId()
+    const fetchWithAuth = useFetchWithAuth()
     const { name, price } = route.params;
 
     const [values, setValues] = useState<typeof inputs>({ name, price: price.toString() });
@@ -24,7 +24,7 @@ const DetailProductScreen = ({ route }: Props) => {
             .map(([key, value]) => key + "=" + value)
             .join("&");
 
-        fetchWithGroupId(`${apiUrl}/products/${route.params._id}?${urlRequest}`, {
+            fetchWithAuth(`${apiUrl}/products/${route.params._id}?${urlRequest}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

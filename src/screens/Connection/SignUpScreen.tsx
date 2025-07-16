@@ -1,41 +1,44 @@
 import { Button, Screen } from "../../components";
 import { StyleSheet, View, Text } from "react-native";
 import { useFormInput } from "../../hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { apiUrl } from "../../config";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList } from "../../types";
 import { InputForm } from "../../components/";
-import Checkbox from "expo-checkbox";
+import { Checkbox } from "expo-checkbox";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignUp">;
 
 const SignUp = ({ navigation }: Props) => {
     const dispatch = useDispatch();
     const [isChecked, setChecked] = useState(false);
-    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", groupId: "" });
+    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJncm91cElkIjoiNjg3Njc5NWY5NzEwZWQyNWRkNDBlNmE5IiwiaWF0IjoxNzUyNjcwNzYyLCJleHAiOjE3NTI2NzQzNjJ9.Srbkoic-O1nAhEB4QvwAHmtE9Gr-3lh8RJFSi-wVSfo" });
     const [errorMessage, setErrorMessage] = useState<string>("");
-
-  
 
     const visible: Record<keyof typeof values, boolean> = {
         username: true,
         password: true,
-        groupId: !isChecked,
+        token: !isChecked,
     };
 
     const labelsFr: Record<keyof typeof values, string> = {
         username: "Nom d'utilisateur",
         password: "Mot de passe",
-        groupId: "ID du groupe",
+        token: "Token de connexion",
+    };
+
+    const handleChangeCheckedStatus = (checked: boolean) => {
+        setChecked(checked);
+        handleChangeValue("token")("");
     };
 
     const handleSignUp = async () => {
         setErrorMessage("");
 
-        if (!values.groupId || !values.password || !values.username)
+        if (!(values.token || isChecked) || !values.password || !values.username)
             return setErrorMessage("Veuillez remplir toutes les infos");
 
         try {
@@ -47,7 +50,9 @@ const SignUp = ({ navigation }: Props) => {
                 body: JSON.stringify(values),
             });
             const json = await response.json();
+            console.log(json)
             if (json.result) {
+                
                 reset();
                 dispatch(setLogin(json.login));
             } else setErrorMessage(json.error);
@@ -75,12 +80,12 @@ const SignUp = ({ navigation }: Props) => {
                         <Checkbox
                             style={styles.checkbox}
                             value={isChecked}
-                            onValueChange={setChecked}
+                            onValueChange={handleChangeCheckedStatus}
                             color={isChecked ? "lightblue" : undefined}
                         />
                         <Text>Créez un nouveau groupe</Text>
                     </View>
-                    {!isChecked && <Text>Si vous voulez rejoindre un groupe, demandez a l'admin l'ID du groupe</Text>}
+                    {!isChecked && <Text>Si vous voulez rejoindre un groupe, demandez a l'admin un token de connexion</Text>}
                     <Button
                         title={"S'inscrire"}
                         onPress={handleSignUp}

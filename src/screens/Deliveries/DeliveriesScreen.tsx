@@ -45,7 +45,7 @@ type Props = NativeStackScreenProps<DeliveriesStackParamList, "AllDeliveries">;
     return (
         <Screen title="Livraisons">
             <FlatList
-                data={data?.deliveries.sort((a: Delivery, b: Delivery) => b.deliveryDate.localeCompare(a.deliveryDate))}
+                data={data?.deliveries?.sort((a: Delivery, b: Delivery) => b.deliveryDate.localeCompare(a.deliveryDate))}
                 renderItem={renderDelivery}
                 keyExtractor={item => item._id}
             />

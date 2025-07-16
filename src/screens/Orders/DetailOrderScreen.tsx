@@ -5,7 +5,7 @@ import { OrderStackParamList, State } from "../../types";
 import { useState } from "react";
 import { apiUrl } from "../../config";
 import { CalculateOrderTotalPrice } from "../../utils";
-import { useFetchWithGroupId } from "../../hooks";
+import { useFetchWithAuth } from "../../hooks";
 
 
 const frenchState = {
@@ -18,7 +18,7 @@ const frenchState = {
 type Props = NativeStackScreenProps<OrderStackParamList, "DetailOrder">;
 
 function DetailOrderScreen({ route }: Props) {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth= useFetchWithAuth();
     const { _id, customer, deliveryDate, creationDate, products, area , amountPaid } = route.params;
 
     const [state, setState] = useState(route.params.state);
@@ -33,7 +33,7 @@ function DetailOrderScreen({ route }: Props) {
     ));
 
     const handleChangeArea = async () => {
-        const response = await fetchWithGroupId(`${apiUrl}/orders/${_id}`, {
+        const response = await fetchWithAuth(`${apiUrl}/orders/${_id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function DetailOrderScreen({ route }: Props) {
     };
 
     const handleCancelledOrder = async () => {
-        const response = await fetchWithGroupId(`${apiUrl}/orders/state`, {
+        const response = await fetchWithAuth(`${apiUrl}/orders/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

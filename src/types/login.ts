@@ -1,1 +1,1 @@
-export type Login =  { username: string; groupId: string; role: string } ;
+export type Login =  { username: string; token: string; role: string } ;

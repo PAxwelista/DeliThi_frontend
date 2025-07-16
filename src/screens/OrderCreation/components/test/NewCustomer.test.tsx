@@ -41,7 +41,6 @@ describe("NewCustomer component", () => {
         render(
             <NewCustomerForm
                 addCustomer={() => {}}
-                closeModal={() => {}}
             />
         );
 
@@ -62,7 +61,6 @@ describe("NewCustomer component", () => {
         render(
             <NewCustomerForm
                 addCustomer={handleAddCustomer}
-                closeModal={() => {}}
             />
         );
 
@@ -90,20 +88,6 @@ describe("NewCustomer component", () => {
         expect(handleAddCustomer).toHaveBeenCalled();
         expect(screen.queryByText("Champ lieu et/ou zone non rempli")).toBeFalsy();
     });
-    it("should call closeModal on click on the exit tab button", () => {
-        const handleCloseModal = jest.fn();
-
-        render(
-            <NewCustomerForm
-                addCustomer={() => {}}
-                closeModal={handleCloseModal}
-            />
-        );
-
-        fireEvent.press(screen.getByText("X"));
-
-        expect(handleCloseModal).toHaveBeenCalled();
-    });
     it("should pass arguments through addCustomer even if the name is empty", () => {
         const placeholders = ["Nom", "Lieu", "Zone", "Téléphone", "Email"];
         const newText = ["", "Here", "42", "", ""];
@@ -113,7 +97,6 @@ describe("NewCustomer component", () => {
         render(
             <NewCustomerForm
                 addCustomer={handleAddCustomer}
-                closeModal={() => {}}
             />
         );
 

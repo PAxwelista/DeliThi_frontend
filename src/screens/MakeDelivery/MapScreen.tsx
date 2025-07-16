@@ -9,7 +9,7 @@ import { Button, Screen, Loading, Error } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
-import { useFetchWithGroupId } from "../../hooks";
+import { useFetchWithAuth } from "../../hooks";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
 
@@ -23,7 +23,7 @@ type Coord = { latitude: number; longitude: number };
 type Coords = [number, number][];
 
 function MapScreen({ navigation }: Props) {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth = useFetchWithAuth();
     const delivery = useDelivery();
 
     const [location, setLocation] = useState<Coord>({ latitude: -1, longitude: -1 });
@@ -71,7 +71,7 @@ function MapScreen({ navigation }: Props) {
     }, [delivery]);
 
     const handleDeliveryFinished = async () => {
-        const response = await fetchWithGroupId(`${apiUrl}/deliveries/state`, {
+        const response = await fetchWithAuth(`${apiUrl}/deliveries/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -89,7 +89,7 @@ function MapScreen({ navigation }: Props) {
 
     async function itiliazeRouteOrder(location: Coord) {
         try {
-            const response = await fetchWithGroupId(`${apiUrl}/direction/order`, {
+            const response = await fetchWithAuth(`${apiUrl}/direction/order`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -127,7 +127,7 @@ function MapScreen({ navigation }: Props) {
 
         try {
             const waypointsCoords = location ? [location, ...(coords ?? [])] : coords ?? [];
-            const response = await fetchWithGroupId(`${apiUrl}/direction`, {
+            const response = await fetchWithAuth(`${apiUrl}/direction`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -156,7 +156,7 @@ function MapScreen({ navigation }: Props) {
     };
 
     const handlePostponeDelivery = async () => {
-        await fetchWithGroupId(`${apiUrl}/orders/state`, {
+        await fetchWithAuth(`${apiUrl}/orders/state`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -167,7 +167,7 @@ function MapScreen({ navigation }: Props) {
             }),
         });
 
-        await fetchWithGroupId(
+        await fetchWithAuth(
             `${apiUrl}/deliveries/${delivery?.delivery?._id}/removeOrder/${delivery?.delivery?.orders[0]?._id}`,
             {
                 method: "PATCH",

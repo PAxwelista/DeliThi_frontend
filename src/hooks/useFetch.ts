@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { useFetchWithGroupId } from "./useFetchWithGroupId";
+import { useFetchWithAuth } from "./useFetchWithAuth";
 
 
 export function useFetch(url: string) {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth = useFetchWithAuth();
     const [data, setData] = useState<any>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>("");
@@ -18,9 +18,12 @@ export function useFetch(url: string) {
         (async () => {
             setIsLoading(true);
             try {
-                const response = await fetchWithGroupId(url);
+                const response = await fetchWithAuth(url);
                 const json = await response.json();
                 setData(json);
+                if (!json.result){
+                    setError(json.error)
+                }
             } catch (err: any) {
                 setError(err.message || "Erreur inconnue");
             } finally {

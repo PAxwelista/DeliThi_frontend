@@ -6,19 +6,19 @@ import { StyleSheet } from "react-native";
 import { CalculateOrderTotalPrice } from "../../utils";
 import { apiUrl } from "../../config";
 import { useDelivery } from "../../context/orderContext";
-import { useFetchWithGroupId } from "../../hooks";
+import { useFetchWithAuth } from "../../hooks";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "DeliverOrder">;
 
 function DeliverOrderScreen({ navigation, route }: Props) {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth = useFetchWithAuth();
     const order = route.params;
     const delivery = useDelivery();
 
     const amountToPaid = CalculateOrderTotalPrice(order);
 
     const handleNextOrder = async () => {
-        await fetchWithGroupId(`${apiUrl}/orders/${order._id}`, {
+        await fetchWithAuth(`${apiUrl}/orders/${order._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

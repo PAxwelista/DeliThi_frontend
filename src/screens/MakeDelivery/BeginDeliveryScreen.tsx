@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { useFetch, useFetchWithGroupId } from "../../hooks";
+import { useFetch, useFetchWithAuth } from "../../hooks";
 import { Screen, Loading, Error, Button } from "../../components";
 import { Text, StyleSheet, ScrollView } from "react-native";
 import { Order, MakeDeliveryStackParamList } from "../../types";
@@ -11,7 +11,7 @@ import { useFocusEffect } from "@react-navigation/native";
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 
 function BeginDeliveryScreen({ navigation }: Props) {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth = useFetchWithAuth();
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders/allAreas`);
 
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -25,13 +25,13 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const delivery = useDelivery();
 
     const handleStartDelivery = async (area: string) => {
-        const actualDeliveryResponse = await fetchWithGroupId(`${apiUrl}/deliveries/actualDelivery`);
+        const actualDeliveryResponse = await fetchWithAuth(`${apiUrl}/deliveries/actualDelivery`);
         const actualDelivery = await actualDeliveryResponse.json();
 
         if (actualDelivery.result) {
             delivery?.setDelivery(actualDelivery.data);
         } else {
-            const orderResponse = await fetchWithGroupId(`${apiUrl}/orders?state=pending&area=${area}`);
+            const orderResponse = await fetchWithAuth(`${apiUrl}/orders?state=pending&area=${area}`);
             const orders = await orderResponse.json();
 
             setErrorMessage("");
@@ -48,7 +48,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
 
             const ordersID = orders.orders.map((order: Order) => order._id);
 
-            const stateChangeResponse = await fetchWithGroupId(`${apiUrl}/orders/state`, {
+            const stateChangeResponse = await fetchWithAuth(`${apiUrl}/orders/state`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -59,7 +59,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 }),
             });
 
-            const deliveriesResponse = await fetchWithGroupId(`${apiUrl}/deliveries`, {
+            const deliveriesResponse = await fetchWithAuth(`${apiUrl}/deliveries`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -71,7 +71,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
 
             const deliveryData = await deliveriesResponse.json();
 
-            await fetchWithGroupId(`${apiUrl}/deliveries/state`, {
+            await fetchWithAuth(`${apiUrl}/deliveries/state`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -90,7 +90,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
         navigation.navigate("PrepareDelivery");
     };
 
-    const Areas = data?.areas.map((area: string) => (
+    const Areas = data?.areas?.map((area: string) => (
         <Button
             key={area}
             title={area}

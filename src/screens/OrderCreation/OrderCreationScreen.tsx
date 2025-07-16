@@ -2,7 +2,7 @@ import { Screen, Button, Loading, Error } from "../../components";
 import { useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal, Text } from "react-native";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
-import {  useFetch ,useFetchWithGroupId} from "../../hooks";
+import {  useFetch ,useFetchWithAuth} from "../../hooks";
 import { apiUrl } from "../../config";
 import ProductManager from "./components/ProductManager";
 import NewCustomerForm from "./components/NewCustomerForm";
@@ -22,7 +22,7 @@ type AutocompleteDropdownController = {
 let inputDropdownCustomerRef: AutocompleteDropdownController;
 
 function OrderCreationScreen() {
-    const fetchWithGroupId = useFetchWithGroupId();
+    const fetchWithAuth = useFetchWithAuth();
     const username = useAppSelector(state=>state.login.username)
     const [products, setProducts] = useState<Product[]>([]);
     const [errorMessage, setErrorMessage] = useState<string>("");
@@ -41,7 +41,7 @@ function OrderCreationScreen() {
         isLoading: isLoadingCustomerlist,
         error: errorCustomerList,
         refresh: refreshCustomerlist,
-    } = useFetch(`${apiUrl}/customers/`);
+    } = useFetch(`${apiUrl}/customers/`)
 
     const handleOnSelectCustomer = (item: any) => {
         item && setCustomer(customerList.customers?.find((v: Customer) => v._id === item.id));
@@ -84,7 +84,7 @@ function OrderCreationScreen() {
             return;
         }
 
-        const response = await fetchWithGroupId(`${apiUrl}/orders?state=pending`);
+        const response = await fetchWithAuth(`${apiUrl}/orders?state=pending`);
         const data = await response.json();
 
         if (data.orders.some((order: Order) => order.customer._id === id)) {
@@ -93,7 +93,7 @@ function OrderCreationScreen() {
         }
 
         try {
-            const response = await fetchWithGroupId(`${apiUrl}/orders`, {
+            const response = await fetchWithAuth(`${apiUrl}/orders`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -128,7 +128,7 @@ function OrderCreationScreen() {
 
     async function AddnewCustomer(customerInfos: CustomerForm): Promise<Customer | undefined> {
         try {
-            const response = await fetchWithGroupId(`${apiUrl}/customers`, {
+            const response = await fetchWithAuth(`${apiUrl}/customers`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
