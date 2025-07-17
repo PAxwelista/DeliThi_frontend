@@ -71,6 +71,7 @@ function OrderCreationScreen() {
                           },
                           quantity,
                           _id: id || "",
+                          group: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.group || "",
                       },
                   ]
         );
@@ -169,7 +170,7 @@ function OrderCreationScreen() {
                         bounces={false}
                     >
                         <ProductManager
-                            availableProducts={availableProducts?.products.sort(
+                            availableProducts={availableProducts?.products?.sort(
                                 (a: AvailableProduct, b: AvailableProduct) => a.name.localeCompare(b.name)
                             )}
                             products={products}

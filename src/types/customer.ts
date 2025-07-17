@@ -4,4 +4,5 @@ export type Customer = {
     phoneNumber: string;
     location: { name: string; area: string; longitude: number; latitude: number };
     email: string
+    group:string
 };

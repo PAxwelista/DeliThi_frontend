@@ -4,7 +4,6 @@ import { Order, State, OrderStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
-import React from "react";
 import { apiUrl } from "../../config";
 import { Loading, Error, Button, Screen } from "../../components";
 
@@ -14,7 +13,6 @@ const colorState = { pending: "#D5FFC4", processing: "#C4ECFF", delivered: "#D5D
 
 function OrdersScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders`);
-
     useFocusEffect(
         useCallback(() => {
             refresh();

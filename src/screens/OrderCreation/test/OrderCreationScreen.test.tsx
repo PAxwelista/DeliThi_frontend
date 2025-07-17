@@ -36,6 +36,12 @@ import { useFetch } from "../../../hooks";
 
 import {OrderCreationScreen} from "../../";
 
+jest.mock('@react-navigation/native', () => ({
+    ...jest.requireActual('@react-navigation/native'),
+    useFocusEffect: jest.fn(),
+  }));
+
+
 const mockLoadingData = {
     data: null,
     isLoading: true,

@@ -13,6 +13,11 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
     const [quantity, setQuantity] = useState<number>(1);
     const [selectedProductId, setSelectedProductId] = useState<string>("");
 
+    const handleAddProduct = (selectedProductId : string, quantity : number) => {
+        if (!selectedProductId) return 
+        addProduct(selectedProductId, quantity);
+    };
+
     useEffect(() => {
         availableProducts && setSelectedProductId(availableProducts[0]?._id);
     }, [availableProducts]);
@@ -57,7 +62,7 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
             </View>
             <Button
                 title="Ajouter"
-                onPress={() => addProduct(selectedProductId, quantity)}
+                onPress={() => handleAddProduct(selectedProductId, quantity)}
             />
         </View>
     );
@@ -71,9 +76,8 @@ const styles = StyleSheet.create({
     picker: {
         backgroundColor: "lightgrey",
         borderRadius: 10,
-        margin:2,
-        boxShadow: "1px 1px 1px black"
-
+        margin: 2,
+        boxShadow: "1px 1px 1px black",
     },
     pickerElmt: {
         height: 120,

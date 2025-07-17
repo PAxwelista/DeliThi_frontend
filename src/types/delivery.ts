@@ -5,4 +5,5 @@ export type Delivery = {
     orders: Order[];
     deliveryDate: string;
     state: string;
+    group:string
 };
