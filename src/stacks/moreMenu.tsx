@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MoreMenuStackParamList } from "../types";
-import { CustomersScreen, DetailCustomerScreen, MoreMenuScreen, ProductsScreen, StatisticsScreen } from "../screens";
+import { CustomersScreen, DetailCustomerScreen, MoreMenuScreen, ProductsScreen, StatisticsScreen ,CustomersMapScreen } from "../screens";
 import { headerReturnTab } from "./config";
 import { DetailProductScreen } from "../screens/Mores/DetailProductScreen";
 
@@ -17,6 +17,11 @@ const MoreMenu = () => {
             <MoreMenuStack.Screen
                 name="Customers"
                 component={CustomersScreen}
+                options={headerReturnTab}
+            />
+            <MoreMenuStack.Screen
+                name="CustomersMap"
+                component={CustomersMapScreen}
                 options={headerReturnTab}
             />
             <MoreMenuStack.Screen

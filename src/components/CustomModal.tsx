@@ -1,15 +1,15 @@
-import { View, StyleSheet, TouchableOpacity, Text, Modal } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, Modal, ViewStyle } from "react-native";
 
-type Props = { children: React.ReactNode; visible: boolean; handleCloseModal: () => void };
+type Props = { children: React.ReactNode; visible: boolean; handleCloseModal: () => void; style?: ViewStyle };
 
-const CustomModal = ({ children, visible, handleCloseModal }: Props) => {
+const CustomModal = ({ children, visible, handleCloseModal, style }: Props) => {
     return (
         <Modal
             transparent
             visible={visible}
             animationType="slide"
         >
-            <View style={styles.modal}>
+            <View style={[styles.modal,style]}>
                 <View style={styles.closeBtnContainer}>
                     <TouchableOpacity
                         style={styles.closeBtn}

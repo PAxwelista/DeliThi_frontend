@@ -1,4 +1,5 @@
 export * from "./Mores/CustomersScreen";
+export * from "./Mores/CustomersMapScreen";
 export * from "./Mores/DetailCustomerScreen";
 export * from "./Mores/MoreMenuScreen";
 export * from "./Mores/ProductsScreen";
@@ -14,4 +15,5 @@ export * from "./Connection/SignUpScreen";
 export * from "./Deliveries/DetailDeliveryScreen";
 export * from "./MakeDelivery/DeliverOrderScreen";
 export * from "./Deliveries/DeliveriesScreen";
+
 
