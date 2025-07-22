@@ -28,11 +28,15 @@ function CustomersScreen({ navigation }: Props) {
 
     const renderCustomer = ({ item }: ItemCustomer) => {
         const title = item.name === item.location.name ? item.name : `${item.name} / ${item.location.name}`;
+        const hasLatAndLong = item.location.latitude && item.location.longitude;
+        const style = !hasLatAndLong ? { backgroundColor: "red" } : {};
+
         return (
             <Button
                 title={title}
                 onPress={() => handlePressDeliveries(item)}
                 isListMember
+                style={style}
             />
         );
     };
@@ -55,4 +59,4 @@ function CustomersScreen({ navigation }: Props) {
     );
 }
 
-export {CustomersScreen}
+export { CustomersScreen };
