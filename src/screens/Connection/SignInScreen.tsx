@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList } from "../../types";
+import {PasswordInput} from "../../components/PasswordInput";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignIn">;
 
@@ -48,11 +49,10 @@ const SignIn = ({ navigation }: Props) => {
                         placeholder="Nom d'utilisateur"
                         {...username}
                     />
-                    <Input
+                    <PasswordInput
                         placeholder="Mot de passe"
                         {...password}
-                        secureTextEntry
-                        autoCapitalize="none"
+                        
                     />
                     <Button
                         title={"Se connecter"}

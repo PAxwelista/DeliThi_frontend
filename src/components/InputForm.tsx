@@ -1,4 +1,5 @@
 import { Input } from "./Input";
+import {PasswordInput} from "./PasswordInput";
 
 const InputForm = ({
     values,
@@ -12,16 +13,21 @@ const InputForm = ({
     visible: Record<string, boolean>;
 }) => {
     return (Object.keys(values) as (keyof typeof values)[]).map(key => {
-        return (visible[key] && 
+        return (visible[key] && (key === "password" ? (
+            <PasswordInput
+                key={key}
+                placeholder={labelsFr[key]}
+                value={values[key]}
+                onChangeText={handleChangeValue(key)}
+            />
+        ) : (
             <Input
                 key={key}
                 placeholder={labelsFr[key]}
                 value={values[key]}
                 onChangeText={handleChangeValue(key)}
-                secureTextEntry={key === "password"}
-                autoCapitalize={key === "password" ? "none" : undefined}
             />
-        );
+        )));
     });
 };
 

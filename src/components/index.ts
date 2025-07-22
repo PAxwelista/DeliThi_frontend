@@ -6,3 +6,4 @@ export * from "./Screen";
 export * from "./InputForm";
 export * from "./CustomModal";
 export * from "./InputFormForUpdate";
+export * from "./PasswordInput"
