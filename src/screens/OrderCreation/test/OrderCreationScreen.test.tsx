@@ -30,16 +30,21 @@ jest.mock("react-native-autocomplete-dropdown", () => {
 
 jest.mock('react-redux');
 
+jest.mock('@react-navigation/native', () => ({
+    ...jest.requireActual('@react-navigation/native'),
+    useFocusEffect: jest.fn(),
+  }));
+
+jest.mock("../../../hooks/useFetch");
+
+
+
+
 import { render, screen, fireEvent, waitFor } from "@testing-library/react-native";
 
 import { useFetch } from "../../../hooks";
 
 import {OrderCreationScreen} from "../../";
-
-jest.mock('@react-navigation/native', () => ({
-    ...jest.requireActual('@react-navigation/native'),
-    useFocusEffect: jest.fn(),
-  }));
 
 
 const mockLoadingData = {
@@ -72,7 +77,7 @@ const mockCustomerList = {
     isLoading: false,
 };
 
-jest.mock("../../../hooks/useFetch");
+
 
 const mockedUseFetch = useFetch as jest.Mock;
 

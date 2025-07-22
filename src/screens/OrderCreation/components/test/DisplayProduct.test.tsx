@@ -4,10 +4,11 @@ import { Product } from "../../../../types";
 
 import DisplayProducts from "../DisplayProducts";
 
+
 describe("DisplayProdcuts component", () => {
     const products: Product[] = [
-        { _id: "1", product: { name: "Carotte" , price : 2 }, quantity: 3 },
-        { _id: "2", product: { name: "Tomate" , price : 5}, quantity: 4 },
+        { _id: "1", product: { name: "Carotte" , price : 2 }, quantity: 3 ,group:""},
+        { _id: "2", product: { name: "Tomate" , price : 5}, quantity: 4 ,group:""},
     ];
 
     it("should show products pass in props", () => {

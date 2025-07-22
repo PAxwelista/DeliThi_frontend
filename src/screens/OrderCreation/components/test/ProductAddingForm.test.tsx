@@ -1,11 +1,12 @@
 import { render, screen, fireEvent } from "@testing-library/react-native";
 
 import ProductAddingForm from "../ProductAddingForm";
+import { Input } from "../../../../components";
 
 describe("ProductAddingForm component", () => {
     const productsAvailable = [
-        { _id: "1", name: "Carottes" , price : 3 },
-        { _id: "2", name: "Tomates" , price : 2 },
+        { _id: "1", name: "Carottes", price: 3 },
+        { _id: "2", name: "Tomates", price: 2 },
     ];
 
     it("should change the quantity value while clicking on + and - button", () => {

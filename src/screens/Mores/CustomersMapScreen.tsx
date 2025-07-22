@@ -67,6 +67,7 @@ const CustomersMapScreen = ({ navigation }: Props) => {
         <Screen
             style={styles.container}
             title="Carte clients"
+            hasHeaderBar
         >
             <MapView
                 initialRegion={{

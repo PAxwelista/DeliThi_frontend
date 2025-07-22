@@ -3,7 +3,7 @@ import { Screen } from "../../components";
 
 function StatisticsScreen() {
     return (
-        <Screen>
+        <Screen title='Statistiques' hasHeaderBar>
             <Text>Stat screen</Text>
         </Screen>
     );
