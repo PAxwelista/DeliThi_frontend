@@ -19,7 +19,13 @@ export function useFetch(url: string) {
             setIsLoading(true);
             try {
                 const response = await fetchWithAuth(url);
+                if(response.status === 304) return 
+
+
                 const json = await response.json();
+
+                
+
                 setData(json);
                 if (!json.result){
                     setError(json.error)
