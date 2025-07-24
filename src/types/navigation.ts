@@ -23,6 +23,11 @@ export type MoreMenuStackParamList = {
     Statistics: undefined;
     Products: undefined;
     DetailProduct: AvailableProduct;
+    CustomersStat:undefined;
+    OrdersStatForm:undefined;
+    OrdersStatResult:{orders:Order[],filters:{ beginAt: string, endAt:string, area: string, product: string }};
+    ProductsStat:undefined;
+
 };
 
 export type ConnexionStackParamList = {

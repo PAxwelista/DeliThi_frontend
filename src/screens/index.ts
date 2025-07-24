@@ -3,7 +3,11 @@ export * from "./Mores/CustomersMapScreen";
 export * from "./Mores/DetailCustomerScreen";
 export * from "./Mores/MoreMenuScreen";
 export * from "./Mores/ProductsScreen";
-export * from "./Mores/StatisticsScreen";
+export * from "./Statistics/StatisticsScreen";
+export * from "./Statistics/CustomersStatScreen"
+export * from "./Statistics/OrdersStatFormScreen"
+export * from "./Statistics/OrdersStatResultScreen"
+export * from "./Statistics/ProductsStatScreen"
 export * from "./OrderCreation/OrderCreationScreen";
 export * from "./Orders/DetailOrderScreen";
 export * from "./Orders/OrdersScreen";
@@ -15,5 +19,6 @@ export * from "./Connection/SignUpScreen";
 export * from "./Deliveries/DetailDeliveryScreen";
 export * from "./MakeDelivery/DeliverOrderScreen";
 export * from "./Deliveries/DeliveriesScreen";
+
 
 

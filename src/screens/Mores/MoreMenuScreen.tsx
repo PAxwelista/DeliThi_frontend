@@ -43,7 +43,7 @@ function MoreMenuScreen({ navigation }: Props) {
     const buttons = [
         { title: "Clients", onPress: () => navigation.navigate("Customers") },
         { title: "Carte Clients", onPress: () => navigation.navigate("CustomersMap") },
-        { title: "Statistiques", onPress: () => navigation.navigate("Statistics") },
+        { title: "Statistiques", onPress: () => navigation.navigate("OrdersStatForm") },
         { title: "Produits", onPress: () => navigation.navigate("Products") },
         ...(role === "admin" ? [{ title: "Partage token de connexion", onPress: handleShareGroupToken }] : []),
         { title: "Deconnexion", onPress: handleClickOnDeconnexion },
