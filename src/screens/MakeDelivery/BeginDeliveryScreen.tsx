@@ -25,12 +25,18 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const delivery = useDelivery();
 
     const handleStartDelivery = async (area: string) => {
+        setErrorMessage("")
+
         const actualDeliveryResponse = await fetchWithAuth(`${apiUrl}/deliveries/actualDelivery`);
         const actualDelivery = await actualDeliveryResponse.json();
 
+        if (actualDelivery.result && actualDelivery.data.orders[0].area != area)
+            return setErrorMessage(`Une autre zone est déjà en cours de livraison : ${actualDelivery.data.orders[0].area}`)
+
         if (actualDelivery.result) {
             delivery?.setDelivery(actualDelivery.data);
-        } else {
+        }
+        else {
             const orderResponse = await fetchWithAuth(`${apiUrl}/orders?state=pending&area=${area}`);
             const orders = await orderResponse.json();
 
