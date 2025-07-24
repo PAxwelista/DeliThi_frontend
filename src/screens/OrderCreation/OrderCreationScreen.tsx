@@ -165,10 +165,7 @@ function OrderCreationScreen() {
                     style={styles.container}
                     behavior="padding"
                 >
-                    <ScrollView
-                        contentContainerStyle={styles.globalScroll}
-                        bounces={false}
-                    >
+                    <View style={styles.productMng}>
                         <ProductManager
                             availableProducts={availableProducts?.products?.sort(
                                 (a: AvailableProduct, b: AvailableProduct) => a.name.localeCompare(b.name)
@@ -177,33 +174,33 @@ function OrderCreationScreen() {
                             addProduct={handleAddProduct}
                             removeProduct={handleRemoveProduct}
                         />
+                    </View>
 
-                        <View style={styles.customer}>
-                            <AutocompleteDropdown
-                                dataSet={customerList?.customers
-                                    ?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))
-                                    .map((v: Customer) => ({ id: v._id, title: v.name }))}
-                                onSelectItem={handleOnSelectCustomer}
-                                clearOnFocus={false}
-                                EmptyResultComponent={<View></View>}
-                                textInputProps={{ placeholder: "Nom" }}
-                                controller={functions => (inputDropdownCustomerRef = functions)}
-                                containerStyle={styles.autocompleteStyle}
-                            />
-
-                            <Button
-                                title="Ajouter un client"
-                                onPress={() => setShowModal(true)}
-                                style={styles.button}
-                            />
-                        </View>
-                        {errorMessage && <Error err={errorMessage} />}
-                        {message && <Text>{message}</Text>}
-                        <Button
-                            title="Valider commande"
-                            onPress={handleValidateOrder}
+                    <View style={styles.customer}>
+                        <AutocompleteDropdown
+                            dataSet={customerList?.customers
+                                ?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))
+                                .map((v: Customer) => ({ id: v._id, title: v.name }))}
+                            onSelectItem={handleOnSelectCustomer}
+                            clearOnFocus={false}
+                            EmptyResultComponent={<View></View>}
+                            textInputProps={{ placeholder: "Nom" }}
+                            controller={functions => (inputDropdownCustomerRef = functions)}
+                            containerStyle={styles.autocompleteStyle}
                         />
-                    </ScrollView>
+
+                        <Button
+                            title="Ajouter un client"
+                            onPress={() => setShowModal(true)}
+                            style={styles.button}
+                        />
+                    </View>
+                    {errorMessage && <Error err={errorMessage} />}
+                    {message && <Text>{message}</Text>}
+                    <Button
+                        title="Valider commande"
+                        onPress={handleValidateOrder}
+                    />
                 </KeyboardAvoidingView>
 
                 <CustomModal
@@ -226,7 +223,7 @@ const styles = StyleSheet.create({
     },
 
     customer: {
-        flex: 3,
+        flex: 2,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
@@ -251,5 +248,9 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: "white",
         borderWidth: 1,
+    },
+    productMng: {
+        flex: 8,
+        justifyContent:"center",
     },
 });
