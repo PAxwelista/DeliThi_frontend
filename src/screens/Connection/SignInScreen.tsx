@@ -8,6 +8,7 @@ import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList } from "../../types";
 import {PasswordInput} from "../../components/PasswordInput";
+import { saveSecureStore } from "../../utils";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignIn">;
 
@@ -29,6 +30,7 @@ const SignIn = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
+                await saveSecureStore("refreshToken" , json.login.refreshToken)
                 dispatch(setLogin(json.login));
             } else setErrorMessage(json.error);
         } catch (error) {

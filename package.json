@@ -26,6 +26,7 @@
         "expo-checkbox": "^4.1.4",
         "expo-constants": "~17.1.7",
         "expo-location": "~18.1.6",
+        "expo-secure-store": "^14.2.3",
         "expo-status-bar": "^2.2.3",
         "expo-updates": "~0.28.17",
         "react": "19.0.0",

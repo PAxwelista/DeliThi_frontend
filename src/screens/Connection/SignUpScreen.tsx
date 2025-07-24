@@ -50,7 +50,6 @@ const SignUp = ({ navigation }: Props) => {
                 body: JSON.stringify(values),
             });
             const json = await response.json();
-            console.log(json)
             if (json.result) {
                 
                 reset();

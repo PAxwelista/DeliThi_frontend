@@ -14,7 +14,6 @@ export const LoginSlice = createSlice({
     reducers: {
         setLogin: (state, action: PayloadAction<Login>) => {
             state.username = action.payload.username;
-            console.log(action.payload.token)
             state.token = action.payload.token;
             state.role = action.payload.role;
         },
@@ -23,10 +22,13 @@ export const LoginSlice = createSlice({
             state.token = "";
             state.role = "";
         },
+        setAccessToken :(state, action: PayloadAction<string>) => {
+            state.token = action.payload;
+        },
     },
 });
 
-export const { setLogin, disconnect } = LoginSlice.actions;
+export const { setLogin, disconnect ,setAccessToken} = LoginSlice.actions;
 
 export const selectCount = (state: RootState) => state.login;
 

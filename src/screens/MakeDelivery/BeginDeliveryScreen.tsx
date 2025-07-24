@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useFetch, useFetchWithAuth } from "../../hooks";
 import { Screen, Loading, Error, Button } from "../../components";
-import { Text, StyleSheet, ScrollView } from "react-native";
+import { Text, ScrollView } from "react-native";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
@@ -120,12 +120,3 @@ function BeginDeliveryScreen({ navigation }: Props) {
 }
 
 export {BeginDeliveryScreen}
-
-const styles = StyleSheet.create({
-    area: {
-        padding: 20,
-        margin: 10,
-        borderRadius: 10,
-        backgroundColor: "lightgrey",
-    },
-});
