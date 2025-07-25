@@ -1,5 +1,5 @@
-import { Button, Screen } from "../../components";
-import { StyleSheet, View, Text } from "react-native";
+import { Button, Screen, Text } from "../../components";
+import { StyleSheet, View } from "react-native";
 import { useFormInput } from "../../hooks";
 import { useState } from "react";
 import { apiUrl } from "../../config";
@@ -51,7 +51,6 @@ const SignUp = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
-                
                 reset();
                 dispatch(setLogin(json.login));
             } else setErrorMessage(json.error);
@@ -84,7 +83,9 @@ const SignUp = ({ navigation }: Props) => {
                         />
                         <Text>Créez un nouveau groupe</Text>
                     </View>
-                    {!isChecked && <Text>Si vous voulez rejoindre un groupe, demandez a l'admin un token de connexion</Text>}
+                    {!isChecked && (
+                        <Text>Si vous voulez rejoindre un groupe, demandez a l'admin un token de connexion</Text>
+                    )}
                     <Button
                         title={"S'inscrire"}
                         onPress={handleSignUp}

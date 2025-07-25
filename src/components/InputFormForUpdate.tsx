@@ -1,7 +1,8 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Button } from "./Button";
 import { Input } from "./Input";
 import { useFormInput } from "../hooks";
+import { Text } from "./Text";
 
 type Props = {
     initialValues: Record<string, string>;

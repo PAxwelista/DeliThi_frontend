@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet,TextStyle ,ViewStyle} from "react-native";
+import { View, StyleSheet,TextStyle ,ViewStyle} from "react-native";
+import { Text } from "../components/Text";
 
 type Prop = {
     err: string,

@@ -1,5 +1,5 @@
-import { Input, Button, Screen } from "../../components";
-import { StyleSheet, Text, View } from "react-native";
+import { Input, Button, Screen, PasswordInput, Text } from "../../components";
+import { StyleSheet, View } from "react-native";
 import { useInput } from "../../hooks";
 import { useState } from "react";
 import { apiUrl } from "../../config";
@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList } from "../../types";
-import {PasswordInput} from "../../components/PasswordInput";
 import { saveSecureStore } from "../../utils";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignIn">;
@@ -30,7 +29,7 @@ const SignIn = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
-                await saveSecureStore("refreshToken" , json.login.refreshToken)
+                await saveSecureStore("refreshToken", json.login.refreshToken);
                 dispatch(setLogin(json.login));
             } else setErrorMessage(json.error);
         } catch (error) {
@@ -54,7 +53,6 @@ const SignIn = ({ navigation }: Props) => {
                     <PasswordInput
                         placeholder="Mot de passe"
                         {...password}
-                        
                     />
                     <Button
                         title={"Se connecter"}

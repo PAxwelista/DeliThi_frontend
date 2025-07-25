@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Button, CustomPicker, Error, Loading, Screen } from "../../components";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, CustomPicker, Error, Loading, Screen, Text } from "../../components";
+import { StyleSheet, View } from "react-native";
 import CalendarPicker from "react-native-calendar-picker";
 import { useFetch, useFetchWithAuth } from "../../hooks";
 import { apiUrl } from "../../config";
 import { AvailableProduct, MoreMenuStackParamList } from "../../types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { GlobalStyles } from "../../styles/global";
 
 type rangeDate = { minDate: Date | undefined; maxDate: Date | undefined };
 
@@ -89,6 +90,7 @@ const OrdersStatFormScreen = ({ navigation }: Props) => {
                     selectMonthTitle={"Selectionnez le mois en "}
                     selectYearTitle="Selectionnez l'année"
                     scaleFactor={450}
+                    textStyle={GlobalStyles.globalFontFamily}
                 />
             </View>
             <View style={styles.pickerContainer}>
@@ -131,5 +133,5 @@ const styles = StyleSheet.create({
     },
     calendar: {
         flex: 3,
-    },
+    }
 });

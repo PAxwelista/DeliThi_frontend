@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Screen, CustomPicker, Button } from "../../components";
-import { Text } from "react-native";
+import { Screen, Button } from "../../components";
 import { MoreMenuStackParamList } from "../../types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ViewStyle } from "react-native";
+import { GlobalStyles } from "../styles/global";
 import DropDownPicker from "react-native-dropdown-picker";
 
 type Props = {
@@ -20,6 +20,7 @@ const CustomPicker = ({ values, selectedValue, setSelectedValue, placeholder }: 
             setValue={setSelectedValue}
             placeholder={placeholder}
             zIndex={open ? 2000 : 10}
+            textStyle={GlobalStyles.globalFontFamily}
         />
     );
 };

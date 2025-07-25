@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Screen } from "../../components";
+import { StyleSheet } from "react-native";
+import { Screen, Text } from "../../components";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MoreMenuStackParamList, Order } from "../../types";
 
@@ -23,24 +23,25 @@ const OrdersStatResultScreen = ({ route }: Props) => {
         </Text>
     ));
 
-
     const TotalProductSell = Object.entries(
         orders.reduce<Record<string, number>>((acc, order) => {
             order.products
                 .map(product => ({ product: product.product.name, qty: product.quantity }))
-                .forEach(v => (acc[v.product] ? acc[v.product] += v.qty : acc[v.product] = v.qty));
+                .forEach(v => (acc[v.product] ? (acc[v.product] += v.qty) : (acc[v.product] = v.qty)));
 
             return acc;
         }, {})
     ).map(v => (
         <Text key={v[0]}>
-            {"      "}{v[0]} : {v[1]}
+            {"      "}
+            {v[0]} : {v[1]}
         </Text>
     ));
 
-    const nbOfClients = (orders : Order[])=>{
-        return orders.filter((order,i,orders)=>orders.findIndex(v=>v.customer._id === order.customer._id) ===i ).length
-    }
+    const nbOfClients = (orders: Order[]) => {
+        return orders.filter((order, i, orders) => orders.findIndex(v => v.customer._id === order.customer._id) === i)
+            .length;
+    };
 
     return (
         <Screen title="Statistiques Commandes">

@@ -1,6 +1,5 @@
 import { useFetch } from "../../hooks";
-import { Screen, Button, Loading } from "../../components";
-import { Text } from "react-native";
+import { Screen, Button, Loading, Text } from "../../components";
 import { TotalProduct, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
@@ -36,4 +35,4 @@ function PrepareDeliveryScreen({ navigation }: Props) {
     );
 }
 
-export {PrepareDeliveryScreen}
+export { PrepareDeliveryScreen };

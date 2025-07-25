@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useFetch, useFetchWithAuth } from "../../hooks";
-import { Screen, Loading, Error, Button } from "../../components";
-import { Text, ScrollView } from "react-native";
+import { Screen, Loading, Error, Button, Text } from "../../components";
+import { ScrollView } from "react-native";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
@@ -25,18 +25,19 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const delivery = useDelivery();
 
     const handleStartDelivery = async (area: string) => {
-        setErrorMessage("")
+        setErrorMessage("");
 
         const actualDeliveryResponse = await fetchWithAuth(`${apiUrl}/deliveries/actualDelivery`);
         const actualDelivery = await actualDeliveryResponse.json();
 
         if (actualDelivery.result && actualDelivery.data.orders[0].area != area)
-            return setErrorMessage(`Une autre zone est déjà en cours de livraison : ${actualDelivery.data.orders[0].area}`)
+            return setErrorMessage(
+                `Une autre zone est déjà en cours de livraison : ${actualDelivery.data.orders[0].area}`
+            );
 
         if (actualDelivery.result) {
             delivery?.setDelivery(actualDelivery.data);
-        }
-        else {
+        } else {
             const orderResponse = await fetchWithAuth(`${apiUrl}/orders?state=pending&area=${area}`);
             const orders = await orderResponse.json();
 
@@ -119,4 +120,4 @@ function BeginDeliveryScreen({ navigation }: Props) {
     );
 }
 
-export {BeginDeliveryScreen}
+export { BeginDeliveryScreen };

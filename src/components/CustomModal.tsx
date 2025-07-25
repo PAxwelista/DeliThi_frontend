@@ -1,4 +1,5 @@
-import { View, StyleSheet, TouchableOpacity, Text, Modal, ViewStyle } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Modal, ViewStyle } from "react-native";
+import { Text } from "../components/Text";
 
 type Props = { children: React.ReactNode; visible: boolean; handleCloseModal: () => void; style?: ViewStyle };
 
@@ -9,7 +10,7 @@ const CustomModal = ({ children, visible, handleCloseModal, style }: Props) => {
             visible={visible}
             animationType="slide"
         >
-            <View style={[styles.modal,style]}>
+            <View style={[styles.modal, style]}>
                 <View style={styles.closeBtnContainer}>
                     <TouchableOpacity
                         style={styles.closeBtn}

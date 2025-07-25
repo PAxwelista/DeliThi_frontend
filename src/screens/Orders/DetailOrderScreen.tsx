@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, Alert } from "react-native";
-import { Screen, Button, Input } from "../../components";
+import { View, StyleSheet, Alert } from "react-native";
+import { Screen, Button, Input,Text } from "../../components";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { OrderStackParamList, State } from "../../types";
 import { useState } from "react";

@@ -10,6 +10,7 @@
         "test": "jest"
     },
     "dependencies": {
+        "@expo-google-fonts/sora": "^0.4.1",
         "@fortawesome/fontawesome-svg-core": "^6.7.2",
         "@fortawesome/free-solid-svg-icons": "^6.7.2",
         "@fortawesome/react-fontawesome": "^0.2.2",
@@ -25,8 +26,10 @@
         "expo": "53.0.19",
         "expo-checkbox": "^4.1.4",
         "expo-constants": "~17.1.7",
+        "expo-font": "^13.3.2",
         "expo-location": "~18.1.6",
         "expo-secure-store": "^14.2.3",
+        "expo-splash-screen": "^0.30.10",
         "expo-status-bar": "^2.2.3",
         "expo-updates": "~0.28.17",
         "react": "19.0.0",

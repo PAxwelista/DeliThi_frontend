@@ -3,10 +3,16 @@ import { useAppSelector } from "./src/hooks/redux";
 import { Store } from "./src/store";
 import { Main } from "./src/stacks/main";
 import { Connexion } from "./src/stacks";
+import { FontInit } from "./src/fontInit";
 
 const Navigation = () => {
     const loginInfos = useAppSelector(state => state.login);
-    return <NavigationContainer>{loginInfos.username ? <Main /> : <Connexion />}</NavigationContainer>;
+
+    return (
+        <FontInit>
+            <NavigationContainer>{loginInfos.username ? <Main /> : <Connexion />}</NavigationContainer>
+        </FontInit>
+    );
 };
 
 export default function App() {

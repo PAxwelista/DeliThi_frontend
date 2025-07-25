@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Button, CustomModal } from "../../../components";
+import { View, StyleSheet } from "react-native";
+import { Button, CustomModal, Text } from "../../../components";
 import { Customer, MoreMenuStackParamList } from "../../../types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -10,10 +10,10 @@ type Props = {
     setIsVisible: (v: boolean) => void;
 };
 
-const CustomerInfosMap = ({ navigate, customer,visible,setIsVisible }: Props) => {
+const CustomerInfosMap = ({ navigate, customer, visible, setIsVisible }: Props) => {
     const handleGoToUpdatePage = () => {
         customer && navigate("DetailCustomer", customer);
-        setIsVisible(false)
+        setIsVisible(false);
     };
 
     return (

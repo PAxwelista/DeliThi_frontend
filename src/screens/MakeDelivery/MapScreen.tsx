@@ -4,8 +4,8 @@ import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order, MakeDeliveryStackParamList } from "../../types";
-import { View, Text, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import { Button, Screen, Loading, Error } from "../../components";
+import { View, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
+import { Button, Screen, Loading, Error, Text } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
@@ -283,7 +283,7 @@ function MapScreen({ navigation }: Props) {
     );
 }
 
-export {MapScreen}
+export { MapScreen };
 
 const styles = StyleSheet.create({
     container: {

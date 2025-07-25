@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Input } from "./";
 import { useState, useEffect } from "react";
+import { Text } from "../components";
 
 type DataType = {
     id: string;

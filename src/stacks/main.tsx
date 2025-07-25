@@ -3,6 +3,7 @@ import { Deliveries, MakeDelivery, MoreMenu, Orders } from ".";
 import { OrderCreationScreen } from "../screens";
 import { faHouse, faServer, faMap, faTruck, faBars, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { GlobalStyles } from "../styles/global";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,27 +34,27 @@ const Main = () => {
             <Tab.Screen
                 name="OrderCreation"
                 component={OrderCreationScreen}
-                options={{ title: "Ajout" }}
+                options={{ title: "Ajout", tabBarLabelStyle: GlobalStyles.globalFontFamily }}
             />
             <Tab.Screen
                 name="Orders"
                 component={Orders}
-                options={{ title: "Commandes" }}
+                options={{ title: "Commandes", tabBarLabelStyle: GlobalStyles.globalFontFamily }}
             />
             <Tab.Screen
                 name="Deliveries"
                 component={Deliveries}
-                options={{ title: "Livraisons" }}
+                options={{ title: "Livraisons", tabBarLabelStyle: GlobalStyles.globalFontFamily }}
             />
             <Tab.Screen
                 name="MakeDelivery"
                 component={MakeDelivery}
-                options={{ title: "Départ" }}
+                options={{ title: "Départ", tabBarLabelStyle: GlobalStyles.globalFontFamily }}
             />
             <Tab.Screen
                 name="MoreMenu"
                 component={MoreMenu}
-                options={{ title: "Autre" }}
+                options={{ title: "Menu", tabBarLabelStyle: GlobalStyles.globalFontFamily }}
             />
         </Tab.Navigator>
     );

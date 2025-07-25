@@ -1,6 +1,6 @@
-import { Screen, Button, Loading, Error } from "../../components";
+import { Screen, Button, Loading, Error, Text } from "../../components";
 import { useCallback, useState } from "react";
-import { StyleSheet, View, KeyboardAvoidingView, ScrollView, Modal, Text } from "react-native";
+import { StyleSheet, View, KeyboardAvoidingView } from "react-native";
 import { AutocompleteDropdown, AutocompleteDropdownContextProvider } from "react-native-autocomplete-dropdown";
 import { useFetch, useFetchWithAuth } from "../../hooks";
 import { apiUrl } from "../../config";
@@ -10,6 +10,7 @@ import { CustomerForm, AvailableProduct, Order, Product, Customer } from "../../
 import { useAppSelector } from "../../hooks/redux";
 import { CustomModal } from "../../components/CustomModal";
 import { useFocusEffect } from "@react-navigation/native";
+import { GlobalStyles } from "../../styles/global";
 
 type AutocompleteDropdownController = {
     clear: () => void;
@@ -184,7 +185,11 @@ function OrderCreationScreen() {
                             onSelectItem={handleOnSelectCustomer}
                             clearOnFocus={false}
                             EmptyResultComponent={<View></View>}
-                            textInputProps={{ placeholder: "Nom" }}
+                            textInputProps={{
+                                placeholder: "Nom",
+                                style: GlobalStyles.globalFontFamily
+                            
+                            }}
                             controller={functions => (inputDropdownCustomerRef = functions)}
                             containerStyle={styles.autocompleteStyle}
                         />
@@ -251,6 +256,6 @@ const styles = StyleSheet.create({
     },
     productMng: {
         flex: 8,
-        justifyContent:"center",
+        justifyContent: "center",
     },
 });

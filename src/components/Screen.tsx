@@ -1,4 +1,5 @@
-import { SafeAreaView, StyleSheet, Text, ViewStyle, Platform, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, ViewStyle, Platform, StatusBar } from "react-native";
+import { Text } from "./Text";
 
 type Props = {
     children: React.ReactNode;

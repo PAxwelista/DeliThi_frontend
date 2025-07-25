@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { MakeDeliveryStackParamList, Order } from "../../types";
-import { Screen, Button } from "../../components";
+import { Screen, Button, Text } from "../../components";
 import { StyleSheet } from "react-native";
 import { CalculateOrderTotalPrice } from "../../utils";
 import { apiUrl } from "../../config";

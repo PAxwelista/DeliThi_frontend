@@ -1,15 +1,15 @@
-import { Screen } from "../../components"
-import { Text } from "react-native"
+import { Screen, Text } from "../../components";
 import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
 
-const CustomersStatScreen = ()=>{
-
+const CustomersStatScreen = () => {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders`);
 
-    return <Screen>
-        <Text>Nombre total de clients actifs : </Text>
-    </Screen>
-}
+    return (
+        <Screen>
+            <Text>Nombre total de clients actifs : </Text>
+        </Screen>
+    );
+};
 
-export {CustomersStatScreen}
+export { CustomersStatScreen };

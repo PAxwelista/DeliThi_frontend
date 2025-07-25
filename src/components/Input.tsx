@@ -1,11 +1,12 @@
 import { View, TextInput, StyleSheet, TextInputProps } from "react-native";
+import { GlobalStyles } from "../styles/global";
 
 export function Input(props: TextInputProps) {
     return (
         <View style={[styles.container, props.style]}>
             <TextInput
                 {...props}
-                style={styles.textInput}
+                style={[GlobalStyles.globalFontFamily , styles.textInput]}
             />
         </View>
     );

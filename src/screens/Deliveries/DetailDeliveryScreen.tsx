@@ -1,5 +1,5 @@
-import { Screen } from "../../components";
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { Screen, Text } from "../../components";
+import { View, StyleSheet, FlatList } from "react-native";
 import { Order, Product, TotalProduct } from "../../types";
 import { useFetch } from "../../hooks/useFetch";
 import { DeliveriesStackParamList } from "../../types/navigation";

@@ -1,5 +1,6 @@
-import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Product } from "../../../types";
+import { Text } from "../../../components";
 
 type Props = {
     products: Product[];

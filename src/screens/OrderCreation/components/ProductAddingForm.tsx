@@ -3,6 +3,7 @@ import { Picker } from "@react-native-picker/picker";
 import { Button, Input } from "../../../components";
 import { useEffect, useState } from "react";
 import { AvailableProduct } from "../../../types";
+import { GlobalStyles } from "../../../styles/global";
 
 type Prop = {
     availableProducts: AvailableProduct[];
@@ -36,7 +37,7 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
                 <Picker
                     selectedValue={selectedProductId}
                     onValueChange={(id: string) => setSelectedProductId(id)}
-                    itemStyle={styles.pickerElmt}
+                    itemStyle={[GlobalStyles.globalFontFamily ,styles.pickerElmt]}
                 >
                     {PickerElmts}
                 </Picker>
