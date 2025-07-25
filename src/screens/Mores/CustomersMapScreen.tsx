@@ -54,7 +54,7 @@ const CustomersMapScreen = ({ navigation }: Props) => {
                 <Marker
                     key={customer._id}
                     coordinate={{ latitude: customer.location.latitude, longitude: customer.location.longitude }}
-                    pinColor={transformWordToColor(customer.location.area)}
+                    pinColor={transformWordToColor(customer.location.area.toLowerCase())}
                     onPress={() => handleClickOnMarker(customer)}
                 />
             )
