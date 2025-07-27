@@ -1,4 +1,4 @@
-import { Input, Button, Screen, PasswordInput, Text } from "../../components";
+import { Input, Button, Screen, PasswordInput, Text, EmailVerification } from "../../components";
 import { StyleSheet, View } from "react-native";
 import { useInput } from "../../hooks";
 import { useState } from "react";
@@ -6,8 +6,7 @@ import { apiUrl } from "../../config";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ConnexionStackParamList } from "../../types";
-import { saveSecureStore } from "../../utils";
+import { ConnexionStackParamList, Login,defaultLoginValue } from "../../types";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignIn">;
 
@@ -16,6 +15,14 @@ const SignIn = ({ navigation }: Props) => {
     const username = useInput();
     const password = useInput();
     const [errorMessage, setErrorMessage] = useState<string>("");
+    const [show, setShow] = useState<boolean>(false);
+    const [user, setUser] = useState<Login>(defaultLoginValue);
+
+    const handleEmailVerifFinished = (value: {type : "error" ;error: string} | {type:"success";login : Login}) => {
+        if (value.type==="error") return setErrorMessage(value.error);
+
+        dispatch(setLogin(value.login));
+    };
 
     const handleSignIn = async () => {
         setErrorMessage("");
@@ -29,11 +36,18 @@ const SignIn = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
-                await saveSecureStore("refreshToken", json.login.refreshToken);
+                
+                if (json.login?.emailVerified === false) {
+                    setUser(json.login);
+                    setShow(true);
+                    return;
+                }
                 dispatch(setLogin(json.login));
-            } else setErrorMessage(json.error);
+            } else {
+                return setErrorMessage(json.error);
+            }
         } catch (error) {
-            setErrorMessage("Erreur de connexion");
+            setErrorMessage(`Erreur de connexion : ${error}`);
         }
     };
 
@@ -65,6 +79,12 @@ const SignIn = ({ navigation }: Props) => {
                     onPress={handleChangePage}
                 />
             </View>
+            <EmailVerification
+                username={username.value}
+                finished={handleEmailVerifFinished}
+                show={show}
+                setShow={setShow}
+            />
         </Screen>
     );
 };

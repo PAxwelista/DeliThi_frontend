@@ -9,3 +9,4 @@ export * from "./InputFormForUpdate";
 export * from "./PasswordInput"
 export * from "./CustomPicker"
 export * from "./Text"
+export * from "./EmailVerification"

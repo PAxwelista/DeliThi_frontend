@@ -26,6 +26,8 @@ function MoreMenuScreen({ navigation }: Props) {
 
         const data = await response.json();
 
+        console.log(data)
+
         try {
             const result = Share.share({
                 title: "Token pour rejoindre un groupe",

@@ -1,4 +1,4 @@
-import { Button, Screen, Text } from "../../components";
+import { Button, EmailVerification, Input, Screen, Text } from "../../components";
 import { StyleSheet, View } from "react-native";
 import { useFormInput } from "../../hooks";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { apiUrl } from "../../config";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ConnexionStackParamList } from "../../types";
+import { ConnexionStackParamList, Login } from "../../types";
 import { InputForm } from "../../components/";
 import { Checkbox } from "expo-checkbox";
 
@@ -14,20 +14,29 @@ type Props = NativeStackScreenProps<ConnexionStackParamList, "SignUp">;
 
 const SignUp = ({ navigation }: Props) => {
     const dispatch = useDispatch();
-    const [isChecked, setChecked] = useState(false);
-    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", token: "" });
+    const [isChecked, setChecked] = useState<boolean>(false);
+    const [show, setShow] = useState<boolean>(false);
+    const { values, handleChangeValue, reset } = useFormInput({ username: "", password: "", token: "", email: "" });
     const [errorMessage, setErrorMessage] = useState<string>("");
 
     const visible: Record<keyof typeof values, boolean> = {
         username: true,
         password: true,
         token: !isChecked,
+        email: true,
     };
 
     const labelsFr: Record<keyof typeof values, string> = {
         username: "Nom d'utilisateur",
         password: "Mot de passe",
         token: "Token de connexion",
+        email: "Email",
+    };
+
+    const handleEmailVerifFinished = (value: { type: "error"; error: string } | { type: "success"; login: Login }) => {
+        if (value.type === "error") return setErrorMessage(value.error);
+
+        dispatch(setLogin(value.login));
     };
 
     const handleChangeCheckedStatus = (checked: boolean) => {
@@ -51,9 +60,8 @@ const SignUp = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
-                reset();
-                dispatch(setLogin(json.login));
-            } else setErrorMessage(json.error);
+                setShow(true);
+            } else setErrorMessage("Erreur d'inscription");
         } catch (error) {
             setErrorMessage(`Erreur de connexion : ${error}`);
         }
@@ -84,7 +92,9 @@ const SignUp = ({ navigation }: Props) => {
                         <Text>Créez un nouveau groupe</Text>
                     </View>
                     {!isChecked && (
-                        <Text>Si vous voulez rejoindre un groupe, demandez a l'admin un token de connexion</Text>
+                        <Text>
+                            Si vous voulez rejoindre un groupe existant, demandez à l'admin un token de connexion.
+                        </Text>
                     )}
                     <Button
                         title={"S'inscrire"}
@@ -96,6 +106,12 @@ const SignUp = ({ navigation }: Props) => {
                     onPress={handleChangePage}
                 />
             </View>
+            <EmailVerification
+                username={values.username}
+                finished={handleEmailVerifFinished}
+                show={show}
+                setShow={setShow}
+            />
         </Screen>
     );
 };
