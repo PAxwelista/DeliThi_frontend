@@ -162,51 +162,45 @@ function OrderCreationScreen() {
     return (
         <Screen title="Nouvelle commande">
             <AutocompleteDropdownContextProvider>
-                <KeyboardAvoidingView
-                    style={styles.container}
-                    behavior="padding"
-                >
-                    <View style={styles.productMng}>
-                        <ProductManager
-                            availableProducts={availableProducts?.products?.sort(
-                                (a: AvailableProduct, b: AvailableProduct) => a.name.localeCompare(b.name)
-                            )}
-                            products={products}
-                            addProduct={handleAddProduct}
-                            removeProduct={handleRemoveProduct}
-                        />
-                    </View>
-
-                    <View style={styles.customer}>
-                        <AutocompleteDropdown
-                            dataSet={customerList?.customers
-                                ?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))
-                                .map((v: Customer) => ({ id: v._id, title: v.name }))}
-                            onSelectItem={handleOnSelectCustomer}
-                            clearOnFocus={false}
-                            EmptyResultComponent={<View></View>}
-                            textInputProps={{
-                                placeholder: "Nom",
-                                style: GlobalStyles.globalFontFamily
-                            
-                            }}
-                            controller={functions => (inputDropdownCustomerRef = functions)}
-                            containerStyle={styles.autocompleteStyle}
-                        />
-
-                        <Button
-                            title="Ajouter un client"
-                            onPress={() => setShowModal(true)}
-                            style={styles.button}
-                        />
-                    </View>
-                    {errorMessage && <Error err={errorMessage} />}
-                    {message && <Text>{message}</Text>}
-                    <Button
-                        title="Valider commande"
-                        onPress={handleValidateOrder}
+                <View style={styles.customer}>
+                    <AutocompleteDropdown
+                        dataSet={customerList?.customers
+                            ?.sort((a: Customer, b: Customer) => a.name.localeCompare(b.name))
+                            .map((v: Customer) => ({ id: v._id, title: v.name }))}
+                        onSelectItem={handleOnSelectCustomer}
+                        clearOnFocus={false}
+                        EmptyResultComponent={<View></View>}
+                        textInputProps={{
+                            placeholder: "Nom",
+                            style: GlobalStyles.globalFontFamily,
+                        }}
+                        controller={functions => (inputDropdownCustomerRef = functions)}
+                        containerStyle={styles.autocompleteStyle}
                     />
-                </KeyboardAvoidingView>
+
+                    <Button
+                        title="Ajouter un client"
+                        onPress={() => setShowModal(true)}
+                        style={styles.button}
+                    />
+                </View>
+                <View style={styles.productMng}>
+                    <ProductManager
+                        availableProducts={availableProducts?.products?.sort(
+                            (a: AvailableProduct, b: AvailableProduct) => a.name.localeCompare(b.name)
+                        )}
+                        products={products}
+                        addProduct={handleAddProduct}
+                        removeProduct={handleRemoveProduct}
+                    />
+                </View>
+
+                {errorMessage && <Error err={errorMessage} />}
+                {message && <Text>{message}</Text>}
+                <Button
+                    title="Valider commande"
+                    onPress={handleValidateOrder}
+                />
 
                 <CustomModal
                     visible={showModal}
@@ -257,5 +251,6 @@ const styles = StyleSheet.create({
     productMng: {
         flex: 8,
         justifyContent: "center",
+        marginBottom: 10,
     },
 });
