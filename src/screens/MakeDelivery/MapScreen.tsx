@@ -70,6 +70,17 @@ function MapScreen({ navigation }: Props) {
         delivery?.delivery?.orders.every(order => order.state != "processing") && handleDeliveryFinished();
     }, [delivery]);
 
+    const removeFirstOrder = () => {
+        delivery?.setDelivery(prev => {
+            if (!prev) return prev;
+
+            return {
+                ...prev,
+                orders: prev.orders.filter((order: Order) => order._id != delivery?.delivery?.orders[0]?._id),
+            };
+        });
+    };
+
     const handleDeliveryFinished = async () => {
         const response = await fetchWithAuth(`${apiUrl}/deliveries/state`, {
             method: "PATCH",
@@ -150,6 +161,8 @@ function MapScreen({ navigation }: Props) {
     }
 
     const handleDelivery = async () => {
+        removeFirstOrder();
+
         setRefreshDirection(t => !t);
 
         if (delivery?.delivery?.orders[0]) navigation.navigate("DeliverOrder", delivery?.delivery?.orders[0]);
@@ -177,14 +190,7 @@ function MapScreen({ navigation }: Props) {
             }
         );
 
-        delivery?.setDelivery(prev => {
-            if (!prev) return prev;
-
-            return {
-                ...prev,
-                orders: prev.orders.filter((order: Order) => order._id != delivery?.delivery?.orders[0]?._id),
-            };
-        });
+        removeFirstOrder();
 
         setRefreshDirection(t => !t);
     };
