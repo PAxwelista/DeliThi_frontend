@@ -54,7 +54,7 @@ function DetailDeliveryScreen({ route }: Props) {
                         ))}
                     </View>
                     <Text style={styles.totalPrice}>
-                        {orders.reduce((a, v) => (a + v.amountPaid ? v.amountPaid : CalculateOrderTotalPrice(v)), 0)}{" "}
+                        {orders.reduce((a, v) => (a + (v.amountPaid ? v.amountPaid : CalculateOrderTotalPrice(v))), 0)}{" "}
                         euros
                     </Text>
                 </View>
