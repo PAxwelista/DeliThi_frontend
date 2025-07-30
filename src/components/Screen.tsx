@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, ViewStyle, Platform, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, ViewStyle, Platform, StatusBar, View } from "react-native";
 import { Text } from "./Text";
 
 type Props = {
@@ -11,23 +11,28 @@ type Props = {
 export function Screen({ children, style, title, hasHeaderBar = false }: Props) {
     const addPaddingTop = Platform.OS === "android" && !hasHeaderBar;
 
-    const styleSafeArea = { paddingTop: addPaddingTop ? StatusBar.currentHeight : 0 };
-
     return (
-        <SafeAreaView style={[styleSafeArea, styles.container, style]}>
-            {title && <Text style={styles.title}>{title}</Text>}
-            {children}
+        <SafeAreaView style={[styles.safeArea,, style]}>
+            <View style={styles.container}>
+                {title && <Text style={styles.title}>{title}</Text>}
+                {children}
+            </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    safeArea: {
+        flex: 1,
+        backgroundColor: "#F2F2F2",
+    },
     container: {
         flex: 1,
-        margin: 20,
+        padding: 20,
     },
     title: {
         textAlign: "center",
         fontSize: 30,
+        paddingBottom:30
     },
 });

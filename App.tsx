@@ -4,6 +4,7 @@ import { Store } from "./src/store";
 import { Main } from "./src/stacks/main";
 import { Connexion } from "./src/stacks";
 import { FontInit } from "./src/fontInit";
+import { StatusBar } from "react-native";
 
 const Navigation = () => {
     const loginInfos = useAppSelector(state => state.login);
@@ -18,6 +19,10 @@ const Navigation = () => {
 export default function App() {
     return (
         <Store>
+            <StatusBar
+                backgroundColor="white"
+                barStyle="dark-content"
+            />
             <Navigation />
         </Store>
     );
