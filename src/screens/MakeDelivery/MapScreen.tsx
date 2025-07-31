@@ -1,5 +1,4 @@
-import MapView from "react-native-maps";
-import { Marker, Polyline } from "react-native-maps";
+import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
@@ -269,6 +268,7 @@ function MapScreen({ navigation }: Props) {
                     longitudeDelta: 0.0421,
                 }}
                 style={styles.map}
+                provider={PROVIDER_GOOGLE}
             >
                 <Marker
                     coordinate={{ latitude: location.latitude, longitude: location.longitude }}
