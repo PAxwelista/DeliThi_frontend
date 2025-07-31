@@ -18,7 +18,7 @@ type Props = NativeStackScreenProps<MoreMenuStackParamList, "CustomersMap">;
 const CustomersMapScreen = ({ navigation }: Props) => {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/customers/`);
 
-    const [location, setLocation] = useState<Coord>({ latitude: -1, longitude: -1 });
+    //const [location, setLocation] = useState<Coord>({ latitude: 50.903292, longitude: 6.527604 });
     const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
     const [modalInfos, setModalInfos] = useState<Customer | undefined>();
 
@@ -28,19 +28,19 @@ const CustomersMapScreen = ({ navigation }: Props) => {
         }, [refresh])
     );
 
-    useEffect(() => {
-        (async () => {
-            const { status } = await Location.requestForegroundPermissionsAsync();
+    // useEffect(() => {
+    //     (async () => {
+    //         const { status } = await Location.requestForegroundPermissionsAsync();
 
-            if (status === "granted") {
-                Location.watchPositionAsync({ distanceInterval: 10 }, location => {
-                    setLocation({ latitude: location.coords.latitude, longitude: location.coords.longitude });
-                });
-                const currentLocation = await Location.getCurrentPositionAsync({});
-                setLocation({ latitude: currentLocation.coords.latitude, longitude: currentLocation.coords.longitude });
-            }
-        })();
-    }, []);
+    //         if (status === "granted") {
+    //             Location.watchPositionAsync({ distanceInterval: 10 }, location => {
+    //                 setLocation({ latitude: location.coords.latitude, longitude: location.coords.longitude });
+    //             });
+    //             const currentLocation = await Location.getCurrentPositionAsync({});
+    //             setLocation({ latitude: currentLocation.coords.latitude, longitude: currentLocation.coords.longitude });
+    //         }
+    //     })();
+    // }, []);
 
     const handleClickOnMarker = (customer: Customer) => {
         setModalInfos(customer);
@@ -77,15 +77,18 @@ const CustomersMapScreen = ({ navigation }: Props) => {
                     longitudeDelta: 0.0421,
                 }}
                 region={{
-                    latitude: location.latitude,
-                    longitude: location.longitude,
+                    latitude: 0, //location.latitude,
+                    longitude: 0, //location.longitude,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}
                 style={styles.map}
             >
                 <Marker
-                    coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+                    coordinate={{
+                        latitude: 0, //location.latitude
+                        longitude: 0, // location.longitude
+                    }}
                     pinColor={"gold"}
                 />
                 {markers}

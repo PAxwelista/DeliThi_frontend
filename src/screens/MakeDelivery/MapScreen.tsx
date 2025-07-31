@@ -26,7 +26,7 @@ function MapScreen({ navigation }: Props) {
     const fetchWithAuth = useFetchWithAuth();
     const delivery = useDelivery();
 
-    const [location, setLocation] = useState<Coord>({ latitude: -1, longitude: -1 });
+    const [location, setLocation] = useState<Coord>({ latitude: 50.903292, longitude: 6.527604 });
     const [firstDirectionInfos, setFirstDirectionInfos] = useState<Directioninfos>();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [routeCoords, setRouteCoords] = useState<Coords>([]);
