@@ -12,8 +12,8 @@ export function Screen({ children, style, title, hasHeaderBar = false }: Props) 
     const addPaddingTop = Platform.OS === "android" && !hasHeaderBar;
 
     return (
-        <SafeAreaView style={[styles.safeArea,, style]}>
-            <View style={styles.container}>
+        <SafeAreaView style={styles.safeArea}>
+            <View style={[styles.container, style]}>
                 {title && <Text style={styles.title}>{title}</Text>}
                 {children}
             </View>

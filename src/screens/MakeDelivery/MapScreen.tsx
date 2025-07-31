@@ -294,7 +294,8 @@ export { MapScreen };
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        margin: 0,
+        paddingHorizontal: 0,
+        paddingBottom: 0,
     },
     map: {
         flex: 5,

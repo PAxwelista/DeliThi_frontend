@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height,
     },
     container: {
-        margin: 0,
+        paddingHorizontal: 0,
+        paddingBottom: 0,
     },
 });

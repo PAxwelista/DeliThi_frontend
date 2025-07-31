@@ -20,7 +20,7 @@ export default function App() {
     return (
         <Store>
             <StatusBar
-                backgroundColor="white"
+                backgroundColor="#F2F2F2"
                 barStyle="dark-content"
             />
             <Navigation />
