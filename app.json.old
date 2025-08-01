@@ -30,7 +30,7 @@
             "package": "com.paxwel.Delithi",
             "config": {
                 "googleMaps": {
-                    "apiKey": "process.env.GOOGLE_MAPS_ANDROID_API_KEY"
+                    "apiKey": ""
                 }
             }
         },
