@@ -34,7 +34,7 @@ const PasswordInput = (props: Props) => {
 export { PasswordInput };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, justifyContent: "center", marginVertical: 5, minHeight: 40 },
+    container: { justifyContent: "center", marginVertical: 5, minHeight: 40 },
     icon: {
         padding: 10,
         position: "absolute",

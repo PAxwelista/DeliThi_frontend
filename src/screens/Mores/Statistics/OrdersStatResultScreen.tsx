@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { Screen, Text } from "../../components";
+import { Screen, Text } from "../../../components";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { MoreMenuStackParamList, Order } from "../../types";
+import { MoreMenuStackParamList, Order } from "../../../types";
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "OrdersStatResult">;
 

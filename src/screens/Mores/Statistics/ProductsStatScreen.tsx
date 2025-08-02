@@ -1,4 +1,4 @@
-import { Screen, Text } from "../../components";
+import { Screen, Text } from "../../../components";
 
 const ProductsStatScreen = () => {
     return (

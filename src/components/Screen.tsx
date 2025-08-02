@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, ViewStyle, Platform, StatusBar, View } from "react-native";
+import { SafeAreaView, StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View } from "react-native";
 import { Text } from "./Text";
 
 type Props = {
@@ -13,18 +13,26 @@ export function Screen({ children, style, title, hasHeaderBar = false }: Props) 
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <View style={[styles.container, style]}>
-                {title && <Text style={styles.title}>{title}</Text>}
-                {children}
-            </View>
+            <KeyboardAvoidingView
+                style={styles.KeyboardAvoidingView}
+                
+            >
+                <View style={[styles.container, style]}>
+                    {title && <Text style={styles.title}>{title}</Text>}
+                    {children}
+                </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    safeArea: {
+    KeyboardAvoidingView: {
         flex: 1,
         backgroundColor: "#F2F2F2",
+    },
+    safeArea: {
+        flex: 1,
     },
     container: {
         flex: 1,
@@ -33,6 +41,6 @@ const styles = StyleSheet.create({
     title: {
         textAlign: "center",
         fontSize: 30,
-        paddingBottom:30
+        paddingBottom: 30,
     },
 });

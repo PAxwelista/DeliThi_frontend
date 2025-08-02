@@ -11,6 +11,7 @@ import {
     ProductsStatScreen,
     CustomersMapScreen,
     OrdersStatResultScreen,
+    AccountScreen,
 } from "../screens";
 import { headerReturnTab } from "./config";
 import { DetailProductScreen } from "../screens/Mores/DetailProductScreen";
@@ -73,6 +74,11 @@ const MoreMenu = () => {
             <MoreMenuStack.Screen
                 name="ProductsStat"
                 component={ProductsStatScreen}
+                options={headerReturnTab}
+            />
+            <MoreMenuStack.Screen
+                name="Account"
+                component={AccountScreen}
                 options={headerReturnTab}
             />
         </MoreMenuStack.Navigator>

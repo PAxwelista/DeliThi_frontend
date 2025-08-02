@@ -1,5 +1,5 @@
-import { Screen, Button } from "../../components";
-import { MoreMenuStackParamList } from "../../types";
+import { Screen, Button } from "../../../components";
+import { MoreMenuStackParamList } from "../../../types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 type Props = NativeStackScreenProps<MoreMenuStackParamList, "Statistics">;
