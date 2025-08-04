@@ -74,7 +74,7 @@ const SignUp = ({ navigation }: Props) => {
             const json = await response.json();
             if (json.result) {
                 setShow(true);
-            } else setErrorMessage("Erreur d'inscription");
+            } else setErrorMessage(`Erreur d'inscription : ${json?.error}`);
         } catch (error) {
             setErrorMessage(`Erreur de connexion : ${error}`);
         }
