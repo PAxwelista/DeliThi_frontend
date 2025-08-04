@@ -3,3 +3,4 @@ export * from "./transformSecondToTime";
 export * from "./transformWordToColor";
 export * from "./secureStore"
 export * from "./emailValidator"
+export * from "./passwordValidator"

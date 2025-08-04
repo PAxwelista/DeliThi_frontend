@@ -9,7 +9,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList, Login } from "../../types";
 import { InputForm } from "../../components/";
 import { Checkbox } from "expo-checkbox";
-import { isValidEmail } from "../../utils";
+import { isValidEmail, isSecurePassword } from "../../utils";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignUp">;
 
@@ -48,7 +48,17 @@ const SignUp = ({ navigation }: Props) => {
     const handleSignUp = async () => {
         setErrorMessage("");
 
-        if (!isValidEmail(values.email))return setErrorMessage("Cet email n'est pas valide");
+        if (!isSecurePassword(values.password))
+            return setErrorMessage(
+                "Le mot de passe n'est pas sécurisé.\nModifiez le en suivant les consignes suivante :\n" +
+                    "• Min. 8 charactères\n" +
+                    "• Min. 1 lettre minuscule\n" +
+                    "• Min. 1 lettre majuscule\n" +
+                    "• Min. 1 chiffre\n" +
+                    "• Min. 1 charactère spécial"
+            );
+
+        if (!isValidEmail(values.email)) return setErrorMessage("Cet email n'est pas valide");
 
         if (!(values.token || isChecked) || !values.password || !values.username)
             return setErrorMessage("Veuillez remplir toutes les infos");
