@@ -9,6 +9,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { ConnexionStackParamList, Login } from "../../types";
 import { InputForm } from "../../components/";
 import { Checkbox } from "expo-checkbox";
+import { isValidEmail } from "../../utils";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignUp">;
 
@@ -46,6 +47,8 @@ const SignUp = ({ navigation }: Props) => {
 
     const handleSignUp = async () => {
         setErrorMessage("");
+
+        if (!isValidEmail(values.email))return setErrorMessage("Cet email n'est pas valide");
 
         if (!(values.token || isChecked) || !values.password || !values.username)
             return setErrorMessage("Veuillez remplir toutes les infos");
