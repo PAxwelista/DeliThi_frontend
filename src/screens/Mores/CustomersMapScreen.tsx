@@ -3,7 +3,7 @@ import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
-import { Loading, Error, Screen } from "../../components";
+import { Loading, Error as ErrorComp, Screen } from "../../components";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import * as Location from "expo-location";
 import { Customer, MoreMenuStackParamList } from "../../types";
@@ -61,48 +61,58 @@ const CustomersMapScreen = ({ navigation }: Props) => {
     );
 
     if (isLoading) return <Loading />;
-    if (error) return <Error err={error} />;
+    if (error) return <ErrorComp err={error} />;
 
-    return (
-        <Screen
-            style={styles.container}
-            title="Carte clients"
-            hasHeaderBar
-        >
-            <MapView
-                initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
-                region={{
-                    latitude: location.latitude,
-                    longitude: location.longitude,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
-                style={styles.map}
-                provider={PROVIDER_DEFAULT}
+    try {
+        return (
+            <Screen
+                style={styles.container}
+                title="Carte clients"
+                hasHeaderBar
             >
-                <Marker
-                    coordinate={{
+                <MapView
+                    initialRegion={{
+                        latitude: 37.78825,
+                        longitude: -122.4324,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                    region={{
                         latitude: location.latitude,
                         longitude: location.longitude,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
                     }}
-                    pinColor={"gold"}
-                />
-                {markers}
-            </MapView>
+                    style={styles.map}
+                    provider={PROVIDER_DEFAULT}
+                >
+                    <Marker
+                        coordinate={{
+                            latitude: location.latitude,
+                            longitude: location.longitude,
+                        }}
+                        pinColor={"gold"}
+                    />
+                    {markers}
+                </MapView>
 
-            <CustomerInfosMap
-                visible={isModalVisible}
-                setIsVisible={val => setIsModalVisible(val)}
-                customer={modalInfos}
-                navigate={navigation.navigate}
-            />
-        </Screen>
-    );
+                <CustomerInfosMap
+                    visible={isModalVisible}
+                    setIsVisible={val => setIsModalVisible(val)}
+                    customer={modalInfos}
+                    navigate={navigation.navigate}
+                />
+            </Screen>
+        );
+    } catch (err) {
+        let errorMess = "";
+        if (err instanceof Error) {
+            errorMess = "Erreur : " + err.message;
+        } else {
+            errorMess = "Erreur inconnue : " + err;
+        }
+        return <ErrorComp err={errorMess} />;
+    }
 };
 
 export { CustomersMapScreen };

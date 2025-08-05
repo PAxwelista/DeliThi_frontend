@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import { View, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import { Button, Screen, Loading, Error, Text } from "../../components";
+import { Button, Screen, Loading, Error as ErrorComp, Text } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
@@ -21,7 +21,7 @@ type Coord = { latitude: number; longitude: number };
 
 type Coords = [number, number][];
 
-const initialCoords = { latitude: -1, longitude: -1 }
+const initialCoords = { latitude: -1, longitude: -1 };
 
 function MapScreen({ navigation }: Props) {
     const fetchWithAuth = useFetchWithAuth();
@@ -213,82 +213,91 @@ function MapScreen({ navigation }: Props) {
     });
 
     if (loadingGetPosition) return <Loading />;
-    if (errorMessage) return <Error err={errorMessage} />;
-
-    return (
-        <Screen style={styles.container}>
-            <View style={styles.header}>
-                {loadingRefreshDirection ? (
-                    <ActivityIndicator
-                        size="large"
-                        color="#3b82f6"
+    if (errorMessage) return <ErrorComp err={errorMessage} />;
+    try {
+        return (
+            <Screen style={styles.container}>
+                <View style={styles.header}>
+                    {loadingRefreshDirection ? (
+                        <ActivityIndicator
+                            size="large"
+                            color="#3b82f6"
+                        />
+                    ) : (
+                        <>
+                            <Text>Prochain client : {delivery?.delivery?.orders[0]?.customer.name}</Text>
+                            <Text>Lieu : {delivery?.delivery?.orders[0]?.customer.location.name}</Text>
+                            <Text>
+                                Temps initiale :{" "}
+                                {firstDirectionInfos?.duration
+                                    ? TransformSecondToTime(firstDirectionInfos.duration)
+                                    : "Pas définie"}
+                            </Text>
+                            <Text>
+                                Distance intiale :{" "}
+                                {firstDirectionInfos?.distance
+                                    ? Math.floor(firstDirectionInfos.distance / 1000) + " km"
+                                    : "Pas définie"}{" "}
+                            </Text>
+                            <View style={styles.buttons}>
+                                <Button
+                                    title="Livraison"
+                                    onPress={handleDelivery}
+                                />
+                                <Button
+                                    title="Repousser livraison"
+                                    onPress={handlePostponeDelivery}
+                                />
+                                <Button
+                                    title="Rafraîchir"
+                                    onPress={handleRefreshDirection}
+                                />
+                            </View>
+                        </>
+                    )}
+                </View>
+                <MapView
+                    initialRegion={{
+                        latitude: 37.78825,
+                        longitude: -122.4324,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                    region={{
+                        latitude: location.latitude,
+                        longitude: location.longitude,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                    style={styles.map}
+                    provider={PROVIDER_DEFAULT}
+                >
+                    <Marker
+                        coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+                        pinColor={"gold"}
                     />
-                ) : (
-                    <>
-                        <Text>Prochain client : {delivery?.delivery?.orders[0]?.customer.name}</Text>
-                        <Text>Lieu : {delivery?.delivery?.orders[0]?.customer.location.name}</Text>
-                        <Text>
-                            Temps initiale :{" "}
-                            {firstDirectionInfos?.duration
-                                ? TransformSecondToTime(firstDirectionInfos.duration)
-                                : "Pas définie"}
-                        </Text>
-                        <Text>
-                            Distance intiale :{" "}
-                            {firstDirectionInfos?.distance
-                                ? Math.floor(firstDirectionInfos.distance / 1000) + " km"
-                                : "Pas définie"}{" "}
-                        </Text>
-                        <View style={styles.buttons}>
-                            <Button
-                                title="Livraison"
-                                onPress={handleDelivery}
-                            />
-                            <Button
-                                title="Repousser livraison"
-                                onPress={handlePostponeDelivery}
-                            />
-                            <Button
-                                title="Rafraîchir"
-                                onPress={handleRefreshDirection}
-                            />
-                        </View>
-                    </>
-                )}
-            </View>
-            <MapView
-                initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
-                region={{
-                    latitude: location.latitude,
-                    longitude: location.longitude,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
-                style={styles.map}
-                provider={PROVIDER_DEFAULT}
-            >
-                <Marker
-                    coordinate={{ latitude: location.latitude, longitude: location.longitude }}
-                    pinColor={"gold"}
-                />
-                {Markers}
-                {routeCoords && (
-                    <Polyline
-                        coordinates={routeCoords.map(coords => {
-                            return { latitude: coords[0], longitude: coords[1] };
-                        })}
-                        strokeColor="rgba(255,0,0,0.3)"
-                        strokeWidth={3}
-                    />
-                )}
-            </MapView>
-        </Screen>
-    );
+                    {Markers}
+                    {routeCoords && (
+                        <Polyline
+                            coordinates={routeCoords.map(coords => {
+                                return { latitude: coords[0], longitude: coords[1] };
+                            })}
+                            strokeColor="rgba(255,0,0,0.3)"
+                            strokeWidth={3}
+                        />
+                    )}
+                </MapView>
+            </Screen>
+        );
+    } catch (err) {
+        let errorMess = "";
+        if (err instanceof Error) {
+            errorMess = "Erreur : " + err.message;
+        } else {
+            errorMess = "Erreur inconnue : " + err;
+        }
+        return <ErrorComp err={errorMess} />;
+    }
 }
 
 export { MapScreen };
