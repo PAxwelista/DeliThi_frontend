@@ -1,4 +1,4 @@
-import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Marker, Polyline, PROVIDER_DEFAULT } from "react-native-maps";
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
@@ -21,11 +21,13 @@ type Coord = { latitude: number; longitude: number };
 
 type Coords = [number, number][];
 
+const initialCoords = { latitude: -1, longitude: -1 }
+
 function MapScreen({ navigation }: Props) {
     const fetchWithAuth = useFetchWithAuth();
     const delivery = useDelivery();
 
-    const [location, setLocation] = useState<Coord>({ latitude: 49.095238, longitude: 5.790342 });
+    const [location, setLocation] = useState<Coord>(initialCoords);
     const [firstDirectionInfos, setFirstDirectionInfos] = useState<Directioninfos>();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [routeCoords, setRouteCoords] = useState<Coords>([]);
@@ -268,7 +270,7 @@ function MapScreen({ navigation }: Props) {
                     longitudeDelta: 0.0421,
                 }}
                 style={styles.map}
-                provider={PROVIDER_GOOGLE}
+                provider={PROVIDER_DEFAULT}
             >
                 <Marker
                     coordinate={{ latitude: location.latitude, longitude: location.longitude }}

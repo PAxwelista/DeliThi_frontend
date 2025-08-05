@@ -1,10 +1,10 @@
-import { View, Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
-import { Loading, Error, Screen, CustomModal } from "../../components";
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { Loading, Error, Screen } from "../../components";
+import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import * as Location from "expo-location";
 import { Customer, MoreMenuStackParamList } from "../../types";
 import { transformWordToColor } from "../../utils";
@@ -83,7 +83,7 @@ const CustomersMapScreen = ({ navigation }: Props) => {
                     longitudeDelta: 0.0421,
                 }}
                 style={styles.map}
-                provider={PROVIDER_GOOGLE}
+                provider={PROVIDER_DEFAULT}
             >
                 <Marker
                     coordinate={{
