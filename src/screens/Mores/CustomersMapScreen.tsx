@@ -3,8 +3,8 @@ import { useFetch } from "../../hooks";
 import { apiUrl } from "../../config";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
-import { Loading, Error as ErrorComp, Screen } from "../../components";
-import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
+import { Loading, Error as ErrorComp, Screen, Map } from "../../components";
+import { Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import { Customer, MoreMenuStackParamList } from "../../types";
 import { transformWordToColor } from "../../utils";
@@ -70,21 +70,9 @@ const CustomersMapScreen = ({ navigation }: Props) => {
                 title="Carte clients"
                 hasHeaderBar
             >
-                <MapView
-                    initialRegion={{
-                        latitude: 37.78825,
-                        longitude: -122.4324,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
-                    }}
-                    region={{
-                        latitude: location.latitude,
-                        longitude: location.longitude,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
-                    }}
+                <Map
+                    location={location}
                     style={styles.map}
-                    provider={PROVIDER_DEFAULT}
                 >
                     <Marker
                         coordinate={{
@@ -94,7 +82,7 @@ const CustomersMapScreen = ({ navigation }: Props) => {
                         pinColor={"gold"}
                     />
                     {markers}
-                </MapView>
+                </Map>
 
                 <CustomerInfosMap
                     visible={isModalVisible}

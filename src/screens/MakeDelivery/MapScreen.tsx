@@ -1,10 +1,10 @@
-import MapView, { Marker, Polyline, PROVIDER_DEFAULT } from "react-native-maps";
+import { Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import { View, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import { Button, Screen, Loading, Error as ErrorComp, Text } from "../../components";
+import { Button, Screen, Loading, Error as ErrorComp, Text, Map } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
@@ -199,6 +199,7 @@ function MapScreen({ navigation }: Props) {
     const handleRefreshDirection = () => {
         setRefreshDirection(t => !t);
     };
+
     const Markers = delivery?.delivery?.orders.map((order: Order) => {
         return (
             <Marker
@@ -256,21 +257,9 @@ function MapScreen({ navigation }: Props) {
                         </>
                     )}
                 </View>
-                <MapView
-                    initialRegion={{
-                        latitude: 37.78825,
-                        longitude: -122.4324,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
-                    }}
-                    region={{
-                        latitude: location.latitude,
-                        longitude: location.longitude,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
-                    }}
+                <Map
                     style={styles.map}
-                    provider={PROVIDER_DEFAULT}
+                    location={location}
                 >
                     <Marker
                         coordinate={{ latitude: location.latitude, longitude: location.longitude }}
@@ -286,7 +275,7 @@ function MapScreen({ navigation }: Props) {
                             strokeWidth={3}
                         />
                     )}
-                </MapView>
+                </Map>
             </Screen>
         );
     } catch (err) {
@@ -309,7 +298,7 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
     },
     map: {
-        flex: 5,
+        flex: 4,
         width: Dimensions.get("window").width,
         height: Dimensions.get("window").height,
     },
@@ -320,5 +309,17 @@ const styles = StyleSheet.create({
     buttons: {
         justifyContent: "center",
         flexDirection: "row",
+    },
+    currentLocationBtn: {
+        position: "absolute",
+        height: 70,
+        width: 70,
+        bottom: 20,
+        right: 20,
+        borderRadius: "50%",
+        justifyContent: "center",
+        alignItems: "center",
+        borderColor: "white",
+        borderWidth: 2,
     },
 });
