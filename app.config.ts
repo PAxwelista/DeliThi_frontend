@@ -21,6 +21,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         userInterfaceStyle: "light",
         infoPlist: {
             ITSAppUsesNonExemptEncryption: false,
+            NSLocationAlwaysAndWhenInUseUsageDescription:
+                "Cette application a besoin de votre position pour afficher des cartes.",
         },
         config: {
             googleMapsApiKey: process.env.EXPO_PUBLIC_GOOGLE_MAPS_IOS_API_KEY,
@@ -54,4 +56,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     updates: {
         url: "https://u.expo.dev/e0fa60d0-8253-4913-ba10-c8155906ddbd",
     },
+    plugins: [
+        ["expo-location", { locationAlwaysAndWhenInUsePermission: "Allow DeliThi to use your location." }],
+    ],
 });
