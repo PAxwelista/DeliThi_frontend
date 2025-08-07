@@ -1,9 +1,10 @@
-import {  TouchableOpacity, StyleSheet, ViewStyle } from "react-native";
+import { TouchableOpacity, StyleSheet, ViewStyle, ActivityIndicator } from "react-native";
 import { Text } from "../components/Text";
+import { useState } from "react";
 
 type ButtonProps = {
     title: string;
-    onPress(): void;
+    onPress: () => void | Promise<void>;
     isListMember?: boolean;
     style?: ViewStyle;
     disable?: boolean;
@@ -11,14 +12,32 @@ type ButtonProps = {
 
 export function Button({ isListMember = false, disable = false, ...props }: ButtonProps) {
     const style = isListMember ? styles.delivery : styles.container;
+    const [loading, isLoading] = useState<boolean>(false);
+
+    const handleClick = async () => {
+        isLoading(true);
+        try {
+            await props.onPress();
+        } finally {
+            isLoading(false);
+        }
+    };
 
     return (
         <TouchableOpacity
             style={[style, props.style]}
-            onPress={props.onPress}
-            disabled={disable}
+            onPress={handleClick}
+            disabled={disable || loading}
         >
-            <Text style={styles.text}>{props.title}</Text>
+            {loading ? (
+                <ActivityIndicator
+                    accessibilityHint="loading"
+                    size="small"
+                    color="#3b82f6"
+                />
+            ) : (
+                <Text style={styles.text}>{props.title}</Text>
+            )}
         </TouchableOpacity>
     );
 }
@@ -28,8 +47,10 @@ const styles = StyleSheet.create({
         backgroundColor: "lightblue",
         margin: 2,
         padding: 10,
+        minHeight: 42,
         borderRadius: 10,
         boxShadow: "1px 1px 1px black",
+        justifyContent: "center",
     },
     text: {
         textAlign: "center",

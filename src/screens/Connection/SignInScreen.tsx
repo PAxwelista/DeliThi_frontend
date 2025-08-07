@@ -16,7 +16,6 @@ const SignIn = ({ navigation }: Props) => {
     const password = useInput();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [show, setShow] = useState<boolean>(false);
-    const [user, setUser] = useState<Login>(defaultLoginValue);
 
     const handleEmailVerifFinished = (value: {type : "error" ;error: string} | {type:"success";login : Login}) => {
         if (value.type==="error") return setErrorMessage(value.error);
@@ -38,7 +37,6 @@ const SignIn = ({ navigation }: Props) => {
             if (json.result) {
                 
                 if (json.login?.emailVerified === false) {
-                    setUser(json.login);
                     setShow(true);
                     return;
                 }
