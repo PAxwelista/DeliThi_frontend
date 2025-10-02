@@ -19,7 +19,13 @@ const DetailProductScreen = ({ route }: Props) => {
     const [values, setValues] = useState<typeof inputs>({ name, price: price.toString() });
 
     const handleValidateModifications = (newValues: Record<string, string>) => {
+
+        newValues.price = newValues.price.replaceAll(",",".")
+
         setValues(newValues);
+
+        
+
         const urlRequest = Object.entries(newValues)
             .map(([key, value]) => key + "=" + value)
             .join("&");
