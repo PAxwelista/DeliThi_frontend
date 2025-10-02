@@ -39,6 +39,8 @@ function ProductsScreen({ navigation }: Props) {
 
     const handleAddNewProduct = async () => {
         if (!values.name || !values.price) return setErrorMessage("Veuillez rentrez toutes les informations");
+       
+        values.price = values.price.replaceAll(",", ".");
 
         try {
             const response = await fecthWithAuth(`${apiUrl}/products`, {
