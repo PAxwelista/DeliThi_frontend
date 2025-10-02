@@ -54,7 +54,7 @@ const SignIn = ({ navigation }: Props) => {
     };
 
     return (
-        <Screen title="Connection">
+        <Screen title="Connexion">
             <View style={styles.btns}>
                 <View>
                     {errorMessage && <Text>{errorMessage}</Text>}

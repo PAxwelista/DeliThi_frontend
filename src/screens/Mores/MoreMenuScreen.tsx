@@ -52,7 +52,7 @@ function MoreMenuScreen({ navigation }: Props) {
         />
     ));
 
-    return <Screen title="Autres menu">{Buttons}</Screen>;
+    return <Screen title="Menu">{Buttons}</Screen>;
 }
 
 export { MoreMenuScreen };

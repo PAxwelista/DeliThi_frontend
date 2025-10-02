@@ -115,7 +115,7 @@ const SignUp = ({ navigation }: Props) => {
                     />
                 </View>
                 <Button
-                    title={"Retour Connexion"}
+                    title={"Retour connexion"}
                     onPress={handleChangePage}
                 />
             </View>

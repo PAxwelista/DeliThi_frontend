@@ -49,7 +49,7 @@ const AccountScreen = () => {
     };
 
     const buttons = [
-        { title: "Deconnection", onPress: handleClickOnDeconnexion },
+        { title: "Deconnexion", onPress: handleClickOnDeconnexion },
         { title: "Supprimer le compte", onPress: handleClickOnDeleteAccount },
     ];
 
