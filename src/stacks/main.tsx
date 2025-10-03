@@ -1,14 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Deliveries, MakeDelivery, MoreMenu, Orders } from ".";
 import { OrderCreationScreen } from "../screens";
-import { faHouse, faServer, faMap, faTruck, faBars, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faServer, faMap, faTruck, faBars, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { GlobalStyles } from "../styles/global";
 
 const Tab = createBottomTabNavigator();
 
 const iconsByRouteName: { [name: string]: IconDefinition } = {
-    OrderCreation: faHouse,
+    OrderCreation: faPlus,
     Orders: faServer,
     Deliveries: faMap,
     MakeDelivery: faTruck,
