@@ -6,6 +6,7 @@ import { useAppSelector, useAppDispatch } from "./redux";
 export const useFetchWithAuth = () => {
     let login = useAppSelector(state => state.login);
     let token = login.token;
+    console.log(login)
     const dispatch = useAppDispatch();
 
     const refreshAccessToken = async (): Promise<string> => {

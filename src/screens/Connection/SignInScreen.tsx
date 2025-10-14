@@ -6,7 +6,8 @@ import { apiUrl } from "../../config";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../../reducers/login";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { ConnexionStackParamList, Login,defaultLoginValue } from "../../types";
+import { ConnexionStackParamList, Login } from "../../types";
+import { setDemoMode } from "../../reducers/demoMode";
 
 type Props = NativeStackScreenProps<ConnexionStackParamList, "SignIn">;
 
@@ -21,7 +22,7 @@ const SignIn = ({ navigation }: Props) => {
         if (value.type==="error") return setErrorMessage(value.error);
 
         dispatch(setLogin(value.login));
-    };
+    }
 
     const handleSignIn = async () => {
         setErrorMessage("");
@@ -53,6 +54,11 @@ const SignIn = ({ navigation }: Props) => {
         navigation.navigate("SignUp");
     };
 
+    const handleDemoMode = () => {
+        dispatch(setDemoMode(true))
+        
+    }
+
     return (
         <Screen title="Connexion">
             <View style={styles.btns}>
@@ -75,6 +81,10 @@ const SignIn = ({ navigation }: Props) => {
                 <Button
                     title={"Inscription"}
                     onPress={handleChangePage}
+                />
+                <Button
+                    title={"Essayer sans compte"}
+                    onPress={handleDemoMode}
                 />
             </View>
             <EmailVerification

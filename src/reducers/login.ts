@@ -14,6 +14,7 @@ export const LoginSlice = createSlice({
             state.role = action.payload.role;
         },
         disconnect: state => {
+            saveSecureStore("refreshToken", "");
             state.username = "";
             state.token = "";
             state.role = "";

@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { disconnect } from "../../reducers/login";
 import { useState } from "react";
 import { apiUrl } from "../../config";
+import { setDemoMode } from "../../reducers/demoMode";
 
 const AccountScreen = () => {
     const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ const AccountScreen = () => {
 
     const handleDeconnexion = () => {
         dispatch(disconnect());
+        dispatch(setDemoMode(false))
     };
 
     const handleDeleteAcount = async () => {

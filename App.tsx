@@ -8,10 +8,11 @@ import { StatusBar } from "react-native";
 
 const Navigation = () => {
     const loginInfos = useAppSelector(state => state.login);
+    const demoMode = useAppSelector(state => state.demoMode);
 
     return (
         <FontInit>
-            <NavigationContainer>{loginInfos.username ? <Main /> : <Connexion />}</NavigationContainer>
+            <NavigationContainer>{loginInfos.username || demoMode.value ? <Main /> : <Connexion />}</NavigationContainer>
         </FontInit>
     );
 };
