@@ -6,6 +6,7 @@ import { apiUrl } from "../../config";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import { Loading, Button, Error, Screen } from "../../components";
+import { useAppSelector } from "../../hooks/redux";
 
 type ItemDelivery = {
     item: Delivery;
@@ -15,6 +16,7 @@ type Props = NativeStackScreenProps<DeliveriesStackParamList, "AllDeliveries">;
 
   function DeliveriesScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/deliveries`);
+    const demoMode = useAppSelector(state => state.demoMode);
 
     useFocusEffect(
         useCallback(() => {
@@ -23,6 +25,7 @@ type Props = NativeStackScreenProps<DeliveriesStackParamList, "AllDeliveries">;
     );
 
     const handlePressDeliveries = (delivery: Delivery) => {
+        if (demoMode.value) return
         navigation.navigate("DetailDelivery", delivery);
     };
 

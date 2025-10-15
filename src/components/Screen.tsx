@@ -1,5 +1,6 @@
 import { SafeAreaView, StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View } from "react-native";
 import { Text } from "./Text";
+import { useAppSelector } from "../hooks/redux";
 
 type Props = {
     children: React.ReactNode;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export function Screen({ children, style, title, hasHeaderBar = false }: Props) {
+    const demoMode = useAppSelector(state => state.demoMode);
     const addPaddingTop = Platform.OS === "android" && !hasHeaderBar;
 
     return (
@@ -18,6 +20,7 @@ export function Screen({ children, style, title, hasHeaderBar = false }: Props) 
                 
             >
                 <View style={[styles.container, style]}>
+                    {demoMode.value && <Text>DEMO, certaines fonctionnalitées ne marcheront pas.</Text>}
                     {title && <Text style={styles.title}>{title}</Text>}
                     {children}
                 </View>

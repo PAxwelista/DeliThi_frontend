@@ -1,0 +1,6453 @@
+{
+	"customers": [
+		{
+			"_id": "4a9acbbed943a155703b33e4",
+			"name": "Earl Wehner",
+			"phoneNumber": "+18322124045",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5329,
+				"latitude": 49.2168,
+				"_id": "68ef918898202416e8844d35"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "df57fadd07155c9b8bd9fb4c",
+			"name": "Andrew Langosh",
+			"phoneNumber": "+19686919484",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.3327,
+				"latitude": 49.2147,
+				"_id": "68ef918898202416e8844d36"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "be77bb58a1eeaf4fdbee859b",
+			"name": "Ignacio Beier",
+			"phoneNumber": "+14338152626",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5688,
+				"latitude": 48.8877,
+				"_id": "68ef918898202416e8844d37"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4cfbb13dbbbb4bed9e57cdf5",
+			"name": "Vicenta Legros",
+			"phoneNumber": "+14725703952",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1828,
+				"latitude": 49.2853,
+				"_id": "68ef918898202416e8844d38"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "c5c1cbbcfe5f2ea9925ecd85",
+			"name": "Thurman Kshlerin",
+			"phoneNumber": "+18002502604",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1411,
+				"latitude": 48.7891,
+				"_id": "68ef918898202416e8844d39"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "aef243f3451dae8fe0b85d4f",
+			"name": "Shayne Quigley",
+			"phoneNumber": "+17726467620",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.2349,
+				"latitude": 49.1768,
+				"_id": "68ef918898202416e8844d3a"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ad0700ad13af0ccd20bc81fe",
+			"name": "Olen Trantow-Raynor",
+			"phoneNumber": "+19842399398",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.4206,
+				"latitude": 49.1228,
+				"_id": "68ef918898202416e8844d3b"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bace5bbd2b3b67aec229a59b",
+			"name": "Haven Jerde",
+			"phoneNumber": "+13869993810",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.7407,
+				"latitude": 49.0114,
+				"_id": "68ef918898202416e8844d3c"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "8436efaad7cccbf4333e0bc5",
+			"name": "Dolores Beier",
+			"phoneNumber": "+16546123102",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.3837,
+				"latitude": 48.9667,
+				"_id": "68ef918898202416e8844d3d"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "51fd4dfd34c09cf5c8ae4a0c",
+			"name": "Obie Turcotte",
+			"phoneNumber": "+15155324860",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.4997,
+				"latitude": 49.0302,
+				"_id": "68ef918898202416e8844d3e"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ee66d66cf22a3744a0814d42",
+			"name": "Dejah Treutel",
+			"phoneNumber": "+13363203915",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.7711,
+				"latitude": 48.8782,
+				"_id": "68ef918898202416e8844d3f"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f4cf0a6b9bcfeef55cf0cd90",
+			"name": "Aracely Grimes",
+			"phoneNumber": "+13885788838",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.3241,
+				"latitude": 49.284,
+				"_id": "68ef918898202416e8844d40"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a32d6bc02333b5ff5e5013e4",
+			"name": "Dana Considine",
+			"phoneNumber": "+16624889368",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5805,
+				"latitude": 48.8042,
+				"_id": "68ef918898202416e8844d41"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "6875f780dd67bafc2dbdefbc",
+			"name": "Mikel Becker",
+			"phoneNumber": "+14713466647",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.6422,
+				"latitude": 49.1086,
+				"_id": "68ef918898202416e8844d42"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3a987e9e43d4db840eea5cf4",
+			"name": "Yoshiko Kub-Stokes",
+			"phoneNumber": "+14818576561",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5631,
+				"latitude": 49.0454,
+				"_id": "68ef918898202416e8844d43"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "eecb7dab658bf5efc97dcf6f",
+			"name": "Ozella Tromp",
+			"phoneNumber": "+19324765649",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5091,
+				"latitude": 49.0037,
+				"_id": "68ef918898202416e8844d44"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ed2a6eaac3c7e7a6e20d70ca",
+			"name": "August Runte",
+			"phoneNumber": "+15503336543",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.7545,
+				"latitude": 48.8256,
+				"_id": "68ef918898202416e8844d45"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "5ddaf113f7d93aa80be24349",
+			"name": "Duncan Schultz",
+			"phoneNumber": "+14585688984",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.2024,
+				"latitude": 48.9919,
+				"_id": "68ef918898202416e8844d46"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f2c10c2bdea312b10d3359d4",
+			"name": "Gladys Hammes",
+			"phoneNumber": "+12215152207",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.769,
+				"latitude": 48.8443,
+				"_id": "68ef918898202416e8844d47"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "7dc1e4aace9d55feda357e0a",
+			"name": "Summer Lang",
+			"phoneNumber": "+16985658150",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1082,
+				"latitude": 49.0774,
+				"_id": "68ef918898202416e8844d48"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "adba9d31bf6aada62f7de9ce",
+			"name": "Timothy Durgan",
+			"phoneNumber": "+12334444371",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.63,
+				"latitude": 48.8511,
+				"_id": "68ef918898202416e8844d49"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "fb224bea97465051dd4bec5a",
+			"name": "Velva O'Reilly",
+			"phoneNumber": "+13272117607",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1481,
+				"latitude": 48.7807,
+				"_id": "68ef918898202416e8844d4a"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "5c707ff3cf9714d38129a1b8",
+			"name": "Jaylen Kris",
+			"phoneNumber": "+18996336121",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5095,
+				"latitude": 48.955,
+				"_id": "68ef918898202416e8844d4b"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b21a80c1a2c58bcc5bae84af",
+			"name": "Guiseppe Hilll",
+			"phoneNumber": "+16254851000",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.2918,
+				"latitude": 49.0152,
+				"_id": "68ef918898202416e8844d4c"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3bcadc0aca164c4e8a17c79c",
+			"name": "Birdie Terry",
+			"phoneNumber": "+12093063961",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.8002,
+				"latitude": 48.9283,
+				"_id": "68ef918898202416e8844d4d"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "155c4dd329d6ddb0ae684bf0",
+			"name": "Leanne Russel",
+			"phoneNumber": "+16876719368",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.3814,
+				"latitude": 49.1149,
+				"_id": "68ef918898202416e8844d4e"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "5adc1f3b947f893aead0fe5c",
+			"name": "Fannie Ortiz",
+			"phoneNumber": "+18538403202",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.6963,
+				"latitude": 49.0599,
+				"_id": "68ef918898202416e8844d4f"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e0b6cbe4a9afccdade53c4e2",
+			"name": "Shany Dach",
+			"phoneNumber": "+16732685390",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.6238,
+				"latitude": 48.9427,
+				"_id": "68ef918898202416e8844d50"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "baf8b1bd938e8c90fd5fe890",
+			"name": "Ramiro Franecki",
+			"phoneNumber": "+13868868127",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1854,
+				"latitude": 49.2827,
+				"_id": "68ef918898202416e8844d51"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "8f340c8a56b8ec6da4e9efca",
+			"name": "Blaze Klocko",
+			"phoneNumber": "+16137163976",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.297,
+				"latitude": 48.7991,
+				"_id": "68ef918898202416e8844d52"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "7829b044eab1f5dacaed93c5",
+			"name": "Zachariah Marquardt",
+			"phoneNumber": "+15432803344",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1469,
+				"latitude": 48.9937,
+				"_id": "68ef918898202416e8844d53"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "70da77aeffceb267c1ce1c6a",
+			"name": "Carlo Hintz",
+			"phoneNumber": "+18776409908",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5875,
+				"latitude": 49.052,
+				"_id": "68ef918898202416e8844d54"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "efd0d980b8e79ad1af50b30c",
+			"name": "Sarai Wiza",
+			"phoneNumber": "+16896489309",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.729,
+				"latitude": 49.1417,
+				"_id": "68ef918898202416e8844d55"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "14562ed2c4efa846049d1d61",
+			"name": "Greg Beier",
+			"phoneNumber": "+19576841398",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.6403,
+				"latitude": 49.2877,
+				"_id": "68ef918898202416e8844d56"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "faca2b2bd1d08afb075be0fe",
+			"name": "Naomie Murphy",
+			"phoneNumber": "+18092067987",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.7303,
+				"latitude": 48.9305,
+				"_id": "68ef918898202416e8844d57"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3e4c9b2669be9a4787294cfa",
+			"name": "Rosalinda Labadie",
+			"phoneNumber": "+19095726111",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.7224,
+				"latitude": 49.2541,
+				"_id": "68ef918898202416e8844d58"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "74de90abd1fc2bcfff9dcfd4",
+			"name": "Itzel DuBuque",
+			"phoneNumber": "+17063936073",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.4393,
+				"latitude": 49.3034,
+				"_id": "68ef918898202416e8844d59"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "489cd8e319b82fabcbd50e6c",
+			"name": "Paige West",
+			"phoneNumber": "+18859829065",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.2616,
+				"latitude": 49.2628,
+				"_id": "68ef918898202416e8844d5a"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b7de258aead98db13a63a5ae",
+			"name": "Daphne Abernathy",
+			"phoneNumber": "+14265199907",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.7782,
+				"latitude": 48.9668,
+				"_id": "68ef918898202416e8844d5b"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a2fa418f57ccfaa3234bbfc4",
+			"name": "Hermina Grant",
+			"phoneNumber": "+13703254897",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.2193,
+				"latitude": 49.169,
+				"_id": "68ef918898202416e8844d5c"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "494c5c3fc4987437c5d0f41c",
+			"name": "Jolie Connelly",
+			"phoneNumber": "+19248710450",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5762,
+				"latitude": 48.9528,
+				"_id": "68ef918898202416e8844d5d"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "2fd9ccb6512cb6b7ad4dd9ec",
+			"name": "Albert Price",
+			"phoneNumber": "+18983918607",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.9168,
+				"latitude": 48.9702,
+				"_id": "68ef918898202416e8844d5e"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e4d73b47c5cac807c14c09b8",
+			"name": "Francesca Kozey",
+			"phoneNumber": "+16675069185",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.3447,
+				"latitude": 48.9676,
+				"_id": "68ef918898202416e8844d5f"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "17e8ad151da2f543ef6e07a4",
+			"name": "Freddy Bogan",
+			"phoneNumber": "+15022710289",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.4331,
+				"latitude": 48.962,
+				"_id": "68ef918898202416e8844d60"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "59b0570bca256dc6bdf5ed4f",
+			"name": "Marion Moore",
+			"phoneNumber": "+15367017162",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.0875,
+				"latitude": 48.9523,
+				"_id": "68ef918898202416e8844d61"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "7269ddafb2eb0eea9ce22cbe",
+			"name": "Stewart Dooley",
+			"phoneNumber": "+16119767164",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5628,
+				"latitude": 49.051,
+				"_id": "68ef918898202416e8844d62"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "8359eb1417b293ffd1d8aede",
+			"name": "Russell Langworth",
+			"phoneNumber": "+19419631599",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.3734,
+				"latitude": 48.8524,
+				"_id": "68ef918898202416e8844d63"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "513fe38a3e02a0f1537c58ac",
+			"name": "Ewell Koss",
+			"phoneNumber": "+15718113178",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5,
+				"latitude": 49.1748,
+				"_id": "68ef918898202416e8844d64"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a003aab4cbb7951b7cd3ea61",
+			"name": "Everett Zieme",
+			"phoneNumber": "+14652231637",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.2838,
+				"latitude": 48.9948,
+				"_id": "68ef918898202416e8844d65"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "1ec98a82b09eb49ee1bf86ae",
+			"name": "Kristina Ankunding",
+			"phoneNumber": "+19078433422",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.1862,
+				"latitude": 48.7826,
+				"_id": "68ef918898202416e8844d66"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "eb8d86c897b5bbb7d890a02a",
+			"name": "Stuart Howell",
+			"phoneNumber": "+12913005438",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5568,
+				"latitude": 49.204,
+				"_id": "68ef918898202416e8844d67"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "95db35bce073b4f5bf4e65f8",
+			"name": "Robin Powlowski",
+			"phoneNumber": "+12099696571",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5479,
+				"latitude": 49.2603,
+				"_id": "68ef918898202416e8844d68"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "2ccd2ad3cdcded7ae0d4cbab",
+			"name": "Ressie Schmidt",
+			"phoneNumber": "+18826934251",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.4765,
+				"latitude": 49.0726,
+				"_id": "68ef918898202416e8844d69"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d50e1cf4f4edab4ad40fde92",
+			"name": "Brad King",
+			"phoneNumber": "+15064753599",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.3125,
+				"latitude": 48.9154,
+				"_id": "68ef918898202416e8844d6a"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "2e608b3041341bda1d02abf3",
+			"name": "Adaline Schaden",
+			"phoneNumber": "+14839777349",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.7906,
+				"latitude": 49.253,
+				"_id": "68ef918898202416e8844d6b"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "648d03eebcd7ba4dce7cbe03",
+			"name": "Watson Mertz",
+			"phoneNumber": "+19915233940",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.1885,
+				"latitude": 48.9225,
+				"_id": "68ef918898202416e8844d6c"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e057eeeaa720fdfcc7cec6d8",
+			"name": "Tabitha Fadel",
+			"phoneNumber": "+14803820268",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5343,
+				"latitude": 48.9908,
+				"_id": "68ef918898202416e8844d6d"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d83adc9fe78ccab970becc0b",
+			"name": "Kiarra Herzog-Okuneva",
+			"phoneNumber": "+18587501104",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5142,
+				"latitude": 49.1098,
+				"_id": "68ef918898202416e8844d6e"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f2cbbb3e9dce3c0fcef9f5af",
+			"name": "Finn Farrell",
+			"phoneNumber": "+15015104897",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.342,
+				"latitude": 49.1313,
+				"_id": "68ef918898202416e8844d6f"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "1e513af763e70ef94501ba3c",
+			"name": "Kyra Parisian",
+			"phoneNumber": "+17772711992",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5135,
+				"latitude": 48.9737,
+				"_id": "68ef918898202416e8844d70"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bfbbeca3cbef0d9736660d22",
+			"name": "Kyler Hagenes",
+			"phoneNumber": "+17245395188",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.762,
+				"latitude": 49.0806,
+				"_id": "68ef918898202416e8844d71"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "274e3a4a9ccf37eb03effbfb",
+			"name": "Turner Zemlak",
+			"phoneNumber": "+19089339773",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.5672,
+				"latitude": 48.7994,
+				"_id": "68ef918898202416e8844d72"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "c662e50083801cd871da08fb",
+			"name": "Ezra Sanford",
+			"phoneNumber": "+17303180411",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.6568,
+				"latitude": 49.0672,
+				"_id": "68ef918898202416e8844d73"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ab97b82d61e1699df6bddfbf",
+			"name": "Anibal Swift",
+			"phoneNumber": "+14675231402",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.209,
+				"latitude": 48.9261,
+				"_id": "68ef918898202416e8844d74"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "54da5b78b3e608a0ba7e0efd",
+			"name": "Delta Hammes",
+			"phoneNumber": "+16877107992",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.2649,
+				"latitude": 49.0922,
+				"_id": "68ef918898202416e8844d75"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3daab7aaa3fefc2f8ced1530",
+			"name": "Nolan Pouros",
+			"phoneNumber": "+15003600311",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.745,
+				"latitude": 49.2023,
+				"_id": "68ef918898202416e8844d76"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9dac0cc6c37491beccec1fad",
+			"name": "Sandrine Rowe",
+			"phoneNumber": "+14832411756",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.0198,
+				"latitude": 48.8238,
+				"_id": "68ef918898202416e8844d77"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bcbf3df4819bbebb3e74b167",
+			"name": "Clement Lockman",
+			"phoneNumber": "+17666821872",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.526,
+				"latitude": 49.0009,
+				"_id": "68ef918898202416e8844d78"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "72f77ff12adc67005807ee3c",
+			"name": "Matteo Beahan",
+			"phoneNumber": "+15107779718",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.6697,
+				"latitude": 49,
+				"_id": "68ef918898202416e8844d79"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ca926a3f063d9925df515cf5",
+			"name": "Savanah Kirlin",
+			"phoneNumber": "+18767139007",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5015,
+				"latitude": 48.9703,
+				"_id": "68ef918898202416e8844d7a"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "dc7b191c8ca68545696c1d09",
+			"name": "Rebeca Schaden",
+			"phoneNumber": "+16034240140",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.488,
+				"latitude": 49.1888,
+				"_id": "68ef918898202416e8844d7b"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a4c2ccb6b47aed147a78afe8",
+			"name": "Taya Ziemann",
+			"phoneNumber": "+12698114298",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5865,
+				"latitude": 49.0419,
+				"_id": "68ef918898202416e8844d7c"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9219efbaee9fcf9486c7bbfd",
+			"name": "Desiree Hackett",
+			"phoneNumber": "+17687213680",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.5721,
+				"latitude": 48.9864,
+				"_id": "68ef918898202416e8844d7d"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "70a486bfedb7e2c4accca7c2",
+			"name": "Milton Bashirian-Cronin",
+			"phoneNumber": "+19028242136",
+			"location": {
+				"name": "location name",
+				"area": "Zone 1",
+				"longitude": 5.4136,
+				"latitude": 49.1582,
+				"_id": "68ef918898202416e8844d7e"
+			},
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d64f9d41970fd53b5229ac1f",
+			"name": "Chaya Pfannerstill",
+			"phoneNumber": "+14213561969",
+			"location": {
+				"name": "location name",
+				"area": "Zone 2",
+				"longitude": 4.3576,
+				"latitude": 49.0631,
+				"_id": "68ef918898202416e8844d7f"
+			},
+			"group": "6877c21e2849078caf344b43"
+		}
+	],
+	"deliveries": [
+		{
+			"_id": "68889275c0b4314f5247579d",
+			"orders": [
+				{
+					"_id": "de060fdcd78cde11c6deaa5d",
+					"customer": {
+						"_id": "f2cbbb3e9dce3c0fcef9f5af",
+						"name": "Finn Farrell",
+						"phoneNumber": "+15015104897",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.342,
+							"latitude": 49.1313,
+							"_id": "68ef91b998202416e8844e13"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2024-09-05T10:31:34.993Z",
+					"deliveryDate": "2025-07-29T09:41:55.364Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "fe0f23f044eccae2e974d88d",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "fc95ebfd9688fcfee0aba747",
+					"customer": {
+						"_id": "1e513af763e70ef94501ba3c",
+						"name": "Kyra Parisian",
+						"phoneNumber": "+17772711992",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5135,
+							"latitude": 48.9737,
+							"_id": "68ef91b998202416e8844dd1"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-05-23T13:18:01.477Z",
+					"deliveryDate": "2025-07-29T09:42:15.310Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "dc2b3adf2cbfefb353a8e41f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4fcf44dbea6a3dd0ec0cf28e",
+					"customer": {
+						"_id": "fb224bea97465051dd4bec5a",
+						"name": "Velva O'Reilly",
+						"phoneNumber": "+13272117607",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1481,
+							"latitude": 48.7807,
+							"_id": "68ef91b998202416e8844e16"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-01-04T03:20:16.300Z",
+					"deliveryDate": "2025-07-29T09:42:09.251Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "5ecbce15e23bfa0a8dfb39aa",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "f694ec922d4b88fea19c5bfe",
+					"customer": {
+						"_id": "4a9acbbed943a155703b33e4",
+						"name": "Earl Wehner",
+						"phoneNumber": "+18322124045",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5329,
+							"latitude": 49.2168,
+							"_id": "68ef91b998202416e8844ddd"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-08-21T21:21:09.743Z",
+					"deliveryDate": "2025-07-29T09:41:23.125Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "e3c5f62775f947868be834a3",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "cc8c52abc39f17969b141077",
+					"customer": {
+						"_id": "bfbbeca3cbef0d9736660d22",
+						"name": "Kyler Hagenes",
+						"phoneNumber": "+17245395188",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.762,
+							"latitude": 49.0806,
+							"_id": "68ef91b998202416e8844e01"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-04-22T00:58:55.800Z",
+					"deliveryDate": "2025-07-29T09:42:40.596Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "fd2936fdb8ac280400214bd6",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "edc5c1e835e14bd105ded6bc",
+					"customer": {
+						"_id": "b21a80c1a2c58bcc5bae84af",
+						"name": "Guiseppe Hilll",
+						"phoneNumber": "+16254851000",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.2918,
+							"latitude": 49.0152,
+							"_id": "68ef91b998202416e8844dfb"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-06-06T14:24:06.018Z",
+					"deliveryDate": "2025-07-29T09:41:56.964Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "1a0dbc0bb0d7a6dbc1d3e910",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "399c41beb3c9cf9a8d5637a4",
+					"customer": {
+						"_id": "c662e50083801cd871da08fb",
+						"name": "Ezra Sanford",
+						"phoneNumber": "+17303180411",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.6568,
+							"latitude": 49.0672,
+							"_id": "68ef91b998202416e8844e03"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2024-09-06T11:54:17.527Z",
+					"deliveryDate": "2025-07-29T09:42:36.773Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "ee2ccbaefe2bbaccb70298cf",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "791b59acb6d9adf9adf0ce0f",
+					"customer": {
+						"_id": "7269ddafb2eb0eea9ce22cbe",
+						"name": "Stewart Dooley",
+						"phoneNumber": "+16119767164",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5628,
+							"latitude": 49.051,
+							"_id": "68ef91b998202416e8844dea"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-10-27T18:32:02.285Z",
+					"deliveryDate": "2025-07-29T09:42:27.539Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "2943f8797c317cf6d13ca50f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "3a14fa15b70e281addc4c14b",
+					"customer": {
+						"_id": "4cfbb13dbbbb4bed9e57cdf5",
+						"name": "Vicenta Legros",
+						"phoneNumber": "+14725703952",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1828,
+							"latitude": 49.2853,
+							"_id": "68ef91b998202416e8844dde"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-04-24T20:37:06.783Z",
+					"deliveryDate": "2025-07-29T09:27:50.657Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "4c8e2db77de04c4a8a9eaf19",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ad7602bd09397bbf12ba6c0f",
+					"customer": {
+						"_id": "c5c1cbbcfe5f2ea9925ecd85",
+						"name": "Thurman Kshlerin",
+						"phoneNumber": "+18002502604",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1411,
+							"latitude": 48.7891,
+							"_id": "68ef91b998202416e8844e02"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-02-27T10:26:05.037Z",
+					"deliveryDate": "2025-07-29T09:42:07.844Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "fb3fcae4b9afc4405abc21fd",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4e386f2cc2ecbdcebefae42f",
+					"customer": {
+						"_id": "baf8b1bd938e8c90fd5fe890",
+						"name": "Ramiro Franecki",
+						"phoneNumber": "+13868868127",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1854,
+							"latitude": 49.2827,
+							"_id": "68ef91b998202416e8844dfe"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-06-11T05:30:34.219Z",
+					"deliveryDate": "2025-07-29T09:27:47.051Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "c3e8ff9ffe47fdddd14185cf",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "eddc87baae2417f0d8d454e0",
+					"customer": {
+						"_id": "aef243f3451dae8fe0b85d4f",
+						"name": "Shayne Quigley",
+						"phoneNumber": "+17726467620",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.2349,
+							"latitude": 49.1768,
+							"_id": "68ef91b998202416e8844dfa"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-05-21T22:52:07.703Z",
+					"deliveryDate": "2025-07-29T09:28:19.467Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "a21c8b33ab9275b4bad0ea6f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e9220dcf5e21bf816dabb6ec",
+					"customer": {
+						"_id": "8359eb1417b293ffd1d8aede",
+						"name": "Russell Langworth",
+						"phoneNumber": "+19419631599",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.3734,
+							"latitude": 48.8524,
+							"_id": "68ef91b998202416e8844dee"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-02-09T11:06:17.889Z",
+					"deliveryDate": "2025-07-29T09:42:11.115Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "7c7f75ed38fb66168688d5db",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "bacb1e88c6b7c8d890bd627d",
+					"customer": {
+						"_id": "ad0700ad13af0ccd20bc81fe",
+						"name": "Olen Trantow-Raynor",
+						"phoneNumber": "+19842399398",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.4206,
+							"latitude": 49.1228,
+							"_id": "68ef91b998202416e8844df8"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-08-28T10:59:28.841Z",
+					"deliveryDate": "2025-07-29T09:41:53.796Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "16989b609bfef9532099496a",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "7c1ae42eab18cfeb28a10bef",
+					"customer": {
+						"_id": "a003aab4cbb7951b7cd3ea61",
+						"name": "Everett Zieme",
+						"phoneNumber": "+14652231637",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.2838,
+							"latitude": 48.9948,
+							"_id": "68ef91b998202416e8844df4"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-01-19T04:28:58.733Z",
+					"deliveryDate": "2025-07-29T09:41:58.758Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "d82aeafddbba67cf7ca63c6f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ea37f84fc849ee3fc2f7ea7c",
+					"customer": {
+						"_id": "7829b044eab1f5dacaed93c5",
+						"name": "Zachariah Marquardt",
+						"phoneNumber": "+15432803344",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1469,
+							"latitude": 48.9937,
+							"_id": "68ef91b998202416e8844ded"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-04-14T01:48:44.320Z",
+					"deliveryDate": "2025-07-29T09:39:18.206Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "2cbb72adf14db8dbbe0a52cc",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "a511b7be48d77b1eabd49ed9",
+					"customer": {
+						"_id": "95db35bce073b4f5bf4e65f8",
+						"name": "Robin Powlowski",
+						"phoneNumber": "+12099696571",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5479,
+							"latitude": 49.2603,
+							"_id": "68ef91b998202416e8844df2"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-10-03T12:29:48.941Z",
+					"deliveryDate": "2025-07-29T09:41:47.115Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "cbc46f3bc20e8942dcbd3b94",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "bcdecdd0ca4cb722c8cdc8b3",
+					"customer": {
+						"_id": "f4cf0a6b9bcfeef55cf0cd90",
+						"name": "Aracely Grimes",
+						"phoneNumber": "+13885788838",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.3241,
+							"latitude": 49.284,
+							"_id": "68ef91b998202416e8844e14"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-01-13T10:18:11.467Z",
+					"deliveryDate": "2025-07-29T09:27:22.857Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "2cff7dc6b88b30e8edf2b17e",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "d6a8b15a2d29fe0ecacc64ec",
+					"customer": {
+						"_id": "a32d6bc02333b5ff5e5013e4",
+						"name": "Dana Considine",
+						"phoneNumber": "+16624889368",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5805,
+							"latitude": 48.8042,
+							"_id": "68ef91b998202416e8844df5"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-03-12T12:20:26.206Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "fd74ff6168a8ebbfb2bfe6ff",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "0adfe70e971ebbe86cb5aa6d",
+					"customer": {
+						"_id": "70da77aeffceb267c1ce1c6a",
+						"name": "Carlo Hintz",
+						"phoneNumber": "+18776409908",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5875,
+							"latitude": 49.052,
+							"_id": "68ef91b998202416e8844de9"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-04-30T08:06:06.487Z",
+					"deliveryDate": "2025-07-29T09:42:34.541Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "07cbacde6c66bc4dce9775e3",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e7567b43cdbbeb9a7aa00cdc",
+					"customer": {
+						"_id": "efd0d980b8e79ad1af50b30c",
+						"name": "Sarai Wiza",
+						"phoneNumber": "+16896489309",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.729,
+							"latitude": 49.1417,
+							"_id": "68ef91b998202416e8844e11"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-11-21T03:29:51.437Z",
+					"deliveryDate": "2025-07-29T09:42:38.596Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "cb9acccf7ecd8ecba1ea3f5f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "a6cedfafcc4e210f56be0a4d",
+					"customer": {
+						"_id": "2e608b3041341bda1d02abf3",
+						"name": "Adaline Schaden",
+						"phoneNumber": "+14839777349",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.7906,
+							"latitude": 49.253,
+							"_id": "68ef91b998202416e8844dd5"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-02-21T01:55:44.030Z",
+					"deliveryDate": "2025-07-29T09:41:52.149Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "ccd1a2fd12b26c3f58ad759e",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "de5e4eee2bffe295bbffaff0",
+					"customer": {
+						"_id": "9dac0cc6c37491beccec1fad",
+						"name": "Sandrine Rowe",
+						"phoneNumber": "+14832411756",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.0198,
+							"latitude": 48.8238,
+							"_id": "68ef91b998202416e8844df3"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-04-06T03:51:07.116Z",
+					"deliveryDate": "2025-07-29T09:42:06.187Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "2d8c5ed32c10b869ce7cc56e",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "03bb7f05db82c6d8319b3fd6",
+					"customer": {
+						"_id": "bcbf3df4819bbebb3e74b167",
+						"name": "Clement Lockman",
+						"phoneNumber": "+17666821872",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.526,
+							"latitude": 49.0009,
+							"_id": "68ef91b998202416e8844dff"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-02-23T19:28:12.877Z",
+					"deliveryDate": "2025-07-29T09:42:16.653Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "0ce2d25ffb2c207cf1dfc7db",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "8de6aaf0be6d8cbdad8f4f5c",
+					"customer": {
+						"_id": "14562ed2c4efa846049d1d61",
+						"name": "Greg Beier",
+						"phoneNumber": "+19576841398",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.6403,
+							"latitude": 49.2877,
+							"_id": "68ef91b998202416e8844dce"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2024-09-17T22:50:09.914Z",
+					"deliveryDate": "2025-07-29T09:41:48.909Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "8a86ba7efd0292d7c1ea36ba",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "3b383d6dd3d95ff7c141f379",
+					"customer": {
+						"_id": "ca926a3f063d9925df515cf5",
+						"name": "Savanah Kirlin",
+						"phoneNumber": "+18767139007",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5015,
+							"latitude": 48.9703,
+							"_id": "68ef91b998202416e8844e04"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-06-20T00:35:12.621Z",
+					"deliveryDate": "2025-07-29T09:42:13.180Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "b32e48ca81dfcce784bf2f21",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "9acb18f4ab3de262abddaa44",
+					"customer": {
+						"_id": "648d03eebcd7ba4dce7cbe03",
+						"name": "Watson Mertz",
+						"phoneNumber": "+19915233940",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.1885,
+							"latitude": 48.9225,
+							"_id": "68ef91b998202416e8844de6"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-04-20T01:58:59.379Z",
+					"deliveryDate": "2025-07-29T09:42:02.220Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "a893e8bb8fecd4fb1aaabe05",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "9aae4ab2b7be94bd7b4ec6da",
+					"customer": {
+						"_id": "dc7b191c8ca68545696c1d09",
+						"name": "Rebeca Schaden",
+						"phoneNumber": "+16034240140",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.488,
+							"latitude": 49.1888,
+							"_id": "68ef91b998202416e8844e08"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-04-07T11:28:06.017Z",
+					"deliveryDate": "2025-07-29T09:41:20.229Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "aa3fb33ab65fceeef9ea83b0",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "b5eaedf74e16fbfced9adcc3",
+					"customer": {
+						"_id": "faca2b2bd1d08afb075be0fe",
+						"name": "Naomie Murphy",
+						"phoneNumber": "+18092067987",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.7303,
+							"latitude": 48.9305,
+							"_id": "68ef91b998202416e8844e15"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-02-06T19:38:51.621Z",
+					"deliveryDate": "2025-07-29T09:42:44.357Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "ff8a27ceaaa2dbc23ad227c6",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4b6b6a5e2ec8a9afe2bddce5",
+					"customer": {
+						"_id": "3e4c9b2669be9a4787294cfa",
+						"name": "Rosalinda Labadie",
+						"phoneNumber": "+19095726111",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.7224,
+							"latitude": 49.2541,
+							"_id": "68ef91b998202416e8844dda"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-01-30T18:59:15.110Z",
+					"deliveryDate": "2025-07-29T09:41:50.684Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "d8defbfeadda6dadff1f5cd8",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ead2ac2be8daa71bf576abcb",
+					"customer": {
+						"_id": "489cd8e319b82fabcbd50e6c",
+						"name": "Paige West",
+						"phoneNumber": "+18859829065",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.2616,
+							"latitude": 49.2628,
+							"_id": "68ef91b998202416e8844ddb"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-07-01T16:30:01.955Z",
+					"deliveryDate": "2025-07-29T09:27:42.266Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "ce5cbb463dc1fe8f2fe8ee6f",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "9832ffad2fba3eb3772d3ded",
+					"customer": {
+						"_id": "a4c2ccb6b47aed147a78afe8",
+						"name": "Taya Ziemann",
+						"phoneNumber": "+12698114298",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5865,
+							"latitude": 49.0419,
+							"_id": "68ef91b998202416e8844df6"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-11-20T13:38:36.728Z",
+					"deliveryDate": "2025-07-29T09:42:29.508Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "fe00dcf3ceeed45fbc6922ab",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ca9b7fefeeebc2ddbe122597",
+					"customer": {
+						"_id": "e057eeeaa720fdfcc7cec6d8",
+						"name": "Tabitha Fadel",
+						"phoneNumber": "+14803820268",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5343,
+							"latitude": 48.9908,
+							"_id": "68ef91b998202416e8844e0a"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-03-22T12:14:50.198Z",
+					"deliveryDate": "2025-07-29T09:42:18.708Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "b8fdba5b21a0f8ce108ff64a",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "22e4ecf3fbd3d396045f742d",
+					"customer": {
+						"_id": "9219efbaee9fcf9486c7bbfd",
+						"name": "Desiree Hackett",
+						"phoneNumber": "+17687213680",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.5721,
+							"latitude": 48.9864,
+							"_id": "68ef91b998202416e8844df1"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2025-11-02T16:31:36.981Z",
+					"deliveryDate": "2025-07-29T09:42:20.779Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "7feb9ff8edcbcd294b5882ee",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "96bbb0ae934fead4d512b44b",
+					"customer": {
+						"_id": "b7de258aead98db13a63a5ae",
+						"name": "Daphne Abernathy",
+						"phoneNumber": "+14265199907",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.7782,
+							"latitude": 48.9668,
+							"_id": "68ef91b998202416e8844dfc"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2024-09-11T12:11:24.305Z",
+					"deliveryDate": "2025-07-29T09:42:42.615Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "4b1c9ba2db5c464db0462ffe",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "698a7ea487044722a24dddcd",
+					"customer": {
+						"_id": "70a486bfedb7e2c4accca7c2",
+						"name": "Milton Bashirian-Cronin",
+						"phoneNumber": "+19028242136",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.4136,
+							"latitude": 49.1582,
+							"_id": "68ef91b998202416e8844de8"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-01-31T20:37:43.928Z",
+					"deliveryDate": "2025-07-29T09:41:17.852Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "7f640c02f7d5c2c8beda85b3",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "2ba9bdacab0ce3cceddb6cfe",
+					"customer": {
+						"_id": "e4d73b47c5cac807c14c09b8",
+						"name": "Francesca Kozey",
+						"phoneNumber": "+16675069185",
+						"location": {
+							"name": "location name",
+							"area": "Zone 1",
+							"longitude": 5.3447,
+							"latitude": 48.9676,
+							"_id": "68ef91b998202416e8844e0c"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "delivered",
+					"creationDate": "2026-02-20T15:16:51.854Z",
+					"deliveryDate": "2025-07-29T09:42:00.250Z",
+					"orderer": "Axel",
+					"area": "Zone 1",
+					"amountPaid": 2,
+					"products": [
+						{
+							"_id": "25fa7922304af4eb2d0fdca5",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				}
+			],
+			"deliveryDate": "2025-07-29T09:20:53.652Z",
+			"state": "finished",
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "68de710e0bcbab908525362d",
+			"orders": [
+				{
+					"_id": "0f7a5b9f96d4aa566f7f6e02",
+					"customer": {
+						"_id": "274e3a4a9ccf37eb03effbfb",
+						"name": "Turner Zemlak",
+						"phoneNumber": "+19089339773",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5672,
+							"latitude": 48.7994,
+							"_id": "68ef91b998202416e8844dd3"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-05-17T08:48:51.770Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "acc390a8f2edabfdddf1b69e",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e42aaac3ec9b4f766215cc01",
+					"customer": {
+						"_id": "5c707ff3cf9714d38129a1b8",
+						"name": "Jaylen Kris",
+						"phoneNumber": "+18996336121",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5095,
+							"latitude": 48.955,
+							"_id": "68ef91b998202416e8844de4"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-05-19T11:07:33.092Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "d6def9ef59c6018dc6de16bd",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e1abca93ebfc3da8c0b2d2da",
+					"customer": {
+						"_id": "3bcadc0aca164c4e8a17c79c",
+						"name": "Birdie Terry",
+						"phoneNumber": "+12093063961",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.8002,
+							"latitude": 48.9283,
+							"_id": "68ef91b998202416e8844dd8"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-01-21T18:52:55.933Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "daa1c38bda43ec40a4b3cc8b",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "df40d9269bbb8a3d67a3eb5b",
+					"customer": {
+						"_id": "17e8ad151da2f543ef6e07a4",
+						"name": "Freddy Bogan",
+						"phoneNumber": "+15022710289",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.4331,
+							"latitude": 48.962,
+							"_id": "68ef91b998202416e8844dd0"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-05-14T18:32:04.299Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "a2cb8b53a2fb3e7a6c54e5df",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "6aa20859edd1d1fa39b5b0e7",
+					"customer": {
+						"_id": "155c4dd329d6ddb0ae684bf0",
+						"name": "Leanne Russel",
+						"phoneNumber": "+16876719368",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.3814,
+							"latitude": 49.1149,
+							"_id": "68ef91b998202416e8844dcf"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-03-18T17:46:21.151Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "7b7cd08bb2ac763f4c76e155",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4f7eafebab2aa2a2aa9fc1d4",
+					"customer": {
+						"_id": "5adc1f3b947f893aead0fe5c",
+						"name": "Fannie Ortiz",
+						"phoneNumber": "+18538403202",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.6963,
+							"latitude": 49.0599,
+							"_id": "68ef91b998202416e8844de3"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-12-01T09:01:01.580Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "797c71fceddccabcaa446fcd",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "5acc9b72aadba5a682a01eb9",
+					"customer": {
+						"_id": "59b0570bca256dc6bdf5ed4f",
+						"name": "Marion Moore",
+						"phoneNumber": "+15367017162",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.0875,
+							"latitude": 48.9523,
+							"_id": "68ef91b998202416e8844de2"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-06-28T09:13:01.856Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "d7b47ccf71fdf83dd81d3501",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "b78c5810ea05a3cc5ba90dc5",
+					"customer": {
+						"_id": "df57fadd07155c9b8bd9fb4c",
+						"name": "Andrew Langosh",
+						"phoneNumber": "+19686919484",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.3327,
+							"latitude": 49.2147,
+							"_id": "68ef91b998202416e8844e09"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-08-03T00:12:23.807Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "dcfe2bd43e62a2a8a5a81e7b",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "adde1ac0fadd3a3efec1bac4",
+					"customer": {
+						"_id": "be77bb58a1eeaf4fdbee859b",
+						"name": "Ignacio Beier",
+						"phoneNumber": "+14338152626",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5688,
+							"latitude": 48.8877,
+							"_id": "68ef91b998202416e8844e00"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-10-04T06:32:01.670Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "09bdf9ff4c80a08aba15af13",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "98d5e48ec6f83a6bd3d0cfc9",
+					"customer": {
+						"_id": "e0b6cbe4a9afccdade53c4e2",
+						"name": "Shany Dach",
+						"phoneNumber": "+16732685390",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.6238,
+							"latitude": 48.9427,
+							"_id": "68ef91b998202416e8844e0b"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-05-26T03:21:12.531Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "4c5fadcfce14ceecc4ce6fed",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "31b1edf2c7f9abfdc22bddaa",
+					"customer": {
+						"_id": "ab97b82d61e1699df6bddfbf",
+						"name": "Anibal Swift",
+						"phoneNumber": "+14675231402",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.209,
+							"latitude": 48.9261,
+							"_id": "68ef91b998202416e8844df7"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-04-04T21:41:49.187Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "017ab248d1f6a7dde98966d8",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "b48af34e8799abba2aecea4c",
+					"customer": {
+						"_id": "8f340c8a56b8ec6da4e9efca",
+						"name": "Blaze Klocko",
+						"phoneNumber": "+16137163976",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.297,
+							"latitude": 48.7991,
+							"_id": "68ef91b998202416e8844df0"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-09-13T07:18:23.073Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "d8e6a9091ff5c17ca2dc9efe",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ae3f9bd88c312dcc8df38540",
+					"customer": {
+						"_id": "bace5bbd2b3b67aec229a59b",
+						"name": "Haven Jerde",
+						"phoneNumber": "+13869993810",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.7407,
+							"latitude": 49.0114,
+							"_id": "68ef91b998202416e8844dfd"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-12-03T10:17:59.904Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "619496844cd7c57e80da9e94",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "f032de15adb6fb1dd3ff8c1c",
+					"customer": {
+						"_id": "513fe38a3e02a0f1537c58ac",
+						"name": "Ewell Koss",
+						"phoneNumber": "+15718113178",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5,
+							"latitude": 49.1748,
+							"_id": "68ef91b998202416e8844ddf"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-03-02T19:14:35.299Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "ddfae8ce1a7e2e17fd6fae4d",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "aa8322647d15eeff9f2ec7b7",
+					"customer": {
+						"_id": "1ec98a82b09eb49ee1bf86ae",
+						"name": "Kristina Ankunding",
+						"phoneNumber": "+19078433422",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.1862,
+							"latitude": 48.7826,
+							"_id": "68ef91b998202416e8844dd2"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-08-23T16:18:54.140Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "80b9acd98ef0a0d7fa683f82",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "8309efeecd7ea5d0c5c75bce",
+					"customer": {
+						"_id": "54da5b78b3e608a0ba7e0efd",
+						"name": "Delta Hammes",
+						"phoneNumber": "+16877107992",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.2649,
+							"latitude": 49.0922,
+							"_id": "68ef91b998202416e8844de1"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-06-01T02:01:13.919Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "9ebaccbb478442f954ef3576",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ab4b34d1e34ba71ae7de1d19",
+					"customer": {
+						"_id": "eb8d86c897b5bbb7d890a02a",
+						"name": "Stuart Howell",
+						"phoneNumber": "+12913005438",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5568,
+							"latitude": 49.204,
+							"_id": "68ef91b998202416e8844e0d"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-02-28T08:37:56.501Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "6cd8e05ee87fdb6ac9c15a7c",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "dbbbd3ded0282405ce9cbbc2",
+					"customer": {
+						"_id": "3daab7aaa3fefc2f8ced1530",
+						"name": "Nolan Pouros",
+						"phoneNumber": "+15003600311",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.745,
+							"latitude": 49.2023,
+							"_id": "68ef91b998202416e8844dd9"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-11-28T00:15:35.088Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "bb221bcc2d07bee5fe6d68e1",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "7cacbb72846bfcfaf5b694e4",
+					"customer": {
+						"_id": "8436efaad7cccbf4333e0bc5",
+						"name": "Dolores Beier",
+						"phoneNumber": "+16546123102",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.3837,
+							"latitude": 48.9667,
+							"_id": "68ef91b998202416e8844def"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-05-23T18:44:15.129Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "cee0a79afdbb194f2cb12b53",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e48e4fce3ade86fcaf517c7a",
+					"customer": {
+						"_id": "51fd4dfd34c09cf5c8ae4a0c",
+						"name": "Obie Turcotte",
+						"phoneNumber": "+15155324860",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.4997,
+							"latitude": 49.0302,
+							"_id": "68ef91b998202416e8844de0"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-10-17T12:03:02.180Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "dae8e59ee7bcff4ef698238e",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "9c8af9cffb2bb7aff32933a7",
+					"customer": {
+						"_id": "ee66d66cf22a3744a0814d42",
+						"name": "Dejah Treutel",
+						"phoneNumber": "+13363203915",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.7711,
+							"latitude": 48.8782,
+							"_id": "68ef91b998202416e8844e0f"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-01-22T16:12:19.461Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "c7988ba99139c7e3dc9eabff",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "e07345c6afa464ddf13cadef",
+					"customer": {
+						"_id": "2ccd2ad3cdcded7ae0d4cbab",
+						"name": "Ressie Schmidt",
+						"phoneNumber": "+18826934251",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.4765,
+							"latitude": 49.0726,
+							"_id": "68ef91b998202416e8844dd4"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-01-09T18:30:27.590Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "a412dae1f7bc468043da57da",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4fd9ff3d7bc1fc7c8df3632c",
+					"customer": {
+						"_id": "d50e1cf4f4edab4ad40fde92",
+						"name": "Brad King",
+						"phoneNumber": "+15064753599",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.3125,
+							"latitude": 48.9154,
+							"_id": "68ef91b998202416e8844e05"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-11-09T03:37:36.170Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "b91dceca425cc1f8ab978ada",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "3be418c888dafcea0eda5903",
+					"customer": {
+						"_id": "6875f780dd67bafc2dbdefbc",
+						"name": "Mikel Becker",
+						"phoneNumber": "+14713466647",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.6422,
+							"latitude": 49.1086,
+							"_id": "68ef91b998202416e8844de7"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-08-29T07:27:25.506Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "af9d2dae32f1869aa54f4fac",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "cd05ad5edcb3bfe4f8c5b120",
+					"customer": {
+						"_id": "3a987e9e43d4db840eea5cf4",
+						"name": "Yoshiko Kub-Stokes",
+						"phoneNumber": "+14818576561",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5631,
+							"latitude": 49.0454,
+							"_id": "68ef91b998202416e8844dd7"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-09-20T12:30:34.928Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "d54a63dcd5129f14915fbffd",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "d3d4044b8efefc3aae1abe4b",
+					"customer": {
+						"_id": "eecb7dab658bf5efc97dcf6f",
+						"name": "Ozella Tromp",
+						"phoneNumber": "+19324765649",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5091,
+							"latitude": 49.0037,
+							"_id": "68ef91b998202416e8844e10"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-04-29T22:13:56.708Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "123ad5c37bb8fb7efad5d096",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4f920a9ef8d9ae2718a996b6",
+					"customer": {
+						"_id": "ed2a6eaac3c7e7a6e20d70ca",
+						"name": "August Runte",
+						"phoneNumber": "+15503336543",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.7545,
+							"latitude": 48.8256,
+							"_id": "68ef91b998202416e8844e0e"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-03-14T17:15:35.733Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "8ff1adbc9cac6f7dd5d0ba40",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "ddbba79799a12a18be1ae402",
+					"customer": {
+						"_id": "72f77ff12adc67005807ee3c",
+						"name": "Matteo Beahan",
+						"phoneNumber": "+15107779718",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.6697,
+							"latitude": 49,
+							"_id": "68ef91b998202416e8844deb"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-10-11T02:23:16.640Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "e749f23e4e3fc37f6d2d03db",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "abfb66ce09545bbc91ccdf90",
+					"customer": {
+						"_id": "5ddaf113f7d93aa80be24349",
+						"name": "Duncan Schultz",
+						"phoneNumber": "+14585688984",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.2024,
+							"latitude": 48.9919,
+							"_id": "68ef91b998202416e8844de5"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-05-31T05:35:06.476Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "165eafcdcad629daa2164ece",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "d551bd693e368be5c2da20ed",
+					"customer": {
+						"_id": "f2c10c2bdea312b10d3359d4",
+						"name": "Gladys Hammes",
+						"phoneNumber": "+12215152207",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.769,
+							"latitude": 48.8443,
+							"_id": "68ef91b998202416e8844e12"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-10-17T10:34:24.112Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "5fdbecaeaecbe71b0499ade6",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "4ef3aacd7b5eabc5c9bdadef",
+					"customer": {
+						"_id": "74de90abd1fc2bcfff9dcfd4",
+						"name": "Itzel DuBuque",
+						"phoneNumber": "+17063936073",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.4393,
+							"latitude": 49.3034,
+							"_id": "68ef91b998202416e8844dec"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2024-11-23T23:51:12.927Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "2dfaefed5bc2ec6928260c3d",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "d5de781f8cf96f5050caebf9",
+					"customer": {
+						"_id": "adba9d31bf6aada62f7de9ce",
+						"name": "Timothy Durgan",
+						"phoneNumber": "+12334444371",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.63,
+							"latitude": 48.8511,
+							"_id": "68ef91b998202416e8844df9"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-04-12T07:54:40.147Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "fdb215818acaa1d7e2e1aafa",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "bf7cb676d977d54b5c3ba2cb",
+					"customer": {
+						"_id": "d83adc9fe78ccab970becc0b",
+						"name": "Kiarra Herzog-Okuneva",
+						"phoneNumber": "+18587501104",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5142,
+							"latitude": 49.1098,
+							"_id": "68ef91b998202416e8844e07"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-07-01T15:58:57.015Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "2e5866b85dbe7ebef18d4e36",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "b1007a0e2e05bdab9ac2df74",
+					"customer": {
+						"_id": "494c5c3fc4987437c5d0f41c",
+						"name": "Jolie Connelly",
+						"phoneNumber": "+19248710450",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.5762,
+							"latitude": 48.9528,
+							"_id": "68ef91b998202416e8844ddc"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2026-03-03T06:10:15.102Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "bab396cee6a5128bd5bfea49",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "1ceb14195e50f7c5d510bf25",
+					"customer": {
+						"_id": "2fd9ccb6512cb6b7ad4dd9ec",
+						"name": "Albert Price",
+						"phoneNumber": "+18983918607",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.9168,
+							"latitude": 48.9702,
+							"_id": "68ef91b998202416e8844dd6"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-03-15T16:11:44.333Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "0fbdfd1eb3c9eff7b52bee95",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "f46d4e12ddd5ef2fac358b24",
+					"customer": {
+						"_id": "d64f9d41970fd53b5229ac1f",
+						"name": "Chaya Pfannerstill",
+						"phoneNumber": "+14213561969",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.3576,
+							"latitude": 49.0631,
+							"_id": "68ef91b998202416e8844e06"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"state": "processing",
+					"creationDate": "2025-04-09T15:07:42.811Z",
+					"deliveryDate": null,
+					"orderer": "Axel",
+					"area": "Zone 2",
+					"amountPaid": 0,
+					"products": [
+						{
+							"_id": "daf9ab9380cceb9e6c744346",
+							"product": {
+								"_id": "6877c62aaed17235608b5510",
+								"name": "Tomate",
+								"price": 1,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2
+						}
+					],
+					"group": "6877c21e2849078caf344b43"
+				},
+				{
+					"_id": "68de70c20bcbab9085252fca",
+					"products": [
+						{
+							"product": {
+								"_id": "688254cfa2474909cbf16093",
+								"name": "Pomme",
+								"price": 2.6,
+								"group": "6877c21e2849078caf344b43",
+								"__v": 0
+							},
+							"quantity": 2,
+							"_id": "68de70c20bcbab9085252fcb"
+						}
+					],
+					"creationDate": "2025-10-02T12:32:02.189Z",
+					"deliveryDate": null,
+					"orderer": "Axel1",
+					"state": "processing",
+					"customer": {
+						"_id": "2fd9ccb6512cb6b7ad4dd9ec",
+						"name": "Albert Price",
+						"phoneNumber": "+18983918607",
+						"location": {
+							"name": "location name",
+							"area": "Zone 2",
+							"longitude": 4.9168,
+							"latitude": 48.9702,
+							"_id": "68ef91b998202416e8844dd6"
+						},
+						"group": "6877c21e2849078caf344b43"
+					},
+					"area": "Zone 2",
+					"group": "6877c21e2849078caf344b43",
+					"__v": 0
+				}
+			],
+			"deliveryDate": "2025-10-02T12:33:18.450Z",
+			"state": "processing",
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		}
+	],
+	"orders": [
+		{
+			"_id": "4fcf44dbea6a3dd0ec0cf28e",
+			"customer": {
+				"_id": "fb224bea97465051dd4bec5a",
+				"name": "Velva O'Reilly",
+				"phoneNumber": "+13272117607",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1481,
+					"latitude": 48.7807,
+					"_id": "68ef920998202416e8844eb0"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-01-04T03:20:16.300Z",
+			"deliveryDate": "2025-07-29T09:42:09.251Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "5ecbce15e23bfa0a8dfb39aa",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f694ec922d4b88fea19c5bfe",
+			"customer": {
+				"_id": "4a9acbbed943a155703b33e4",
+				"name": "Earl Wehner",
+				"phoneNumber": "+18322124045",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5329,
+					"latitude": 49.2168,
+					"_id": "68ef920998202416e8844e75"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-08-21T21:21:09.743Z",
+			"deliveryDate": "2025-07-29T09:41:23.125Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "e3c5f62775f947868be834a3",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "399c41beb3c9cf9a8d5637a4",
+			"customer": {
+				"_id": "c662e50083801cd871da08fb",
+				"name": "Ezra Sanford",
+				"phoneNumber": "+17303180411",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.6568,
+					"latitude": 49.0672,
+					"_id": "68ef920998202416e8844e9d"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2024-09-06T11:54:17.527Z",
+			"deliveryDate": "2025-07-29T09:42:36.773Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "ee2ccbaefe2bbaccb70298cf",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "eddc87baae2417f0d8d454e0",
+			"customer": {
+				"_id": "aef243f3451dae8fe0b85d4f",
+				"name": "Shayne Quigley",
+				"phoneNumber": "+17726467620",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.2349,
+					"latitude": 49.1768,
+					"_id": "68ef920998202416e8844e94"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-05-21T22:52:07.703Z",
+			"deliveryDate": "2025-07-29T09:28:19.467Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "a21c8b33ab9275b4bad0ea6f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e9220dcf5e21bf816dabb6ec",
+			"customer": {
+				"_id": "8359eb1417b293ffd1d8aede",
+				"name": "Russell Langworth",
+				"phoneNumber": "+19419631599",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.3734,
+					"latitude": 48.8524,
+					"_id": "68ef920998202416e8844e87"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-02-09T11:06:17.889Z",
+			"deliveryDate": "2025-07-29T09:42:11.115Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "7c7f75ed38fb66168688d5db",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ea37f84fc849ee3fc2f7ea7c",
+			"customer": {
+				"_id": "7829b044eab1f5dacaed93c5",
+				"name": "Zachariah Marquardt",
+				"phoneNumber": "+15432803344",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1469,
+					"latitude": 48.9937,
+					"_id": "68ef920998202416e8844e85"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-04-14T01:48:44.320Z",
+			"deliveryDate": "2025-07-29T09:39:18.206Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "2cbb72adf14db8dbbe0a52cc",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d6a8b15a2d29fe0ecacc64ec",
+			"customer": {
+				"_id": "a32d6bc02333b5ff5e5013e4",
+				"name": "Dana Considine",
+				"phoneNumber": "+16624889368",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5805,
+					"latitude": 48.8042,
+					"_id": "68ef920998202416e8844e8f"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-03-12T12:20:26.206Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "fd74ff6168a8ebbfb2bfe6ff",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "0adfe70e971ebbe86cb5aa6d",
+			"customer": {
+				"_id": "70da77aeffceb267c1ce1c6a",
+				"name": "Carlo Hintz",
+				"phoneNumber": "+18776409908",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5875,
+					"latitude": 49.052,
+					"_id": "68ef920998202416e8844e81"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-04-30T08:06:06.487Z",
+			"deliveryDate": "2025-07-29T09:42:34.541Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "07cbacde6c66bc4dce9775e3",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a6cedfafcc4e210f56be0a4d",
+			"customer": {
+				"_id": "2e608b3041341bda1d02abf3",
+				"name": "Adaline Schaden",
+				"phoneNumber": "+14839777349",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.7906,
+					"latitude": 49.253,
+					"_id": "68ef920998202416e8844e6d"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-02-21T01:55:44.030Z",
+			"deliveryDate": "2025-07-29T09:41:52.149Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "ccd1a2fd12b26c3f58ad759e",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "03bb7f05db82c6d8319b3fd6",
+			"customer": {
+				"_id": "bcbf3df4819bbebb3e74b167",
+				"name": "Clement Lockman",
+				"phoneNumber": "+17666821872",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.526,
+					"latitude": 49.0009,
+					"_id": "68ef920998202416e8844e99"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-02-23T19:28:12.877Z",
+			"deliveryDate": "2025-07-29T09:42:16.653Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "0ce2d25ffb2c207cf1dfc7db",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "abfb66ce09545bbc91ccdf90",
+			"customer": {
+				"_id": "5ddaf113f7d93aa80be24349",
+				"name": "Duncan Schultz",
+				"phoneNumber": "+14585688984",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.2024,
+					"latitude": 48.9919,
+					"_id": "68ef920998202416e8844e7d"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-05-31T05:35:06.476Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "165eafcdcad629daa2164ece",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b5eaedf74e16fbfced9adcc3",
+			"customer": {
+				"_id": "faca2b2bd1d08afb075be0fe",
+				"name": "Naomie Murphy",
+				"phoneNumber": "+18092067987",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.7303,
+					"latitude": 48.9305,
+					"_id": "68ef920998202416e8844eaf"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-02-06T19:38:51.621Z",
+			"deliveryDate": "2025-07-29T09:42:44.357Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "ff8a27ceaaa2dbc23ad227c6",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4ef3aacd7b5eabc5c9bdadef",
+			"customer": {
+				"_id": "74de90abd1fc2bcfff9dcfd4",
+				"name": "Itzel DuBuque",
+				"phoneNumber": "+17063936073",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.4393,
+					"latitude": 49.3034,
+					"_id": "68ef920998202416e8844e84"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-11-23T23:51:12.927Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "2dfaefed5bc2ec6928260c3d",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d1740bb4e9ef2ac813c5b5ec",
+			"customer": {
+				"_id": "a2fa418f57ccfaa3234bbfc4",
+				"name": "Hermina Grant",
+				"phoneNumber": "+13703254897",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.2193,
+					"latitude": 49.169,
+					"_id": "68ef920998202416e8844e8e"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "pending",
+			"creationDate": "2025-11-02T07:22:14.941Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "1d83de63fe6e1f3c6649a643",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "1ceb14195e50f7c5d510bf25",
+			"customer": {
+				"_id": "2fd9ccb6512cb6b7ad4dd9ec",
+				"name": "Albert Price",
+				"phoneNumber": "+18983918607",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.9168,
+					"latitude": 48.9702,
+					"_id": "68ef920998202416e8844e6e"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-03-15T16:11:44.333Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "0fbdfd1eb3c9eff7b52bee95",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "de060fdcd78cde11c6deaa5d",
+			"customer": {
+				"_id": "f2cbbb3e9dce3c0fcef9f5af",
+				"name": "Finn Farrell",
+				"phoneNumber": "+15015104897",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.342,
+					"latitude": 49.1313,
+					"_id": "68ef920998202416e8844ead"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2024-09-05T10:31:34.993Z",
+			"deliveryDate": "2025-07-29T09:41:55.364Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "fe0f23f044eccae2e974d88d",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "0f7a5b9f96d4aa566f7f6e02",
+			"customer": {
+				"_id": "274e3a4a9ccf37eb03effbfb",
+				"name": "Turner Zemlak",
+				"phoneNumber": "+19089339773",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5672,
+					"latitude": 48.7994,
+					"_id": "68ef920998202416e8844e6b"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-05-17T08:48:51.770Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "acc390a8f2edabfdddf1b69e",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "6aa20859edd1d1fa39b5b0e7",
+			"customer": {
+				"_id": "155c4dd329d6ddb0ae684bf0",
+				"name": "Leanne Russel",
+				"phoneNumber": "+16876719368",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.3814,
+					"latitude": 49.1149,
+					"_id": "68ef920998202416e8844e67"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-03-18T17:46:21.151Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "7b7cd08bb2ac763f4c76e155",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b78c5810ea05a3cc5ba90dc5",
+			"customer": {
+				"_id": "df57fadd07155c9b8bd9fb4c",
+				"name": "Andrew Langosh",
+				"phoneNumber": "+19686919484",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.3327,
+					"latitude": 49.2147,
+					"_id": "68ef920998202416e8844ea3"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-08-03T00:12:23.807Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "dcfe2bd43e62a2a8a5a81e7b",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "adde1ac0fadd3a3efec1bac4",
+			"customer": {
+				"_id": "be77bb58a1eeaf4fdbee859b",
+				"name": "Ignacio Beier",
+				"phoneNumber": "+14338152626",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5688,
+					"latitude": 48.8877,
+					"_id": "68ef920998202416e8844e9a"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-10-04T06:32:01.670Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "09bdf9ff4c80a08aba15af13",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3a14fa15b70e281addc4c14b",
+			"customer": {
+				"_id": "4cfbb13dbbbb4bed9e57cdf5",
+				"name": "Vicenta Legros",
+				"phoneNumber": "+14725703952",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1828,
+					"latitude": 49.2853,
+					"_id": "68ef920998202416e8844e76"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-04-24T20:37:06.783Z",
+			"deliveryDate": "2025-07-29T09:27:50.657Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "4c8e2db77de04c4a8a9eaf19",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ad7602bd09397bbf12ba6c0f",
+			"customer": {
+				"_id": "c5c1cbbcfe5f2ea9925ecd85",
+				"name": "Thurman Kshlerin",
+				"phoneNumber": "+18002502604",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1411,
+					"latitude": 48.7891,
+					"_id": "68ef920998202416e8844e9c"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-02-27T10:26:05.037Z",
+			"deliveryDate": "2025-07-29T09:42:07.844Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "fb3fcae4b9afc4405abc21fd",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b48af34e8799abba2aecea4c",
+			"customer": {
+				"_id": "8f340c8a56b8ec6da4e9efca",
+				"name": "Blaze Klocko",
+				"phoneNumber": "+16137163976",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.297,
+					"latitude": 48.7991,
+					"_id": "68ef920998202416e8844e89"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-09-13T07:18:23.073Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "d8e6a9091ff5c17ca2dc9efe",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "7c1ae42eab18cfeb28a10bef",
+			"customer": {
+				"_id": "a003aab4cbb7951b7cd3ea61",
+				"name": "Everett Zieme",
+				"phoneNumber": "+14652231637",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.2838,
+					"latitude": 48.9948,
+					"_id": "68ef920998202416e8844e8d"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-01-19T04:28:58.733Z",
+			"deliveryDate": "2025-07-29T09:41:58.758Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "d82aeafddbba67cf7ca63c6f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "7cacbb72846bfcfaf5b694e4",
+			"customer": {
+				"_id": "8436efaad7cccbf4333e0bc5",
+				"name": "Dolores Beier",
+				"phoneNumber": "+16546123102",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.3837,
+					"latitude": 48.9667,
+					"_id": "68ef920998202416e8844e88"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-05-23T18:44:15.129Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "cee0a79afdbb194f2cb12b53",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9c8af9cffb2bb7aff32933a7",
+			"customer": {
+				"_id": "ee66d66cf22a3744a0814d42",
+				"name": "Dejah Treutel",
+				"phoneNumber": "+13363203915",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.7711,
+					"latitude": 48.8782,
+					"_id": "68ef920998202416e8844ea9"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-01-22T16:12:19.461Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "c7988ba99139c7e3dc9eabff",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4fd9ff3d7bc1fc7c8df3632c",
+			"customer": {
+				"_id": "d50e1cf4f4edab4ad40fde92",
+				"name": "Brad King",
+				"phoneNumber": "+15064753599",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.3125,
+					"latitude": 48.9154,
+					"_id": "68ef920998202416e8844e9f"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-11-09T03:37:36.170Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "b91dceca425cc1f8ab978ada",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3be418c888dafcea0eda5903",
+			"customer": {
+				"_id": "6875f780dd67bafc2dbdefbc",
+				"name": "Mikel Becker",
+				"phoneNumber": "+14713466647",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.6422,
+					"latitude": 49.1086,
+					"_id": "68ef920998202416e8844e7f"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-08-29T07:27:25.506Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "af9d2dae32f1869aa54f4fac",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4f920a9ef8d9ae2718a996b6",
+			"customer": {
+				"_id": "ed2a6eaac3c7e7a6e20d70ca",
+				"name": "August Runte",
+				"phoneNumber": "+15503336543",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.7545,
+					"latitude": 48.8256,
+					"_id": "68ef920998202416e8844ea8"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-03-14T17:15:35.733Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "8ff1adbc9cac6f7dd5d0ba40",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ddbba79799a12a18be1ae402",
+			"customer": {
+				"_id": "72f77ff12adc67005807ee3c",
+				"name": "Matteo Beahan",
+				"phoneNumber": "+15107779718",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.6697,
+					"latitude": 49,
+					"_id": "68ef920998202416e8844e83"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-10-11T02:23:16.640Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "e749f23e4e3fc37f6d2d03db",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "8de6aaf0be6d8cbdad8f4f5c",
+			"customer": {
+				"_id": "14562ed2c4efa846049d1d61",
+				"name": "Greg Beier",
+				"phoneNumber": "+19576841398",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.6403,
+					"latitude": 49.2877,
+					"_id": "68ef920998202416e8844e66"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2024-09-17T22:50:09.914Z",
+			"deliveryDate": "2025-07-29T09:41:48.909Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "8a86ba7efd0292d7c1ea36ba",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ead2ac2be8daa71bf576abcb",
+			"customer": {
+				"_id": "489cd8e319b82fabcbd50e6c",
+				"name": "Paige West",
+				"phoneNumber": "+18859829065",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.2616,
+					"latitude": 49.2628,
+					"_id": "68ef920998202416e8844e73"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-07-01T16:30:01.955Z",
+			"deliveryDate": "2025-07-29T09:27:42.266Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "ce5cbb463dc1fe8f2fe8ee6f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9832ffad2fba3eb3772d3ded",
+			"customer": {
+				"_id": "a4c2ccb6b47aed147a78afe8",
+				"name": "Taya Ziemann",
+				"phoneNumber": "+12698114298",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5865,
+					"latitude": 49.0419,
+					"_id": "68ef920998202416e8844e90"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-11-20T13:38:36.728Z",
+			"deliveryDate": "2025-07-29T09:42:29.508Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "fe00dcf3ceeed45fbc6922ab",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "698a7ea487044722a24dddcd",
+			"customer": {
+				"_id": "70a486bfedb7e2c4accca7c2",
+				"name": "Milton Bashirian-Cronin",
+				"phoneNumber": "+19028242136",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.4136,
+					"latitude": 49.1582,
+					"_id": "68ef920998202416e8844e80"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-01-31T20:37:43.928Z",
+			"deliveryDate": "2025-07-29T09:41:17.852Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "7f640c02f7d5c2c8beda85b3",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bf7cb676d977d54b5c3ba2cb",
+			"customer": {
+				"_id": "d83adc9fe78ccab970becc0b",
+				"name": "Kiarra Herzog-Okuneva",
+				"phoneNumber": "+18587501104",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5142,
+					"latitude": 49.1098,
+					"_id": "68ef920998202416e8844ea1"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-07-01T15:58:57.015Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "2e5866b85dbe7ebef18d4e36",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "2ba9bdacab0ce3cceddb6cfe",
+			"customer": {
+				"_id": "e4d73b47c5cac807c14c09b8",
+				"name": "Francesca Kozey",
+				"phoneNumber": "+16675069185",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.3447,
+					"latitude": 48.9676,
+					"_id": "68ef920998202416e8844ea6"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-02-20T15:16:51.854Z",
+			"deliveryDate": "2025-07-29T09:42:00.250Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "25fa7922304af4eb2d0fdca5",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "fc95ebfd9688fcfee0aba747",
+			"customer": {
+				"_id": "1e513af763e70ef94501ba3c",
+				"name": "Kyra Parisian",
+				"phoneNumber": "+17772711992",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5135,
+					"latitude": 48.9737,
+					"_id": "68ef920998202416e8844e69"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-05-23T13:18:01.477Z",
+			"deliveryDate": "2025-07-29T09:42:15.310Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "dc2b3adf2cbfefb353a8e41f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "edc5c1e835e14bd105ded6bc",
+			"customer": {
+				"_id": "b21a80c1a2c58bcc5bae84af",
+				"name": "Guiseppe Hilll",
+				"phoneNumber": "+16254851000",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.2918,
+					"latitude": 49.0152,
+					"_id": "68ef920998202416e8844e95"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-06-06T14:24:06.018Z",
+			"deliveryDate": "2025-07-29T09:41:56.964Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "1a0dbc0bb0d7a6dbc1d3e910",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4f7eafebab2aa2a2aa9fc1d4",
+			"customer": {
+				"_id": "5adc1f3b947f893aead0fe5c",
+				"name": "Fannie Ortiz",
+				"phoneNumber": "+18538403202",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.6963,
+					"latitude": 49.0599,
+					"_id": "68ef920998202416e8844e7b"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-12-01T09:01:01.580Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "797c71fceddccabcaa446fcd",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "791b59acb6d9adf9adf0ce0f",
+			"customer": {
+				"_id": "7269ddafb2eb0eea9ce22cbe",
+				"name": "Stewart Dooley",
+				"phoneNumber": "+16119767164",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5628,
+					"latitude": 49.051,
+					"_id": "68ef920998202416e8844e82"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-10-27T18:32:02.285Z",
+			"deliveryDate": "2025-07-29T09:42:27.539Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "2943f8797c317cf6d13ca50f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "31b1edf2c7f9abfdc22bddaa",
+			"customer": {
+				"_id": "ab97b82d61e1699df6bddfbf",
+				"name": "Anibal Swift",
+				"phoneNumber": "+14675231402",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.209,
+					"latitude": 48.9261,
+					"_id": "68ef920998202416e8844e91"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-04-04T21:41:49.187Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "017ab248d1f6a7dde98966d8",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4e386f2cc2ecbdcebefae42f",
+			"customer": {
+				"_id": "baf8b1bd938e8c90fd5fe890",
+				"name": "Ramiro Franecki",
+				"phoneNumber": "+13868868127",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1854,
+					"latitude": 49.2827,
+					"_id": "68ef920998202416e8844e98"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-06-11T05:30:34.219Z",
+			"deliveryDate": "2025-07-29T09:27:47.051Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "c3e8ff9ffe47fdddd14185cf",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bacb1e88c6b7c8d890bd627d",
+			"customer": {
+				"_id": "ad0700ad13af0ccd20bc81fe",
+				"name": "Olen Trantow-Raynor",
+				"phoneNumber": "+19842399398",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.4206,
+					"latitude": 49.1228,
+					"_id": "68ef920998202416e8844e92"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-08-28T10:59:28.841Z",
+			"deliveryDate": "2025-07-29T09:41:53.796Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "16989b609bfef9532099496a",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ae3f9bd88c312dcc8df38540",
+			"customer": {
+				"_id": "bace5bbd2b3b67aec229a59b",
+				"name": "Haven Jerde",
+				"phoneNumber": "+13869993810",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.7407,
+					"latitude": 49.0114,
+					"_id": "68ef920998202416e8844e97"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-12-03T10:17:59.904Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "619496844cd7c57e80da9e94",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "dbbbd3ded0282405ce9cbbc2",
+			"customer": {
+				"_id": "3daab7aaa3fefc2f8ced1530",
+				"name": "Nolan Pouros",
+				"phoneNumber": "+15003600311",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.745,
+					"latitude": 49.2023,
+					"_id": "68ef920998202416e8844e71"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-11-28T00:15:35.088Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "bb221bcc2d07bee5fe6d68e1",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e48e4fce3ade86fcaf517c7a",
+			"customer": {
+				"_id": "51fd4dfd34c09cf5c8ae4a0c",
+				"name": "Obie Turcotte",
+				"phoneNumber": "+15155324860",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.4997,
+					"latitude": 49.0302,
+					"_id": "68ef920998202416e8844e78"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-10-17T12:03:02.180Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "dae8e59ee7bcff4ef698238e",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e07345c6afa464ddf13cadef",
+			"customer": {
+				"_id": "2ccd2ad3cdcded7ae0d4cbab",
+				"name": "Ressie Schmidt",
+				"phoneNumber": "+18826934251",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.4765,
+					"latitude": 49.0726,
+					"_id": "68ef920998202416e8844e6c"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-01-09T18:30:27.590Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "a412dae1f7bc468043da57da",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d3d4044b8efefc3aae1abe4b",
+			"customer": {
+				"_id": "eecb7dab658bf5efc97dcf6f",
+				"name": "Ozella Tromp",
+				"phoneNumber": "+19324765649",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5091,
+					"latitude": 49.0037,
+					"_id": "68ef920998202416e8844eaa"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-04-29T22:13:56.708Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "123ad5c37bb8fb7efad5d096",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d551bd693e368be5c2da20ed",
+			"customer": {
+				"_id": "f2c10c2bdea312b10d3359d4",
+				"name": "Gladys Hammes",
+				"phoneNumber": "+12215152207",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.769,
+					"latitude": 48.8443,
+					"_id": "68ef920998202416e8844eac"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2024-10-17T10:34:24.112Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "5fdbecaeaecbe71b0499ade6",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "3b383d6dd3d95ff7c141f379",
+			"customer": {
+				"_id": "ca926a3f063d9925df515cf5",
+				"name": "Savanah Kirlin",
+				"phoneNumber": "+18767139007",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5015,
+					"latitude": 48.9703,
+					"_id": "68ef920998202416e8844e9e"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-06-20T00:35:12.621Z",
+			"deliveryDate": "2025-07-29T09:42:13.180Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "b32e48ca81dfcce784bf2f21",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "4b6b6a5e2ec8a9afe2bddce5",
+			"customer": {
+				"_id": "3e4c9b2669be9a4787294cfa",
+				"name": "Rosalinda Labadie",
+				"phoneNumber": "+19095726111",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.7224,
+					"latitude": 49.2541,
+					"_id": "68ef920998202416e8844e72"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-01-30T18:59:15.110Z",
+			"deliveryDate": "2025-07-29T09:41:50.684Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "d8defbfeadda6dadff1f5cd8",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f93c4845addba4dc2fd3bc4e",
+			"customer": {
+				"_id": "7dc1e4aace9d55feda357e0a",
+				"name": "Summer Lang",
+				"phoneNumber": "+16985658150",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1082,
+					"latitude": 49.0774,
+					"_id": "68ef920998202416e8844e86"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "pending",
+			"creationDate": "2024-12-31T04:00:25.182Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "d4ca7c39ebfdd0d6aebfa05b",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "22e4ecf3fbd3d396045f742d",
+			"customer": {
+				"_id": "9219efbaee9fcf9486c7bbfd",
+				"name": "Desiree Hackett",
+				"phoneNumber": "+17687213680",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5721,
+					"latitude": 48.9864,
+					"_id": "68ef920998202416e8844e8a"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-11-02T16:31:36.981Z",
+			"deliveryDate": "2025-07-29T09:42:20.779Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "7feb9ff8edcbcd294b5882ee",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "b1007a0e2e05bdab9ac2df74",
+			"customer": {
+				"_id": "494c5c3fc4987437c5d0f41c",
+				"name": "Jolie Connelly",
+				"phoneNumber": "+19248710450",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5762,
+					"latitude": 48.9528,
+					"_id": "68ef920998202416e8844e74"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-03-03T06:10:15.102Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "bab396cee6a5128bd5bfea49",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f46d4e12ddd5ef2fac358b24",
+			"customer": {
+				"_id": "d64f9d41970fd53b5229ac1f",
+				"name": "Chaya Pfannerstill",
+				"phoneNumber": "+14213561969",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.3576,
+					"latitude": 49.0631,
+					"_id": "68ef920998202416e8844ea0"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-04-09T15:07:42.811Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "daf9ab9380cceb9e6c744346",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "cc8c52abc39f17969b141077",
+			"customer": {
+				"_id": "bfbbeca3cbef0d9736660d22",
+				"name": "Kyler Hagenes",
+				"phoneNumber": "+17245395188",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.762,
+					"latitude": 49.0806,
+					"_id": "68ef920998202416e8844e9b"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-04-22T00:58:55.800Z",
+			"deliveryDate": "2025-07-29T09:42:40.596Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "fd2936fdb8ac280400214bd6",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e42aaac3ec9b4f766215cc01",
+			"customer": {
+				"_id": "5c707ff3cf9714d38129a1b8",
+				"name": "Jaylen Kris",
+				"phoneNumber": "+18996336121",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5095,
+					"latitude": 48.955,
+					"_id": "68ef920998202416e8844e7c"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-05-19T11:07:33.092Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "d6def9ef59c6018dc6de16bd",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e1abca93ebfc3da8c0b2d2da",
+			"customer": {
+				"_id": "3bcadc0aca164c4e8a17c79c",
+				"name": "Birdie Terry",
+				"phoneNumber": "+12093063961",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.8002,
+					"latitude": 48.9283,
+					"_id": "68ef920998202416e8844e70"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-01-21T18:52:55.933Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "daa1c38bda43ec40a4b3cc8b",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "df40d9269bbb8a3d67a3eb5b",
+			"customer": {
+				"_id": "17e8ad151da2f543ef6e07a4",
+				"name": "Freddy Bogan",
+				"phoneNumber": "+15022710289",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.4331,
+					"latitude": 48.962,
+					"_id": "68ef920998202416e8844e68"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-05-14T18:32:04.299Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "a2cb8b53a2fb3e7a6c54e5df",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "5acc9b72aadba5a682a01eb9",
+			"customer": {
+				"_id": "59b0570bca256dc6bdf5ed4f",
+				"name": "Marion Moore",
+				"phoneNumber": "+15367017162",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.0875,
+					"latitude": 48.9523,
+					"_id": "68ef920998202416e8844e7a"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-06-28T09:13:01.856Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "d7b47ccf71fdf83dd81d3501",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "98d5e48ec6f83a6bd3d0cfc9",
+			"customer": {
+				"_id": "e0b6cbe4a9afccdade53c4e2",
+				"name": "Shany Dach",
+				"phoneNumber": "+16732685390",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.6238,
+					"latitude": 48.9427,
+					"_id": "68ef920998202416e8844ea5"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-05-26T03:21:12.531Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "4c5fadcfce14ceecc4ce6fed",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "f032de15adb6fb1dd3ff8c1c",
+			"customer": {
+				"_id": "513fe38a3e02a0f1537c58ac",
+				"name": "Ewell Koss",
+				"phoneNumber": "+15718113178",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5,
+					"latitude": 49.1748,
+					"_id": "68ef920998202416e8844e77"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-03-02T19:14:35.299Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "ddfae8ce1a7e2e17fd6fae4d",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "aa8322647d15eeff9f2ec7b7",
+			"customer": {
+				"_id": "1ec98a82b09eb49ee1bf86ae",
+				"name": "Kristina Ankunding",
+				"phoneNumber": "+19078433422",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.1862,
+					"latitude": 48.7826,
+					"_id": "68ef920998202416e8844e6a"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-08-23T16:18:54.140Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "80b9acd98ef0a0d7fa683f82",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "8309efeecd7ea5d0c5c75bce",
+			"customer": {
+				"_id": "54da5b78b3e608a0ba7e0efd",
+				"name": "Delta Hammes",
+				"phoneNumber": "+16877107992",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.2649,
+					"latitude": 49.0922,
+					"_id": "68ef920998202416e8844e79"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-06-01T02:01:13.919Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "9ebaccbb478442f954ef3576",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ab4b34d1e34ba71ae7de1d19",
+			"customer": {
+				"_id": "eb8d86c897b5bbb7d890a02a",
+				"name": "Stuart Howell",
+				"phoneNumber": "+12913005438",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5568,
+					"latitude": 49.204,
+					"_id": "68ef920998202416e8844ea7"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2026-02-28T08:37:56.501Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "6cd8e05ee87fdb6ac9c15a7c",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "a511b7be48d77b1eabd49ed9",
+			"customer": {
+				"_id": "95db35bce073b4f5bf4e65f8",
+				"name": "Robin Powlowski",
+				"phoneNumber": "+12099696571",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5479,
+					"latitude": 49.2603,
+					"_id": "68ef920998202416e8844e8b"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-10-03T12:29:48.941Z",
+			"deliveryDate": "2025-07-29T09:41:47.115Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "cbc46f3bc20e8942dcbd3b94",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "bcdecdd0ca4cb722c8cdc8b3",
+			"customer": {
+				"_id": "f4cf0a6b9bcfeef55cf0cd90",
+				"name": "Aracely Grimes",
+				"phoneNumber": "+13885788838",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.3241,
+					"latitude": 49.284,
+					"_id": "68ef920998202416e8844eae"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-01-13T10:18:11.467Z",
+			"deliveryDate": "2025-07-29T09:27:22.857Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "2cff7dc6b88b30e8edf2b17e",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "e7567b43cdbbeb9a7aa00cdc",
+			"customer": {
+				"_id": "efd0d980b8e79ad1af50b30c",
+				"name": "Sarai Wiza",
+				"phoneNumber": "+16896489309",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.729,
+					"latitude": 49.1417,
+					"_id": "68ef920998202416e8844eab"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-11-21T03:29:51.437Z",
+			"deliveryDate": "2025-07-29T09:42:38.596Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "cb9acccf7ecd8ecba1ea3f5f",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "cd05ad5edcb3bfe4f8c5b120",
+			"customer": {
+				"_id": "3a987e9e43d4db840eea5cf4",
+				"name": "Yoshiko Kub-Stokes",
+				"phoneNumber": "+14818576561",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.5631,
+					"latitude": 49.0454,
+					"_id": "68ef920998202416e8844e6f"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-09-20T12:30:34.928Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "d54a63dcd5129f14915fbffd",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "de5e4eee2bffe295bbffaff0",
+			"customer": {
+				"_id": "9dac0cc6c37491beccec1fad",
+				"name": "Sandrine Rowe",
+				"phoneNumber": "+14832411756",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.0198,
+					"latitude": 48.8238,
+					"_id": "68ef920998202416e8844e8c"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-04-06T03:51:07.116Z",
+			"deliveryDate": "2025-07-29T09:42:06.187Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "2d8c5ed32c10b869ce7cc56e",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9acb18f4ab3de262abddaa44",
+			"customer": {
+				"_id": "648d03eebcd7ba4dce7cbe03",
+				"name": "Watson Mertz",
+				"phoneNumber": "+19915233940",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.1885,
+					"latitude": 48.9225,
+					"_id": "68ef920998202416e8844e7e"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-04-20T01:58:59.379Z",
+			"deliveryDate": "2025-07-29T09:42:02.220Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "a893e8bb8fecd4fb1aaabe05",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "9aae4ab2b7be94bd7b4ec6da",
+			"customer": {
+				"_id": "dc7b191c8ca68545696c1d09",
+				"name": "Rebeca Schaden",
+				"phoneNumber": "+16034240140",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.488,
+					"latitude": 49.1888,
+					"_id": "68ef920998202416e8844ea2"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2025-04-07T11:28:06.017Z",
+			"deliveryDate": "2025-07-29T09:41:20.229Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "aa3fb33ab65fceeef9ea83b0",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "ca9b7fefeeebc2ddbe122597",
+			"customer": {
+				"_id": "e057eeeaa720fdfcc7cec6d8",
+				"name": "Tabitha Fadel",
+				"phoneNumber": "+14803820268",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.5343,
+					"latitude": 48.9908,
+					"_id": "68ef920998202416e8844ea4"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2026-03-22T12:14:50.198Z",
+			"deliveryDate": "2025-07-29T09:42:18.708Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "b8fdba5b21a0f8ce108ff64a",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "d5de781f8cf96f5050caebf9",
+			"customer": {
+				"_id": "adba9d31bf6aada62f7de9ce",
+				"name": "Timothy Durgan",
+				"phoneNumber": "+12334444371",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.63,
+					"latitude": 48.8511,
+					"_id": "68ef920998202416e8844e93"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "processing",
+			"creationDate": "2025-04-12T07:54:40.147Z",
+			"deliveryDate": null,
+			"orderer": "Axel",
+			"area": "Zone 2",
+			"amountPaid": 0,
+			"products": [
+				{
+					"_id": "fdb215818acaa1d7e2e1aafa",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "96bbb0ae934fead4d512b44b",
+			"customer": {
+				"_id": "b7de258aead98db13a63a5ae",
+				"name": "Daphne Abernathy",
+				"phoneNumber": "+14265199907",
+				"location": {
+					"name": "location name",
+					"area": "Zone 1",
+					"longitude": 5.7782,
+					"latitude": 48.9668,
+					"_id": "68ef920998202416e8844e96"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"state": "delivered",
+			"creationDate": "2024-09-11T12:11:24.305Z",
+			"deliveryDate": "2025-07-29T09:42:42.615Z",
+			"orderer": "Axel",
+			"area": "Zone 1",
+			"amountPaid": 2,
+			"products": [
+				{
+					"_id": "4b1c9ba2db5c464db0462ffe",
+					"product": {
+						"_id": "6877c62aaed17235608b5510",
+						"name": "Tomate",
+						"price": 1,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2
+				}
+			],
+			"group": "6877c21e2849078caf344b43"
+		},
+		{
+			"_id": "68de70c20bcbab9085252fca",
+			"products": [
+				{
+					"product": {
+						"_id": "688254cfa2474909cbf16093",
+						"name": "Pomme",
+						"price": 2.6,
+						"group": "6877c21e2849078caf344b43",
+						"__v": 0
+					},
+					"quantity": 2,
+					"_id": "68de70c20bcbab9085252fcb"
+				}
+			],
+			"creationDate": "2025-10-02T12:32:02.189Z",
+			"deliveryDate": null,
+			"orderer": "Axel1",
+			"state": "processing",
+			"customer": {
+				"_id": "2fd9ccb6512cb6b7ad4dd9ec",
+				"name": "Albert Price",
+				"phoneNumber": "+18983918607",
+				"location": {
+					"name": "location name",
+					"area": "Zone 2",
+					"longitude": 4.9168,
+					"latitude": 48.9702,
+					"_id": "68ef920998202416e8844e6e"
+				},
+				"group": "6877c21e2849078caf344b43"
+			},
+			"area": "Zone 2",
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		}
+	],
+	"products": [
+		{
+			"_id": "6877c62aaed17235608b5510",
+			"name": "Tomate",
+			"price": 1,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "6882259565e05b5fd2ae2dab",
+			"name": "Pamplemousse",
+			"price": 5.3,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "688254cfa2474909cbf16093",
+			"name": "Pomme",
+			"price": 2.6,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "68874aa549cbc2378dfc8a0f",
+			"name": "Carotte",
+			"price": 10,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "68de77657e6d625dfa9c15fe",
+			"name": "G",
+			"price": 2.5,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "68de793631c73dab16f680f4",
+			"name": "Go",
+			"price": 5,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		},
+		{
+			"_id": "68de7cb7b3ef719ea1c39844",
+			"name": "T",
+			"price": 2.5,
+			"group": "6877c21e2849078caf344b43",
+			"__v": 0
+		}
+	],
+    "allProducts":[]
+}

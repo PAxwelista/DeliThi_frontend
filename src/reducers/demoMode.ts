@@ -5,7 +5,6 @@ export const DemoModeSlice = createSlice({
     initialState: {value:false},
     reducers: {
         setDemoMode: (state, action: PayloadAction<boolean>) => {
-            console.log("state :" ,state ,action )
             state.value = action.payload;
         }
     },
