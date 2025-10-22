@@ -68,7 +68,8 @@ function MapScreen({ navigation }: Props) {
     }, [refreshDirection]);
 
     useEffect(() => {
-        delivery?.delivery?.orders.every(order => order.state != "processing") && handleDeliveryFinished();
+        if (delivery?.delivery?.orders.every(order => order.state != "processing") || !delivery?.delivery)
+            handleDeliveryFinished();
     }, [delivery]);
 
     const removeFirstOrder = () => {
@@ -83,6 +84,8 @@ function MapScreen({ navigation }: Props) {
     };
 
     const handleDeliveryFinished = async () => {
+        if (!delivery?.delivery?._id) return;
+
         const response = await fetchWithAuth(`${apiUrl}/deliveries/state`, {
             method: "PATCH",
             headers: {
@@ -164,40 +167,62 @@ function MapScreen({ navigation }: Props) {
     const handleDelivery = async () => {
         removeFirstOrder();
 
-        setRefreshDirection(t => !t);
+        handleRefreshDirection();
 
         if (delivery?.delivery?.orders[0]) navigation.navigate("DeliverOrder", delivery?.delivery?.orders[0]);
     };
 
     const handlePostponeDelivery = async () => {
-        await fetchWithAuth(`${apiUrl}/orders/state`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                newState: "pending",
-                ordersID: [delivery?.delivery?.orders[0]._id],
-            }),
-        });
 
-        await fetchWithAuth(
-            `${apiUrl}/deliveries/${delivery?.delivery?._id}/removeOrder/${delivery?.delivery?.orders[0]?._id}`,
-            {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
+        if (!delivery?.delivery?.orders[0]?._id) return
+
+        const ordersID = [delivery?.delivery?.orders[0]?._id];
+
+        if (!removeOrdersFromDelivery(ordersID)) return;
 
         removeFirstOrder();
 
-        setRefreshDirection(t => !t);
+        handleRefreshDirection();
+    };
+
+    const handlePostponeAllDelivery = async () => {
+        const ordersID = delivery?.delivery?.orders.map(v => v._id);
+
+        console.log(ordersID)
+        if (!ordersID) return;
+
+        if (!removeOrdersFromDelivery(ordersID)) return;
+
+        delivery?.setDelivery(null);
+
+        handleRefreshDirection();
     };
 
     const handleRefreshDirection = () => {
         setRefreshDirection(t => !t);
+    };
+
+    const removeOrdersFromDelivery = async (ordersID: string[]) => {
+        try {
+            const responseDelivery = await fetchWithAuth(
+                `${apiUrl}/deliveries/${delivery?.delivery?._id}/removeOrders`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        ordersID,
+                    }),
+                }
+            );
+
+            const dataDelivery = await responseDelivery.json();
+
+            return dataDelivery;
+        } catch (error) {}
+
+        return null;
     };
 
     const Markers = delivery?.delivery?.orders.map((order: Order) => {
@@ -248,6 +273,10 @@ function MapScreen({ navigation }: Props) {
                                 <Button
                                     title="Repousser livraison"
                                     onPress={handlePostponeDelivery}
+                                />
+                                <Button
+                                    title="Repousser toute la livraison"
+                                    onPress={handlePostponeAllDelivery}
                                 />
                                 <Button
                                     title="Rafraîchir"
@@ -307,8 +336,11 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     buttons: {
+        flex: 1,
+        flexWrap: "wrap",
         justifyContent: "center",
         flexDirection: "row",
+        zIndex: 10,
     },
     currentLocationBtn: {
         position: "absolute",

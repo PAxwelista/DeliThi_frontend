@@ -12,7 +12,9 @@ function PrepareDeliveryScreen({ navigation }: Props) {
 
     const _id = delivery?.delivery?._id;
 
-    const { data, isLoading } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
+    const { data, isLoading } = _id
+        ? useFetch(`${apiUrl}/deliveries/${_id}/allProducts`)
+        : { data: null, isLoading: false };
 
     const handleStartRide = () => {
         navigation.navigate("Map");
