@@ -165,9 +165,11 @@ function MapScreen({ navigation }: Props) {
     }
 
     const handleDelivery = async () => {
-        removeFirstOrder();
+        if (delivery?.delivery?.orders && delivery?.delivery?.orders.length > 1) {
+            removeFirstOrder();
 
-        handleRefreshDirection();
+            handleRefreshDirection();
+        }
 
         if (delivery?.delivery?.orders[0]) navigation.navigate("DeliverOrder", delivery?.delivery?.orders[0]);
     };
