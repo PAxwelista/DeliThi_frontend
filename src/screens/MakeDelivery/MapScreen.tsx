@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import { View, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import { Button, Screen, Loading, Error as ErrorComp, Text, Map } from "../../components";
+import { Button, Screen, Loading, Error as ErrorComp, Text, Map, CustomModal } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
 import { useFetchWithAuth } from "../../hooks";
+import { OrderInfosModal } from "./components/OrderInfosModal";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
 
@@ -34,6 +35,10 @@ function MapScreen({ navigation }: Props) {
     const [refreshDirection, setRefreshDirection] = useState<boolean>(false);
     const [loadingRefreshDirection, setLoadingRefreshDirection] = useState<boolean>(false);
     const [loadingGetPosition, setLoadingGetPosition] = useState<boolean>(false);
+    const [showOrderInfos, setShowOrderInfos] = useState<boolean>(false);
+    const [selectMarkerInfos, setSelectMarkerInfos] = useState<{ order: Order; deliverySequence: number } | null>(
+        delivery?.delivery ? { order: delivery?.delivery?.orders[0], deliverySequence: 0 } : null
+    );
 
     useEffect(() => {
         (async () => {
@@ -225,7 +230,7 @@ function MapScreen({ navigation }: Props) {
         return null;
     };
 
-    const Markers = delivery?.delivery?.orders.map((order: Order) => {
+    const Markers = delivery?.delivery?.orders.map((order: Order, i: number) => {
         return (
             <Marker
                 key={order._id}
@@ -233,7 +238,10 @@ function MapScreen({ navigation }: Props) {
                     latitude: order.customer.location.latitude,
                     longitude: order.customer.location.longitude,
                 }}
-                onPress={() => console.log("tetst")}
+                onPress={() => {
+                    setSelectMarkerInfos({order , deliverySequence:i+1});
+                    setShowOrderInfos(true);
+                }}
             />
         );
     });
@@ -305,6 +313,7 @@ function MapScreen({ navigation }: Props) {
                         />
                     )}
                 </Map>
+                <OrderInfosModal order={selectMarkerInfos?.order} deliverySequence={selectMarkerInfos?.deliverySequence} visible={showOrderInfos} setVisible={setShowOrderInfos}  setRefreshDirection={setRefreshDirection}/>
             </Screen>
         );
     } catch (err) {
