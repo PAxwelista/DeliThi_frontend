@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View } from "react-native";
+import { StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View ,Keyboard  } from "react-native";
 import { Text } from "./Text";
 import { useAppSelector } from "../hooks/redux";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,7 +15,7 @@ export function Screen({ children, style, title, hasHeaderBar = false }: Props) 
     const addPaddingTop = Platform.OS === "android" && !hasHeaderBar;
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <SafeAreaView style={styles.safeArea} onTouchStart={()=>Keyboard.dismiss()}>
             <KeyboardAvoidingView
                 style={styles.KeyboardAvoidingView}
                 
