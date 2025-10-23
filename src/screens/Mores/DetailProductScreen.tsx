@@ -10,13 +10,14 @@ type Props = NativeStackScreenProps<MoreMenuStackParamList, "DetailProduct">;
 const inputs: Record<keyof Product["product"], string> = {
     name: "Nom",
     price: "prix",
+    capacity: "capacité"
 };
 
 const DetailProductScreen = ({ route }: Props) => {
     const fetchWithAuth = useFetchWithAuth()
-    const { name, price } = route.params;
+    const { name, price ,capacity } = route.params;
 
-    const [values, setValues] = useState<typeof inputs>({ name, price: price.toString() });
+    const [values, setValues] = useState<typeof inputs>({ name, price: price.toString() , capacity : (capacity?.toString()||"")});
 
     const handleValidateModifications = (newValues: Record<string, string>) => {
 
