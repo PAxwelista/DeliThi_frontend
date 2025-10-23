@@ -1,6 +1,7 @@
-import { SafeAreaView, StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View } from "react-native";
+import { StyleSheet, ViewStyle, Platform, KeyboardAvoidingView, View } from "react-native";
 import { Text } from "./Text";
 import { useAppSelector } from "../hooks/redux";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type Props = {
     children: React.ReactNode;
