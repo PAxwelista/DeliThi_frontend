@@ -188,7 +188,6 @@ function MapScreen({ navigation }: Props) {
     const handlePostponeAllDelivery = async () => {
         const ordersID = delivery?.delivery?.orders.map(v => v._id);
 
-        console.log(ordersID)
         if (!ordersID) return;
 
         if (!removeOrdersFromDelivery(ordersID)) return;
