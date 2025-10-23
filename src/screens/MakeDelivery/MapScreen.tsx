@@ -84,20 +84,20 @@ function MapScreen({ navigation }: Props) {
     };
 
     const handleDeliveryFinished = async () => {
-        if (!delivery?.delivery?._id) return;
+        if (delivery?.delivery?._id) {
+            const response = await fetchWithAuth(`${apiUrl}/deliveries/state`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    newState: "finished",
+                    deliveryID: delivery?.delivery?._id,
+                }),
+            });
 
-        const response = await fetchWithAuth(`${apiUrl}/deliveries/state`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                newState: "finished",
-                deliveryID: delivery?.delivery?._id,
-            }),
-        });
-
-        const data = await response.json();
+            await response.json();
+        }
 
         navigation.navigate("BeginDelivery");
     };
@@ -173,8 +173,7 @@ function MapScreen({ navigation }: Props) {
     };
 
     const handlePostponeDelivery = async () => {
-
-        if (!delivery?.delivery?.orders[0]?._id) return
+        if (!delivery?.delivery?.orders[0]?._id) return;
 
         const ordersID = [delivery?.delivery?.orders[0]?._id];
 
