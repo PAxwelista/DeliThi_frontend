@@ -18,7 +18,7 @@ export function useFetch(url: string) {
     useEffect(() => {
         (async () => {
             setIsLoading(true);
-
+            setError("")
             try {
                 if (demoMode.value) {
                     const route = url
