@@ -1,12 +1,13 @@
 import { useCallback, useState } from "react";
 import { useFetch, useFetchWithAuth } from "../../hooks";
-import { Screen, Loading, Error, Button, Text } from "../../components";
+import { Screen, Loading, Error, Button, Text, Input } from "../../components";
 import { ScrollView } from "react-native";
 import { Order, MakeDeliveryStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { apiUrl } from "../../config";
 import { useDelivery } from "../../context/orderContext";
 import { useFocusEffect } from "@react-navigation/native";
+import { splitOrdersByCapacity } from "../../utils";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "BeginDelivery">;
 
@@ -15,6 +16,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders/allAreas`);
 
     const [errorMessage, setErrorMessage] = useState<string>("");
+    const [maxCapacity , setMaxCapacity] = useState<number>(0)
 
     useFocusEffect(
         useCallback(() => {
@@ -52,8 +54,14 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 setErrorMessage("Il n’y a aucune commande à traiter dans cette zone.");
                 return;
             }
+            console.log("test" )
+            const elmt = splitOrdersByCapacity(orders.orders,maxCapacity)
+            console.log(elmt)
+            console.log(splitOrdersByCapacity(orders.orders,maxCapacity))
 
-            const ordersID = orders.orders.map((order: Order) => order._id);
+            const ordersID = splitOrdersByCapacity(orders.orders,maxCapacity).firstPartOrders.map((order: Order) => order._id);
+
+        
 
             const stateChangeResponse = await fetchWithAuth(`${apiUrl}/orders/state`, {
                 method: "PATCH",
@@ -116,6 +124,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 {Areas}
                 {errorMessage && <Text>{errorMessage}</Text>}
             </ScrollView>
+            <Text>Capacité max</Text><Input value={maxCapacity.toString()} onChangeText={(text)=>setMaxCapacity(parseInt(text) ||0)}></Input>
         </Screen>
     );
 }
