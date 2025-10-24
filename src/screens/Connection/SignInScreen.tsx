@@ -1,4 +1,4 @@
-import { Input, Button, Screen, PasswordInput, Text, EmailVerification } from "../../components";
+import { Input, Button, Screen, PasswordInput, Text, EmailVerification, ForgotPassword } from "../../components";
 import { StyleSheet, View } from "react-native";
 import { useInput } from "../../hooks";
 import { useState } from "react";
@@ -17,12 +17,13 @@ const SignIn = ({ navigation }: Props) => {
     const password = useInput();
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [show, setShow] = useState<boolean>(false);
+    const [showForgotPassword , setShowForgotPassword] =useState<boolean>(false)
 
-    const handleEmailVerifFinished = (value: {type : "error" ;error: string} | {type:"success";login : Login}) => {
-        if (value.type==="error") return setErrorMessage(value.error);
+    const handleEmailVerifFinished = (value: { type: "error"; error: string } | { type: "success"; login: Login }) => {
+        if (value.type === "error") return setErrorMessage(value.error);
 
         dispatch(setLogin(value.login));
-    }
+    };
 
     const handleSignIn = async () => {
         setErrorMessage("");
@@ -36,7 +37,6 @@ const SignIn = ({ navigation }: Props) => {
             });
             const json = await response.json();
             if (json.result) {
-                
                 if (json.login?.emailVerified === false) {
                     setShow(true);
                     return;
@@ -55,9 +55,12 @@ const SignIn = ({ navigation }: Props) => {
     };
 
     const handleDemoMode = () => {
-        dispatch(setDemoMode(true))
-        
-    }
+        dispatch(setDemoMode(true));
+    };
+
+    const handleForgotPassword = () => {
+        setShowForgotPassword(true)
+    };
 
     return (
         <Screen title="Connexion">
@@ -77,15 +80,20 @@ const SignIn = ({ navigation }: Props) => {
                         onPress={handleSignIn}
                     />
                 </View>
-
-                <Button
-                    title={"Inscription"}
-                    onPress={handleChangePage}
-                />
-                <Button
-                    title={"Essayer sans compte"}
-                    onPress={handleDemoMode}
-                />
+                <View>
+                    <Button
+                        title={"Inscription"}
+                        onPress={handleChangePage}
+                    />
+                    <Button
+                        title={"Mot de passe oublié"}
+                        onPress={handleForgotPassword}
+                    />
+                    <Button
+                        title={"Essayer sans compte"}
+                        onPress={handleDemoMode}
+                    />
+                </View>
             </View>
             <EmailVerification
                 username={username.value}
@@ -93,6 +101,9 @@ const SignIn = ({ navigation }: Props) => {
                 show={show}
                 setShow={setShow}
             />
+            <ForgotPassword
+            show={showForgotPassword}
+            setShow={setShowForgotPassword}/>
         </Screen>
     );
 };
