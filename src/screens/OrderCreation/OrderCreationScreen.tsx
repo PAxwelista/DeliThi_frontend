@@ -69,8 +69,10 @@ function OrderCreationScreen() {
                               name: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.name || "",
                               price:
                                   availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.price || "",
-                          },
+                            capacity:availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.capacity || "",
+                                },
                           quantity,
+                          
                           _id: id || "",
                           group: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.group || "",
                       },
