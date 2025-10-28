@@ -69,10 +69,12 @@ function OrderCreationScreen() {
                               name: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.name || "",
                               price:
                                   availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.price || "",
-                            capacity:availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.capacity || "",
-                                },
+                              capacity:
+                                  availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.capacity ||
+                                  "",
+                          },
                           quantity,
-                          
+
                           _id: id || "",
                           group: availableProducts?.products.find((v: AvailableProduct) => v._id === id)?.group || "",
                       },
@@ -178,10 +180,11 @@ function OrderCreationScreen() {
                         }}
                         controller={functions => (inputDropdownCustomerRef = functions)}
                         containerStyle={styles.autocompleteStyle}
+                        inputContainerStyle={styles.autocompleteInputStyle}
                     />
 
                     <Button
-                        title="Ajouter un client"
+                        title="Ajouter"
                         onPress={() => setShowModal(true)}
                         style={styles.button}
                     />
@@ -228,11 +231,18 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        backgroundColor: "white",
+        borderRadius: 10,
+        padding: 10,
     },
     autocompleteStyle: {
         width: "70%",
         borderRadius: 5,
-        boxShadow: "1px 1px 1px black",
+        boxShadow: "0.5px -0.5px 2px black",
+        backgroundColor: "white",
+    },
+    autocompleteInputStyle: {
+        backgroundColor: "white",
     },
     button: {
         width: "25%",
@@ -251,7 +261,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     productMng: {
-        flex: 8,
+        flex: 15,
         justifyContent: "center",
         marginBottom: 10,
     },

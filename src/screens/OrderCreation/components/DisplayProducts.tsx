@@ -30,15 +30,21 @@ export default function DisplayProducts({ products, removeProduct }: Props) {
     ));
 
     return (
+        <View style={styles.container}>
         <View style={styles.orders}>
             <ScrollView contentContainerStyle={styles.ordersScroll}>
                 {products.length ? productElmts : <Text>Aucun produits dans le panier</Text>}
             </ScrollView>
-        </View>
+        </View></View>
     );
 }
 
 const styles = StyleSheet.create({
+    container:{
+        flex: 2,
+        borderRadius: 10,
+        backgroundColor:"white",
+    },
     ordersScroll: {
         padding: 10,
     },
@@ -47,6 +53,8 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 10,
         borderWidth: 1,
+        backgroundColor:"#F2F2F2",
+        margin:20
     },
 
     product: {

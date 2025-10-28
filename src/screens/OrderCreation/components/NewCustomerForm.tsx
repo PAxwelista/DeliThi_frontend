@@ -67,6 +67,7 @@ export default function NewCustomerForm({ addCustomer }: PropType) {
                         onChangeText={handleChangeTextLocation}
                         showChevron={false}
                         onClear={handleResetForm}
+                        inputContainerStyle={styles.autocompleteInputStyle}
                     />
                     <Input
                         placeholder="Zone"
@@ -120,4 +121,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
     },
+    autocompleteInputStyle:{
+        backgroundColor:"white",
+        boxShadow: "0.5px -0.5px 2px black",
+        borderRadius:10,
+        margin:5
+
+    }
 });

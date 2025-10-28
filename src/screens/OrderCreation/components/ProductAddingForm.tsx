@@ -14,8 +14,8 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
     const [quantity, setQuantity] = useState<number>(1);
     const [selectedProductId, setSelectedProductId] = useState<string>("");
 
-    const handleAddProduct = (selectedProductId : string, quantity : number) => {
-        if (!selectedProductId) return 
+    const handleAddProduct = (selectedProductId: string, quantity: number) => {
+        if (!selectedProductId) return;
         addProduct(selectedProductId, quantity);
     };
 
@@ -33,33 +33,37 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
 
     return (
         <View style={styles.ordersChoices}>
-            <View style={styles.picker}>
-                <Picker
-                    selectedValue={selectedProductId}
-                    onValueChange={(id: string) => setSelectedProductId(id)}
-                    itemStyle={[GlobalStyles.globalFontFamily ,styles.pickerElmt]}
-                >
-                    {PickerElmts}
-                </Picker>
-            </View>
-            <View style={styles.quantityContainer}>
-                <Input
-                    placeholder="Qté"
-                    keyboardType="decimal-pad"
-                    style={styles.quantityInput}
-                    value={quantity.toString()}
-                    onChangeText={v => (Number(v) > 0 ? setQuantity(Number(v)) : setQuantity(0))}
-                />
-                <Button
-                    title="+"
-                    style={styles.quantityChanger}
-                    onPress={() => setQuantity(v => v + 1)}
-                />
-                <Button
-                    title="-"
-                    style={styles.quantityChanger}
-                    onPress={() => setQuantity(v => (v > 1 ? v - 1 : 1))}
-                />
+            <View style={styles.pickerAndQty}>
+                <View style={styles.picker}>
+                    <Picker
+                        selectedValue={selectedProductId}
+                        onValueChange={(id: string) => setSelectedProductId(id)}
+                        itemStyle={[GlobalStyles.globalFontFamily, styles.pickerElmt]}
+                    >
+                        {PickerElmts}
+                    </Picker>
+                </View>
+                <View style={styles.quantityContainer}>
+                    <Input
+                        placeholder="Qté"
+                        keyboardType="decimal-pad"
+                        style={styles.quantityInput}
+                        value={quantity.toString()}
+                        onChangeText={v => (Number(v) > 0 ? setQuantity(Number(v)) : setQuantity(0))}
+                    />
+                    <View style={styles.qtyBtns}>
+                        <Button
+                            title="+"
+                            style={styles.quantityChanger}
+                            onPress={() => setQuantity(v => v + 1)}
+                        />
+                        <Button
+                            title="-"
+                            style={styles.quantityChanger}
+                            onPress={() => setQuantity(v => (v > 1 ? v - 1 : 1))}
+                        />
+                    </View>
+                </View>
             </View>
             <Button
                 title="Ajouter"
@@ -72,27 +76,53 @@ export default function ProductAddingForm({ availableProducts, addProduct }: Pro
 const styles = StyleSheet.create({
     ordersChoices: {
         flex: 2,
-        justifyContent: "center",
+        justifyContent:"space-around",
+        backgroundColor:"white",
+        borderRadius:10,
+        padding:10,
+        marginVertical:50
     },
     picker: {
-        backgroundColor: "lightgrey",
+        flex: 1,
+        backgroundColor: "white",
         borderRadius: 10,
         margin: 2,
-        boxShadow: "1px 1px 1px black",
+        minWidth:"30%",
+        borderWidth:0.2
     },
     pickerElmt: {
         height: 120,
     },
 
-    quantityChanger: {
-        flex: 1,
-    },
-
     quantityContainer: {
+        flex: 1,
         flexDirection: "row",
         alignContent: "center",
+        justifyContent:"center",
+        alignItems:"center",
+        height: 70,
+        width: 30,
     },
     quantityInput: {
         flex: 2,
+    },
+    pickerAndQty: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems:"center",
+        marginBottom:10
+    },
+    qtyBtns: {
+        flexDirection: "column",
+    },
+    quantityChanger: {
+        flex: 1,
+        minHeight:10,
+        minWidth:10,
+        height:30,
+        width:30,
+        padding:0,
+        alignItems:"center",
+        justifyContent:"center"
     },
 });
