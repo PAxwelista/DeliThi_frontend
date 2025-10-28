@@ -8,6 +8,7 @@ type ButtonProps = {
     isListMember?: boolean;
     style?: ViewStyle;
     disable?: boolean;
+    children?: React.ReactNode;
 };
 
 export function Button({ isListMember = false, disable = false, ...props }: ButtonProps) {
@@ -36,7 +37,7 @@ export function Button({ isListMember = false, disable = false, ...props }: Butt
                     color="#3b82f6"
                 />
             ) : (
-                <Text style={styles.text}>{props.title}</Text>
+                props.children ?? <Text style={styles.text}>{props.title}</Text>
             )}
         </TouchableOpacity>
     );
