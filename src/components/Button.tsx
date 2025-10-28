@@ -45,22 +45,22 @@ export function Button({ isListMember = false, disable = false, ...props }: Butt
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "lightblue",
+        backgroundColor: "#437CF7",
         margin: 2,
         padding: 10,
         minHeight: 42,
         borderRadius: 10,
-        boxShadow: "1px 1px 1px black",
         justifyContent: "center",
     },
     text: {
         textAlign: "center",
+        color:"white"
     },
     delivery: {
         margin: 10,
         padding: 20,
         borderRadius: 10,
-        backgroundColor: "lightblue",
+        backgroundColor: "#437CF7",
         boxShadow: "2px 2px 5px black",
     },
 });
