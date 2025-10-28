@@ -3,7 +3,7 @@ import { Text } from "../components/Text";
 import { useState } from "react";
 
 type ButtonProps = {
-    title: string;
+    title?: string;
     onPress: () => void | Promise<void>;
     isListMember?: boolean;
     style?: ViewStyle;
