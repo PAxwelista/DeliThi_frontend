@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     screen: {
-        padding: 0,
+        paddingBottom: 0,
+        paddingHorizontal: 0,
     },
     list:{
         padding:20
