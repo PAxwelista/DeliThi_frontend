@@ -1,0 +1,6 @@
+{
+    "pending": "Enregistré",
+    "processing": "En cours de livraison",
+    "delivered": "Livré",
+    "cancelled": "Annulé"
+}

@@ -6,14 +6,7 @@ import { useState } from "react";
 import { apiUrl } from "../../config";
 import { CalculateOrderTotalPrice } from "../../utils";
 import { useFetchWithAuth } from "../../hooks";
-
-
-const frenchState = {
-    pending: "Enregistré",
-    processing: "En cours de livraison",
-    delivered: "Livré",
-    cancelled: "Annulé",
-};
+import frenchState from "../../../assets/translation/frenchState.json"
 
 type Props = NativeStackScreenProps<OrderStackParamList, "DetailOrder">;
 
