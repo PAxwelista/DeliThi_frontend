@@ -54,7 +54,7 @@ export const ForgotPassword = ({ show, setShow }: Props) => {
         });
 
         const data = await response.json();
-        console.log(data);
+        
         if (!data.result) setErrorMessage(data.error);
 
         setMessage("Mot de passe modifié");

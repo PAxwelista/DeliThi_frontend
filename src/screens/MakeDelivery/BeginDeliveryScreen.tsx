@@ -54,10 +54,8 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 setErrorMessage("Il n’y a aucune commande à traiter dans cette zone.");
                 return;
             }
-            console.log("test" )
+            
             const elmt = splitOrdersByCapacity(orders.orders,maxCapacity)
-            console.log(elmt)
-            console.log(splitOrdersByCapacity(orders.orders,maxCapacity))
 
             const ordersID = splitOrdersByCapacity(orders.orders,maxCapacity).firstPartOrders.map((order: Order) => order._id);
 
