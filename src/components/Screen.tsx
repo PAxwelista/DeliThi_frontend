@@ -12,11 +12,11 @@ type Props = {
 
 export function Screen({ children, style, title, hasHeaderBar = false }: Props) {
     const demoMode = useAppSelector(state => state.demoMode);
-    const addPaddingTop = Platform.OS === "android" && !hasHeaderBar;
+    const addPaddingTop = Platform.OS != "android" && !hasHeaderBar;
 
     return (
         <SafeAreaView
-            edges={["top"]}
+            edges={addPaddingTop ?["top"] : []}
             style={styles.safeArea}
             onTouchStart={() => Keyboard.dismiss()}
         >
