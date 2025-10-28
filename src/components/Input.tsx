@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderRadius: 10,
         boxShadow: "0.5px -0.5px 2px black",
+        backgroundColor:"white"
     },
     textInput: {
         minHeight: 40,
