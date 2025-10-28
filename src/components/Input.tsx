@@ -22,11 +22,10 @@ export function Input(props: TextInputProps) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "lightgrey",
         margin: 5,
         paddingHorizontal: 10,
         borderRadius: 10,
-        boxShadow: "-1px -1px 3px black",
+        boxShadow: "0.5px -0.5px 2px black",
     },
     textInput: {
         minHeight: 40,
