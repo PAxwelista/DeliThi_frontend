@@ -39,11 +39,15 @@ function OrdersScreen({ navigation }: Props) {
     if (data && !data.result) return <Error err={data.error} />;
 
     return (
-        <Screen title="Commandes">
+        <Screen
+            title="Commandes"
+            style={styles.screen}
+        >
             <FlatList
                 data={data?.orders.sort((a: OrderType, b: OrderType) => b.creationDate.localeCompare(a.creationDate))}
                 renderItem={renderOrder}
                 keyExtractor={item => item._id}
+                style={styles.list}
             />
         </Screen>
     );
@@ -57,4 +61,10 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
     },
+    screen: {
+        padding: 0,
+    },
+    list:{
+        padding:20
+    }
 });
