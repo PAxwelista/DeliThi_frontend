@@ -11,7 +11,7 @@ type Props = {
     onPress: () => void | Promise<void>;
 };
 
-const colorState = { pending: "#D5FFC4", processing: "#C4ECFF", delivered: "#D5D5D5", cancelled: "#FFC4C4" };
+export const colorState = { pending: "#D5FFC4", processing: "#C4ECFF", delivered: "#D5D5D5", cancelled: "#FFC4C4" };
 
 export const Order = ({ status, customerName, price, onPress }: Props) => {
     const orderColorStyle = { backgroundColor: colorState[status as State] };

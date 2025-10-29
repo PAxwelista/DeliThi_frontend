@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type ButtonProps = {
     title?: string;
-    onPress: (event: GestureResponderEvent) => void ;
+    onPress: (event: GestureResponderEvent) => void;
     isListMember?: boolean;
     style?: ViewStyle;
     disable?: boolean;
@@ -24,9 +24,11 @@ export function Button({ isListMember = false, disable = false, ...props }: Butt
         }
     };
 
+    const disableStyle = disable ? { backgroundColor: "grey" } : { backgroundColor: "#437CF7" };
+
     return (
         <TouchableOpacity
-            style={[style, props.style]}
+            style={[disableStyle, style, props.style]}
             onPress={handleClick}
             disabled={disable || loading}
         >
@@ -45,22 +47,19 @@ export function Button({ isListMember = false, disable = false, ...props }: Butt
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#437CF7",
         margin: 2,
         padding: 10,
         minHeight: 42,
         borderRadius: 10,
         justifyContent: "center",
-        
     },
     text: {
         textAlign: "center",
-        color:"white"
+        color: "white",
     },
     delivery: {
         margin: 10,
         padding: 20,
-        borderRadius: 10,
-        backgroundColor: "#437CF7",
+        borderRadius: 10
     },
 });
