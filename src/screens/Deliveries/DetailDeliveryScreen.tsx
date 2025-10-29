@@ -34,7 +34,10 @@ function DetailDeliveryScreen({ route }: Props) {
     };
 
     return (
-        <Screen title="Livraison">
+        <Screen
+            title="Livraison"
+            hasHeaderBar
+        >
             <Text style={styles.deliveryDate}>Date de livraison : {new Date(deliveryDate).toLocaleDateString()}</Text>
             <View style={styles.orders}>
                 <FlatList
@@ -54,8 +57,10 @@ function DetailDeliveryScreen({ route }: Props) {
                         ))}
                     </View>
                     <Text style={styles.totalPrice}>
-                        {orders.reduce((a, v) => (a + (v.amountPaid ? v.amountPaid : CalculateOrderTotalPrice(v))), 0)}{" "}
-                        euros
+                        {orders
+                            .reduce((a, v) => a + (v.amountPaid ? v.amountPaid : CalculateOrderTotalPrice(v)), 0)
+                            .toFixed(2)}
+                        €
                     </Text>
                 </View>
             </View>
@@ -67,13 +72,14 @@ export { DetailDeliveryScreen };
 
 const styles = StyleSheet.create({
     order: {
-        backgroundColor: "lightgrey",
+        backgroundColor: "white",
         borderRadius: 10,
-        margin: 5,
+        margin: 10,
         padding: 10,
     },
     orderCustomer: {
         textAlign: "center",
+        marginBottom:20
     },
     deliveryDate: {
         flex: 1,
@@ -83,6 +89,10 @@ const styles = StyleSheet.create({
     total: {
         flex: 3,
         justifyContent: "center",
+        backgroundColor: "white",
+        padding:10,
+        margin:10,
+        borderRadius:10
     },
     orders: {
         flex: 6,
