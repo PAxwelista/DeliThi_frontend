@@ -1,13 +1,12 @@
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { ReactNode, useRef } from "react";
-import { StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
-import MapView, {  LatLng, PROVIDER_DEFAULT } from "react-native-maps";
+import { StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
+import MapView, { LatLng, PROVIDER_DEFAULT } from "react-native-maps";
 
-type Props = { children: ReactNode , style:ViewStyle ,location:LatLng};
+type Props = { children: ReactNode; style: ViewStyle; location: LatLng };
 
-const Map = ({ children ,style,location}: Props) => {
-
+const Map = ({ children, style, location }: Props) => {
     const mapRef = useRef<MapView>(null);
 
     const handleFocusUserLocation = () => {
@@ -19,9 +18,8 @@ const Map = ({ children ,style,location}: Props) => {
         });
     };
 
-
     return (
-        <>
+        <View style={styles.container}>
             <MapView
                 ref={mapRef}
                 initialRegion={{
@@ -47,21 +45,24 @@ const Map = ({ children ,style,location}: Props) => {
             >
                 <FontAwesomeIcon
                     icon={faLocationCrosshairs}
-                    size={40}
+                    size={30}
                     color="white"
                 />
             </TouchableOpacity>
-        </>
+        </View>
     );
 };
 
 export { Map };
 
 const styles = StyleSheet.create({
-    currentLocationBtn : {
+    container: {
+        flex: 1,
+    },
+    currentLocationBtn: {
         position: "absolute",
-        height: 70,
-        width: 70,
+        height: 50,
+        width: 50,
         bottom: 20,
         right: 20,
         borderRadius: "50%",

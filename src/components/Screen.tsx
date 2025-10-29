@@ -8,15 +8,17 @@ type Props = {
     style?: ViewStyle;
     title?: string;
     hasHeaderBar?: boolean;
+    fullScreenTop?: boolean;
 };
 
-export function Screen({ children, style, title, hasHeaderBar = false }: Props) {
+export function Screen({ children, style, title, hasHeaderBar = false, fullScreenTop = false }: Props) {
     const demoMode = useAppSelector(state => state.demoMode);
     const addPaddingTop = Platform.OS != "android" && !hasHeaderBar;
-
+    console.log("here :", addPaddingTop && !fullScreenTop)
     return (
         <SafeAreaView
-            edges={addPaddingTop ?["top"] : []}
+            edges={addPaddingTop && !fullScreenTop ? ["top"] : []}
+            
             style={styles.safeArea}
             onTouchStart={() => Keyboard.dismiss()}
         >
@@ -37,15 +39,15 @@ const styles = StyleSheet.create({
         backgroundColor: "#F2F2F2",
     },
     safeArea: {
-        flex: 1
+        flex: 1,
     },
     container: {
         flex: 1,
-        padding: 20,
     },
     title: {
         textAlign: "center",
         fontSize: 30,
+        padding:20,
         paddingBottom: 30,
     },
 });

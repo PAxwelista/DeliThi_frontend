@@ -1,10 +1,10 @@
-import { TouchableOpacity, StyleSheet, ViewStyle, ActivityIndicator } from "react-native";
+import { TouchableOpacity, StyleSheet, ViewStyle, ActivityIndicator, GestureResponderEvent } from "react-native";
 import { Text } from "../components/Text";
 import { useState } from "react";
 
 type ButtonProps = {
     title?: string;
-    onPress: () => void | Promise<void>;
+    onPress: (event: GestureResponderEvent) => void ;
     isListMember?: boolean;
     style?: ViewStyle;
     disable?: boolean;
@@ -15,10 +15,10 @@ export function Button({ isListMember = false, disable = false, ...props }: Butt
     const style = isListMember ? styles.delivery : styles.container;
     const [loading, isLoading] = useState<boolean>(false);
 
-    const handleClick = async () => {
+    const handleClick = async (event: GestureResponderEvent) => {
         isLoading(true);
         try {
-            await props.onPress();
+            props.onPress(event);
         } finally {
             isLoading(false);
         }

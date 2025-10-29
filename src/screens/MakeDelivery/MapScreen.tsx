@@ -3,13 +3,14 @@ import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { useDelivery } from "../../context/orderContext";
 import { Order, MakeDeliveryStackParamList } from "../../types";
-import { View, StyleSheet, ActivityIndicator, Dimensions } from "react-native";
-import { Button, Screen, Loading, Error as ErrorComp, Text, Map, CustomModal } from "../../components";
+import { View, StyleSheet, ActivityIndicator, Dimensions ,Platform} from "react-native";
+import { Button, Screen, Loading, Error as ErrorComp, Text, Map, CustomModal, NextOrdersInfos } from "../../components";
 import { apiUrl } from "../../config";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { TransformSecondToTime } from "../../utils";
 import { useFetchWithAuth } from "../../hooks";
 import { OrderInfosModal } from "./components/OrderInfosModal";
+import { RowSlideButtons } from "../../components/RowSlideButtons";
 
 type Props = NativeStackScreenProps<MakeDeliveryStackParamList, "Map">;
 
@@ -136,7 +137,39 @@ function MapScreen({ navigation }: Props) {
                     };
                 });
                 await initializeRouteCoords(json.orderCoords);
-            } else setErrorMessage(json.error);
+            } else {
+                const response = await fetchWithAuth(`${apiUrl}/direction/order`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        useOpenRouteApi: false,
+                        waypointsCoords: [
+                            location,
+                            ...(delivery?.delivery?.orders.map(order => {
+                                return {
+                                    latitude: order.customer.location.latitude,
+                                    longitude: order.customer.location.longitude,
+                                };
+                            }) ?? []),
+                        ],
+                    }),
+                });
+                const json = await response.json();
+                if (json.result) {
+                    delivery?.setDelivery(prev => {
+                        if (!prev) return null;
+                        return {
+                            ...prev,
+                            orders: json.order
+                                .filter((v: number) => v > 0)
+                                .map((index: number) => prev.orders[index - 1]),
+                        };
+                    });
+                    await initializeRouteCoords(json.orderCoords);
+                } else setErrorMessage(json.error);
+            }
         } catch (error) {
             setErrorMessage("Erreur de connexion");
         }
@@ -239,60 +272,27 @@ function MapScreen({ navigation }: Props) {
                     longitude: order.customer.location.longitude,
                 }}
                 onPress={() => {
-                    setSelectMarkerInfos({order , deliverySequence:i+1});
+                    setSelectMarkerInfos({ order, deliverySequence: i + 1 });
                     setShowOrderInfos(true);
                 }}
             />
         );
     });
 
+    const buttons = [
+        { title: "Livraison", onPress: handleDelivery },
+        { title: "Repousser livraison", onPress: handlePostponeDelivery },
+        { title: "Repousser toute la livraison", onPress: handlePostponeAllDelivery },
+        { title: "Rafraîchir", onPress: handleRefreshDirection },
+    ];
+
     if (loadingGetPosition) return <Loading />;
     if (errorMessage) return <ErrorComp err={errorMessage} />;
     try {
         return (
-            <Screen style={styles.container}>
-                <View style={styles.header}>
-                    {loadingRefreshDirection ? (
-                        <ActivityIndicator
-                            size="large"
-                            color="#3b82f6"
-                        />
-                    ) : (
-                        <>
-                            <Text>Prochain client : {delivery?.delivery?.orders[0]?.customer.name}</Text>
-                            <Text>Lieu : {delivery?.delivery?.orders[0]?.customer.location.name}</Text>
-                            <Text>
-                                Temps initiale :{" "}
-                                {firstDirectionInfos?.duration
-                                    ? TransformSecondToTime(firstDirectionInfos.duration)
-                                    : "Pas définie"}
-                            </Text>
-                            <Text>
-                                Distance intiale :{" "}
-                                {firstDirectionInfos?.distance
-                                    ? Math.floor(firstDirectionInfos.distance / 1000) + " km"
-                                    : "Pas définie"}{" "}
-                            </Text>
-                            <View style={styles.buttons}>
-                                <Button
-                                    title="Livraison"
-                                    onPress={handleDelivery}
-                                />
-                                <Button
-                                    title="Repousser livraison"
-                                    onPress={handlePostponeDelivery}
-                                />
-                                <Button
-                                    title="Repousser toute la livraison"
-                                    onPress={handlePostponeAllDelivery}
-                                />
-                                <Button
-                                    title="Rafraîchir"
-                                    onPress={handleRefreshDirection}
-                                />
-                            </View>
-                        </>
-                    )}
+            <Screen style={styles.container} fullScreenTop>
+                <View style={styles.buttons}>
+                    <RowSlideButtons buttons={buttons} />
                 </View>
                 <Map
                     style={styles.map}
@@ -313,7 +313,33 @@ function MapScreen({ navigation }: Props) {
                         />
                     )}
                 </Map>
-                <OrderInfosModal order={selectMarkerInfos?.order} deliverySequence={selectMarkerInfos?.deliverySequence} visible={showOrderInfos} setVisible={setShowOrderInfos}  setRefreshDirection={setRefreshDirection}/>
+                <View style={styles.header}>
+                    {loadingRefreshDirection ? (
+                        <ActivityIndicator
+                            size="large"
+                            color="#3b82f6"
+                        />
+                    ) : (
+                        delivery?.delivery && (
+                            <NextOrdersInfos
+                                orders={delivery.delivery.orders}
+                                firstDuration={
+                                    firstDirectionInfos?.duration
+                                        ? TransformSecondToTime(firstDirectionInfos.duration)
+                                        : "Pas définie"
+                                }
+                            />
+                        )
+                    )}
+                </View>
+
+                <OrderInfosModal
+                    order={selectMarkerInfos?.order}
+                    deliverySequence={selectMarkerInfos?.deliverySequence}
+                    visible={showOrderInfos}
+                    setVisible={setShowOrderInfos}
+                    setRefreshDirection={setRefreshDirection}
+                />
             </Screen>
         );
     } catch (err) {
@@ -335,32 +361,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 0,
         paddingBottom: 0,
     },
+    buttons: {
+        position: "absolute",
+        zIndex: 1,
+        top:Platform.OS === "android" ? 0 : 40,
+    },
     map: {
         flex: 4,
         width: Dimensions.get("window").width,
         height: Dimensions.get("window").height,
     },
     header: {
-        flex: 1,
-        margin: 20,
-    },
-    buttons: {
-        flex: 1,
-        flexWrap: "wrap",
-        justifyContent: "center",
-        flexDirection: "row",
-        zIndex: 10,
-    },
-    currentLocationBtn: {
-        position: "absolute",
-        height: 70,
-        width: 70,
-        bottom: 20,
-        right: 20,
-        borderRadius: "50%",
-        justifyContent: "center",
-        alignItems: "center",
-        borderColor: "white",
-        borderWidth: 2,
+        flex: 0.2
     },
 });
