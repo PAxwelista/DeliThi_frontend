@@ -15,7 +15,6 @@ const InputFormForUpdate = ({ initialValues, inputs, handleValidateModifications
 
     const isInitialValues = JSON.stringify(values) === JSON.stringify(initialValues);
 
-    const btnStyle = isInitialValues ? { backgroundColor: "grey" } : {};
 
     const Inputs = Object.entries(inputs).map(([key, value]) => {
         const k = key as keyof typeof initialValues;
@@ -40,7 +39,6 @@ const InputFormForUpdate = ({ initialValues, inputs, handleValidateModifications
                 title="Valider changements"
                 onPress={() => handleValidateModifications(values)}
                 disable={isInitialValues}
-                style={btnStyle}
             />
         </View>
     );
