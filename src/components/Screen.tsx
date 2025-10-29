@@ -14,7 +14,6 @@ type Props = {
 export function Screen({ children, style, title, hasHeaderBar = false, fullScreenTop = false }: Props) {
     const demoMode = useAppSelector(state => state.demoMode);
     const addPaddingTop = Platform.OS != "android" && !hasHeaderBar;
-    console.log("here :", addPaddingTop && !fullScreenTop)
     return (
         <SafeAreaView
             edges={addPaddingTop && !fullScreenTop ? ["top"] : []}

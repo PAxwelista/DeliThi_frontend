@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         minHeight: 42,
         borderRadius: 10,
         justifyContent: "center",
+        
     },
     text: {
         textAlign: "center",
@@ -61,6 +62,5 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         backgroundColor: "#437CF7",
-        boxShadow: "2px 2px 5px black",
     },
 });
