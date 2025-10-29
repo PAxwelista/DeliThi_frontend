@@ -16,7 +16,7 @@ function BeginDeliveryScreen({ navigation }: Props) {
     const { data, isLoading, error, refresh } = useFetch(`${apiUrl}/orders/allAreas`);
 
     const [errorMessage, setErrorMessage] = useState<string>("");
-    const [maxCapacity , setMaxCapacity] = useState<number>(0)
+    const [maxCapacity, setMaxCapacity] = useState<number>(0);
 
     useFocusEffect(
         useCallback(() => {
@@ -54,12 +54,12 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 setErrorMessage("Il n’y a aucune commande à traiter dans cette zone.");
                 return;
             }
-            
-            const elmt = splitOrdersByCapacity(orders.orders,maxCapacity)
 
-            const ordersID = splitOrdersByCapacity(orders.orders,maxCapacity).firstPartOrders.map((order: Order) => order._id);
+            const elmt = splitOrdersByCapacity(orders.orders, maxCapacity);
 
-        
+            const ordersID = splitOrdersByCapacity(orders.orders, maxCapacity).firstPartOrders.map(
+                (order: Order) => order._id
+            );
 
             const stateChangeResponse = await fetchWithAuth(`${apiUrl}/orders/state`, {
                 method: "PATCH",
@@ -122,7 +122,12 @@ function BeginDeliveryScreen({ navigation }: Props) {
                 {Areas}
                 {errorMessage && <Text>{errorMessage}</Text>}
             </ScrollView>
-            <Text>Capacité max</Text><Input value={maxCapacity.toString()} onChangeText={(text)=>setMaxCapacity(parseInt(text) ||0)}></Input>
+            <Text>Capacité max</Text>
+            <Input
+                value={maxCapacity.toString()}
+                onChangeText={text => setMaxCapacity(parseInt(text) || 0)}
+                keyboardType="numeric"
+            ></Input>
         </Screen>
     );
 }
