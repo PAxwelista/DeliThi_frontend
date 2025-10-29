@@ -1,4 +1,4 @@
-import { FlatList,StyleSheet } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import { useFetch } from "../../hooks";
 import { Delivery as DeliveryType, DeliveriesStackParamList } from "../../types";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -45,7 +45,10 @@ function DeliveriesScreen({ navigation }: Props) {
     if (error) return <Error err={error} />;
 
     return (
-        <Screen title="Livraisons" style={styles.screen}>
+        <Screen
+            title="Livraisons"
+            style={styles.screen}
+        >
             <FlatList
                 data={data?.deliveries?.sort((a: DeliveryType, b: DeliveryType) =>
                     b.deliveryDate.localeCompare(a.deliveryDate)
@@ -60,14 +63,13 @@ function DeliveriesScreen({ navigation }: Props) {
 
 export { DeliveriesScreen };
 
-
 const styles = StyleSheet.create({
-    
     screen: {
         paddingBottom: 0,
         paddingHorizontal: 0,
+        margin: 0,
     },
-    list:{
-        padding:20
-    }
+    list: {
+        padding: 20,
+    },
 });

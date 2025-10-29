@@ -36,12 +36,14 @@ const styles = StyleSheet.create({
     KeyboardAvoidingView: {
         flex: 1,
         backgroundColor: "#F2F2F2",
+        
     },
     safeArea: {
         flex: 1,
     },
     container: {
         flex: 1,
+        margin:20
     },
     title: {
         textAlign: "center",

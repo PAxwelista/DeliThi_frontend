@@ -26,7 +26,7 @@ const AccountScreen = () => {
 
     const handleDeconnexion = () => {
         dispatch(disconnect());
-        dispatch(setDemoMode(false))
+        dispatch(setDemoMode(false));
     };
 
     const handleDeleteAcount = async () => {
@@ -41,13 +41,13 @@ const AccountScreen = () => {
             }),
         });
         const data = await response.json();
-        
-        setShowModal(false)
-        setPassword("")
+
+        setShowModal(false);
+        setPassword("");
         if (data.result) {
             return handleDeconnexion();
         }
-        setErrorMessage(data.error === "User not find or wrong password" ? "Mot de passe erroné" :  data.error)
+        setErrorMessage(data.error === "User not find or wrong password" ? "Mot de passe erroné" : data.error);
     };
 
     const buttons = [
@@ -65,7 +65,10 @@ const AccountScreen = () => {
     ));
 
     return (
-        <Screen title="Compte">
+        <Screen
+            title="Compte"
+            hasHeaderBar
+        >
             {errorMessage && <Error err={errorMessage} />}
             {Buttons}
             <CustomModal

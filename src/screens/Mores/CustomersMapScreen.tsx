@@ -114,5 +114,6 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 0,
         paddingBottom: 0,
+        margin: 0,
     },
 });

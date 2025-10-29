@@ -5,7 +5,7 @@ import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 import { apiUrl } from "../../config";
-import { Loading, Error, Button, Screen, Order } from "../../components";
+import { Loading, Error, Screen, Order } from "../../components";
 import { CalculateOrderTotalPrice } from "../../utils";
 
 type Props = NativeStackScreenProps<OrderStackParamList, "AllOrders">;
@@ -64,8 +64,9 @@ const styles = StyleSheet.create({
     screen: {
         paddingBottom: 0,
         paddingHorizontal: 0,
+        margin:0,
     },
-    list:{
-        padding:20
-    }
+    list: {
+        padding: 20,
+    },
 });

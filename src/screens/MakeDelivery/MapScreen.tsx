@@ -360,6 +360,8 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 0,
         paddingBottom: 0,
+
+        margin:0
     },
     buttons: {
         position: "absolute",
