@@ -3,6 +3,7 @@ import { Delivery, Order, Customer, AvailableProduct } from "./";
 export type DeliveriesStackParamList = {
     AllDeliveries: undefined;
     DetailDelivery: Delivery;
+    DetailOrder: Order;
 };
 
 export type OrderStackParamList = {

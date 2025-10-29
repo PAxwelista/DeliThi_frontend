@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DeliveriesStackParamList } from "../types";
-import { DeliveriesScreen, DetailDeliveryScreen } from "../screens";
+import { DeliveriesScreen, DetailDeliveryScreen,DetailOrderScreen } from "../screens";
 import { headerReturnTab } from "./config";
 
 
@@ -16,6 +16,11 @@ const Deliveries = () => {
             <DeliveriesStack.Screen
                 name="DetailDelivery"
                 component={DetailDeliveryScreen}
+                options={headerReturnTab}
+            />
+             <DeliveriesStack.Screen
+                name="DetailOrder"
+                component={DetailOrderScreen}
                 options={headerReturnTab}
             />
         </DeliveriesStack.Navigator>

@@ -1,5 +1,5 @@
-import { Screen, Text } from "../../components";
-import { View, StyleSheet, FlatList } from "react-native";
+import { Button, Screen, Text } from "../../components";
+import { View, StyleSheet, FlatList, GestureResponderEvent } from "react-native";
 import { Order, Product, TotalProduct } from "../../types";
 import { useFetch } from "../../hooks/useFetch";
 import { DeliveriesStackParamList } from "../../types/navigation";
@@ -13,14 +13,17 @@ type ItemOrder = {
 
 type Props = NativeStackScreenProps<DeliveriesStackParamList, "DetailDelivery">;
 
-function DetailDeliveryScreen({ route }: Props) {
+function DetailDeliveryScreen({ route, navigation }: Props) {
     const { _id, deliveryDate, orders } = route.params;
 
     const { data: total } = useFetch(`${apiUrl}/deliveries/${_id}/allProducts`);
 
     const renderOrders = ({ item }: ItemOrder) => {
         return (
-            <View style={styles.order}>
+            <Button
+                style={styles.order}
+                onPress={() => navigation.navigate("DetailOrder", item)}
+            >
                 <Text style={styles.orderCustomer}>{item.customer.name}</Text>
                 <View>
                     {item.products.map((product: Product) => (
@@ -29,7 +32,7 @@ function DetailDeliveryScreen({ route }: Props) {
                         </Text>
                     ))}
                 </View>
-            </View>
+            </Button>
         );
     };
 
@@ -79,7 +82,7 @@ const styles = StyleSheet.create({
     },
     orderCustomer: {
         textAlign: "center",
-        marginBottom:20
+        marginBottom: 20,
     },
     deliveryDate: {
         flex: 1,
@@ -90,9 +93,9 @@ const styles = StyleSheet.create({
         flex: 3,
         justifyContent: "center",
         backgroundColor: "white",
-        padding:10,
-        margin:10,
-        borderRadius:10
+        padding: 10,
+        margin: 10,
+        borderRadius: 10,
     },
     orders: {
         flex: 6,

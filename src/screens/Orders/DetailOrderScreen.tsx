@@ -65,7 +65,6 @@ function DetailOrderScreen({ route }: Props) {
     const statusStyle = { backgroundColor: colorState[state] };
 
     const disableBtn = area === areaInput.value;
-    console.log(areaInput.value, area);
 
     return (
         <Screen
