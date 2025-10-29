@@ -1,12 +1,17 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, KeyboardTypeOptions } from "react-native";
 import { Button } from "./Button";
 import { Input } from "./Input";
 import { useFormInput } from "../hooks";
 import { Text } from "./Text";
 
+export type InputType = {
+    value: string;
+    keyboardType: KeyboardTypeOptions;
+};
+
 type Props = {
     initialValues: Record<string, string>;
-    inputs: Record<string, string>;
+    inputs: Record<string, InputType>;
     handleValidateModifications: (values: Record<string, string>) => void;
 };
 
@@ -15,7 +20,6 @@ const InputFormForUpdate = ({ initialValues, inputs, handleValidateModifications
 
     const isInitialValues = JSON.stringify(values) === JSON.stringify(initialValues);
 
-
     const Inputs = Object.entries(inputs).map(([key, value]) => {
         const k = key as keyof typeof initialValues;
         return (
@@ -23,10 +27,11 @@ const InputFormForUpdate = ({ initialValues, inputs, handleValidateModifications
                 key={k}
                 style={styles.inputContainer}
             >
-                <Text>{value}</Text>
+                <Text>{value.value}</Text>
                 <Input
                     value={values[k]}
                     onChangeText={handleChangeValue(k)}
+                    keyboardType={value.keyboardType}
                 />
             </View>
         );
